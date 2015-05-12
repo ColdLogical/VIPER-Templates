@@ -2,7 +2,9 @@
 
 1. Copy the template folders or create a symbolic link to the GIT repo
   - Copy the VIPER Template folders to /Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File\ Templates/
+
    OR
+
   - cd /path/to/VIPERTemplate/git/repo
   - sudo ln -s VIPER.xctemplate /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/File\ Templates/Source/VIPER.xctemplate
   - sudo ln -s VIPER\ Tests.xctemplate /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/File\ Templates/Source/VIPER\ Tests.xctemplate
