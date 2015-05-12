@@ -1,0 +1,31 @@
+# Installation
+
+- Copy the VIPER Template folders to /Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File\ Templates/
+- Start Xcode and create a new file (File > New > File or ⌘N)
+- Choose VIPER or VIPER Test
+
+# Architecture - Objective-C
+
+- `Interactor.h`
+- `Interactor.m`
+- `InteractorProtocols.h` - Interactor Input protocol
+- `Presenter.h`
+- `Presenter.m`
+- `PresenterProtocols.h` - Interactor Output, Presenter Interface, Routing protocols
+- `View.h`
+- `View.m`
+- `ViewProtocols.h` - View Interface protocol
+- `Wireframe.h`
+- `Wireframe.m`
+- `WireframeProtocols.h` - Module Delegate and Wireframe Interface protocols
+
+# Architecture - Swift
+
+- `Interactor.swift` - Interactor class and Interactor Input protocol
+- `Presenter.swift` - Presenter class, Interactor Output, Presenter Interface and Routing protocols
+- `View.swift` - View class, View Interface protocol
+- `Wireframe.swift` - Wireframe class, Module Delegate and Wireframe Interface protocols
+
+# TODO
+
+- Swift test template files
