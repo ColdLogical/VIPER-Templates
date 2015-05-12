@@ -28,10 +28,14 @@
 
 # Architecture - Swift
 
-- `Interactor.swift` - Interactor class and Interactor Input protocol
-- `Presenter.swift` - Presenter class, Interactor Output, Presenter Interface and Routing protocols
-- `View.swift` - View class, View Interface protocol
-- `Wireframe.swift` - Wireframe class, Module Delegate and Wireframe Interface protocols
+- `Interactor.swift`
+- `InteractorProtocols.swift` - Interactor Input protocol
+- `Presenter.swift`
+- `PresenterProtocols.swift` - Interactor Output, Presenter Interface, Routing protocols
+- `View.swift`
+- `ViewProtocols.swift` - View Interface protocol
+- `Wireframe.swift`
+- `WireframeProtocols.swift` - Module Delegate and Wireframe Interface protocols
 
 # TODO
 
