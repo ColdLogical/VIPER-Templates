@@ -1,7 +1,7 @@
 # Installation
 
 1. Copy the template folders or create a symbolic link to the GIT repo
-  - Copy the VIPER Template folders to `/Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File\ Templates/`
+  - Copy the VIPER Template folders to `/Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File\ Templates/Source/`
 
    OR
 
