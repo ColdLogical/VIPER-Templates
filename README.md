@@ -11,7 +11,7 @@
 2. Start Xcode and create a new file (File > New > File or ⌘N)
 3. Choose VIPER or VIPER Test
 
-# Architecture - Objective-C
+# VIPER - Objective-C
 
 - `Interactor.h`
 - `Interactor.m`
@@ -26,7 +26,7 @@
 - `Wireframe.m`
 - `WireframeProtocols.h` - Module Delegate and Wireframe Interface protocols
 
-# Architecture - Swift
+# VIPER - Swift
 
 - `Interactor.swift`
 - `InteractorProtocols.swift` - Interactor Input protocol
@@ -36,6 +36,13 @@
 - `ViewProtocols.swift` - View Interface protocol
 - `Wireframe.swift`
 - `WireframeProtocols.swift` - Module Delegate and Wireframe Interface protocols
+
+# VIPER Tests - Objective-C
+
+- `InteractorTests.m`
+- `PresenterTests.m`
+- `ViewTests.m`
+- `WireframeTests.m`
 
 # TODO
 
