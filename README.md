@@ -5,9 +5,11 @@
 
    OR
 
-  - `cd /path/to/VIPERTemplate/git/repo`
-  - `sudo ln -s VIPER.xctemplate /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/File\ Templates/Source/VIPER.xctemplate`
-  - `sudo ln -s VIPER\ Tests.xctemplate /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/File\ Templates/Source/VIPER\ Tests.xctemplate`
+```
+  cd /path/to/VIPERTemplate/git/repo
+  sudo ln -s VIPER.xctemplate /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/File\ Templates/Source/VIPER.xctemplate
+  sudo ln -s VIPER\ Tests.xctemplate /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/File\ Templates/Source/VIPER\ Tests.xctemplate
+```
 2. Start Xcode and create a new file (File > New > File or ⌘N)
 3. Choose VIPER or VIPER Test
 
