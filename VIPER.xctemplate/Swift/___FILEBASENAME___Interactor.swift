@@ -8,11 +8,6 @@
 
 import Foundation
 
-// VIPER Interface for communication from Presenter to Interactor
-protocol ___FILEBASENAMEASIDENTIFIER___InteractorInput {
-        
-}
-
 class ___FILEBASENAMEASIDENTIFIER___Interactor: NSObject, ___FILEBASENAMEASIDENTIFIER___InteractorInput {
         // MARK: - VIPER Stack
         var presenter : ___FILEBASENAMEASIDENTIFIER___InteractorOutput?

@@ -33,10 +33,10 @@
         self.presenter = nil;
 }
 
-#pragma mark - Interactor
+#pragma mark - Interactor Input
 
-#pragma mark - View
+#pragma mark - View Interface
 
-#pragma mark - Wireframe
+#pragma mark - Wireframe Interface
 
 @end

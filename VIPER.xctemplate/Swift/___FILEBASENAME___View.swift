@@ -8,11 +8,6 @@
 
 import UIKit
 
-// VIPER Interface for communication from Presenter -> View
-protocol ___FILEBASENAMEASIDENTIFIER___ViewInterface {
-        
-}
-
 class ___FILEBASENAMEASIDENTIFIER___View : UIViewController, ___FILEBASENAMEASIDENTIFIER___ViewInterface {
         // MARK: - VIPER Stack
         var presenter : ___FILEBASENAMEASIDENTIFIER___PresenterInterface?

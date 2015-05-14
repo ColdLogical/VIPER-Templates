@@ -31,6 +31,6 @@
         self.interactor = nil;
 }
 
-#pragma mark - Output
+#pragma mark - Interactor Output
 
 @end

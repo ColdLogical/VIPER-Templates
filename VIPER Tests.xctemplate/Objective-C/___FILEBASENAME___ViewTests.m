@@ -34,6 +34,6 @@
         self.view = nil;
 }
 
-#pragma mark - Module Interface Tests
+#pragma mark - Presenter Interface
 
 @end

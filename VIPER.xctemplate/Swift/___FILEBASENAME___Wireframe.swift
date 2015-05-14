@@ -8,16 +8,6 @@
 
 import UIKit
 
-// VIPER Interface to the Module
-protocol ___FILEBASENAMEASIDENTIFIER___Delegate {
-        
-}
-
-// VIPER Interface for communication from Presenter -> Wireframe
-protocol ___FILEBASENAMEASIDENTIFIER___WireframeInterface {
-        
-}
-
 class ___FILEBASENAMEASIDENTIFIER___Wireframe: NSObject, ___FILEBASENAMEASIDENTIFIER___WireframeInterface {
         // MARK: - VIPER Stack
         var interactor = ___FILEBASENAMEASIDENTIFIER___Interactor()
