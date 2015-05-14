@@ -16,8 +16,8 @@
 
 #pragma mark - Interactor Output
 
-#pragma mark - View Interface
+#pragma mark - Presenter Interface
 
-#pragma mark - Wireframe Interface
+#pragma mark - Routing
 
 @end
