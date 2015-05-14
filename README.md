@@ -49,6 +49,13 @@
 - `ViewTests.m`
 - `WireframeTests.m`
 
+# VIPER Tests - Swift
+
+- `InteractorTests.swift`
+- `PresenterTests.swift`
+- `ViewTests.swift`
+- `WireframeTests.swif`
+
 # TODO
 
-- Swift test template files
+- Keep it sexy
