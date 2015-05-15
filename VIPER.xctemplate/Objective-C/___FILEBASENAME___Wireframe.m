@@ -75,8 +75,8 @@
         return [UIStoryboard storyboardWithName:k___FILEBASENAMEASIDENTIFIER___Storyboard bundle:[NSBundle mainBundle]];
 }
 
-#pragma mark - Wireframe Interface
-
 #pragma mark - Operational
+
+#pragma mark - Wireframe Interface
 
 @end

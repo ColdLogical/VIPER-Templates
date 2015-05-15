@@ -14,6 +14,8 @@
 
 @implementation ___FILEBASENAMEASIDENTIFIER___Interactor
 
+#pragma mark - Operational
+
 #pragma mark - Interactor Input
 
 @end

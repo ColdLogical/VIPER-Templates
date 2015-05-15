@@ -33,4 +33,7 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe: NSObject, ___FILEBASENAMEASIDENTI
                 
                 v.presenter = p
         }
+        
+        // MARK: Wireframe Interface
+        
 }

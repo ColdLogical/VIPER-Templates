@@ -14,6 +14,8 @@
 
 @implementation ___FILEBASENAMEASIDENTIFIER___Presenter
 
+#pragma mark - Operational
+
 #pragma mark - Interactor Output
 
 #pragma mark - Presenter Interface

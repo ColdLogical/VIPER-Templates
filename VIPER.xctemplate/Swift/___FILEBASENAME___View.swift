@@ -17,4 +17,7 @@ class ___FILEBASENAMEASIDENTIFIER___View : UIViewController, ___FILEBASENAMEASID
         // MARK: - Outlets
         
         // MARK: - Operational
+        
+        // MARK: - View Interface
+        
 }

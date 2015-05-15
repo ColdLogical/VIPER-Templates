@@ -17,4 +17,11 @@ class ___FILEBASENAMEASIDENTIFIER___Presenter : NSObject, ___FILEBASENAMEASIDENT
         // MARK: - Instance Variables
         
         // MARK: - Operational
+        
+        // MARK: Interactor Output
+        
+        // MARK: Presenter Interface
+        
+        // MARK: Routing
+        
 }

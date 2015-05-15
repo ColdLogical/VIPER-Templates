@@ -14,8 +14,8 @@
 
 @implementation ___FILEBASENAMEASIDENTIFIER___View
 
-#pragma mark - View Interface
-
 #pragma mark - Operational
+
+#pragma mark - View Interface
 
 @end

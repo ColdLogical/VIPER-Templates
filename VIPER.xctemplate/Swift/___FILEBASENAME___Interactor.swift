@@ -15,4 +15,7 @@ class ___FILEBASENAMEASIDENTIFIER___Interactor: NSObject, ___FILEBASENAMEASIDENT
         // MARK: - Instance Variables
         
         // MARK: - Operational
+        
+        // MARK: Interactor Input
+        
 }
