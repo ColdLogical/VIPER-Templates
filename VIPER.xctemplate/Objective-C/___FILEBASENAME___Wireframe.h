@@ -12,9 +12,6 @@
 #import "___FILEBASENAMEASIDENTIFIER___PresenterProtocols.h"
 #import "___FILEBASENAMEASIDENTIFIER___WireframeProtocols.h"
 
-static NSString *k___FILEBASENAMEASIDENTIFIER___Storyboard = @"___FILEBASENAMEASIDENTIFIER___Storyboard";
-static NSString *k___FILEBASENAMEASIDENTIFIER___ViewIdentifier = @"___FILEBASENAMEASIDENTIFIER___ViewIdentifier";
-
 // VIPER Forward Declarations
 @class ___FILEBASENAMEASIDENTIFIER___Interactor;
 @class ___FILEBASENAMEASIDENTIFIER___Presenter;

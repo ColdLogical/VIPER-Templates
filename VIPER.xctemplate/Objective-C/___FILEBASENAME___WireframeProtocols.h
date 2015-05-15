@@ -8,6 +8,10 @@
 
 // Forward Class Declarations
 
+// VIPER Module Constants
+static NSString *k___FILEBASENAMEASIDENTIFIER___Storyboard = @"___FILEBASENAMEASIDENTIFIER___";
+static NSString *k___FILEBASENAMEASIDENTIFIER___ViewIdentifier = @"___FILEBASENAMEASIDENTIFIER___View";
+
 // VIPER Interface for the module
 @protocol ___FILEBASENAME___Delegate <NSObject>
 
