@@ -1,19 +1,16 @@
 # Installation
 
-1. Copy the template folders or create a symbolic link to the GIT repo
-  - Copy the VIPER Template folders to 
+1. Open Terminal
+2. Change into the VIPERTemplate directory
 ```
-/Applications/Xcode.app/Contents/Developer/Library/Xcode/Templates/File\ Templates/Source/
+cd /path/to/VIPERTemplates/
 ```
-
-   OR
-
+3. Run the install script
 ```
-  sudo ln -s (path to viper template repo)/VIPER.xctemplate /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/File\ Templates/Source/VIPER.xctemplate
-  sudo ln -s (path to viper template repo)/VIPER\ Tests.xctemplate /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/File\ Templates/Source/VIPER\ Tests.xctemplate
+./install
 ```
-2. Start Xcode and create a new file (File > New > File or ⌘N)
-3. Choose VIPER or VIPER Test
+4. Start Xcode and create a new file (File > New > File or ⌘N)
+5. Choose VIPER or VIPER Test
 
 # VIPER - Objective-C
 

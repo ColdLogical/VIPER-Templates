@@ -1,0 +1,10 @@
+#!/bin/bash
+TEMPLATE_DIRECTORY=$PWD
+echo $TEMPLATE_DIRECTORY
+SOURCE_DIRECTORY='/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/File\ Templates/Source'
+
+eval cd $SOURCE_DIRECTORY
+
+echo $PWD
+sudo ln -s "$TEMPLATE_DIRECTORY/VIPER.xctemplate" "VIPER.xctemplate"
+sudo ln -s "$TEMPLATE_DIRECTORY/VIPER Tests.xctemplate" "VIPER Tests.xctemplate"
