@@ -1,14 +1,7 @@
 # Installation
 
-1. Open Terminal
-2. Change into the VIPERTemplate directory
-```
-cd /path/to/VIPERTemplates/
-```
-3. Run the install script
-```
-./install
-```
+1. Open VIPERTemplates repository
+3. Run the install script (double click)
 4. Start Xcode and create a new file (File > New > File or ⌘N)
 5. Choose VIPER or VIPER Test
 
