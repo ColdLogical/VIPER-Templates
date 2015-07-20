@@ -24,9 +24,9 @@
         self = [super init];
         
         if (self) {
-                ___FILEBASENAMEASIDENTIFIER___Interactor *i = self.interactor;
-                ___FILEBASENAMEASIDENTIFIER___Presenter *p = self.presenter;
-                ___FILEBASENAMEASIDENTIFIER___View *v = self.view;
+                ___FILEBASENAMEASIDENTIFIER___Interactor *i = self.moduleInteractor;
+                ___FILEBASENAMEASIDENTIFIER___Presenter *p = self.modulePresenter;
+                ___FILEBASENAMEASIDENTIFIER___View *v = self.moduleView;
                 
                 i.presenter = p;
                 
@@ -35,40 +35,42 @@
                 p.wireframe = self;
                 
                 v.presenter = p;
+                
+                self.presenter = p;
         }
         
         return self;
 }
 
 #pragma mark - Lazy Loaders
--(___FILEBASENAMEASIDENTIFIER___Interactor *)interactor {
-        if(_interactor != nil) {
-                return _interactor ;
+-(___FILEBASENAMEASIDENTIFIER___Interactor *)moduleInteractor {
+        if(_moduleInteractor != nil) {
+                return _moduleInteractor ;
         }
         
-        _interactor = [[___FILEBASENAMEASIDENTIFIER___Interactor alloc] init];
+        _moduleInteractor = [___FILEBASENAMEASIDENTIFIER___Interactor new];
         
-        return _interactor;
+        return _moduleInteractor;
 }
 
--(___FILEBASENAMEASIDENTIFIER___Presenter *)presenter {
-        if(_presenter != nil) {
-                return _presenter;
+-(___FILEBASENAMEASIDENTIFIER___Presenter *)modulePresenter {
+        if(_modulePresenter != nil) {
+                return _modulePresenter;
         }
         
-        _presenter = [[___FILEBASENAMEASIDENTIFIER___Presenter alloc] init];
+        _modulePresenter = [___FILEBASENAMEASIDENTIFIER___Presenter new];
         
-        return _presenter;
+        return _modulePresenter;
 }
 
--(___FILEBASENAMEASIDENTIFIER___View *)view {
-        if(_view != nil) {
-                return _view;
+-(___FILEBASENAMEASIDENTIFIER___View *)moduleView {
+        if(_moduleView != nil) {
+                return _moduleView;
         }
         
-        _view = [[self storyboard] instantiateViewControllerWithIdentifier:k___FILEBASENAMEASIDENTIFIER___ViewIdentifier];
+        _moduleView = [[self storyboard] instantiateViewControllerWithIdentifier:k___FILEBASENAMEASIDENTIFIER___ViewIdentifier];
         
-        return _view;
+        return _moduleView;
 }
 
 -(UIStoryboard *)storyboard {

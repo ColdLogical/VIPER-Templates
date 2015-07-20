@@ -20,9 +20,10 @@
 @interface ___FILEBASENAMEASIDENTIFIER___Wireframe : NSObject <___FILEBASENAMEASIDENTIFIER___WireframeInterface>
 
 // VIPER Stack
-@property (nonatomic, strong) ___FILEBASENAMEASIDENTIFIER___Interactor *interactor;
-@property (nonatomic, strong) ___FILEBASENAMEASIDENTIFIER___Presenter *presenter;
-@property (nonatomic, strong) ___FILEBASENAMEASIDENTIFIER___View *view;
+@property (nonatomic, strong) ___FILEBASENAMEASIDENTIFIER___Interactor *moduleInteractor;
+@property (nonatomic, strong) ___FILEBASENAMEASIDENTIFIER___Presenter *modulePresenter;
+@property (nonatomic, strong) ___FILEBASENAMEASIDENTIFIER___View *moduleView;
+@property (nonatomic, weak) id<___FILEBASENAMEASIDENTIFIER___Routing> presenter;
 
 // Instance Variables
 

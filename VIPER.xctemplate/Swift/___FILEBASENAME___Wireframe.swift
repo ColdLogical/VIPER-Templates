@@ -10,9 +10,10 @@ import UIKit
 
 class ___FILEBASENAMEASIDENTIFIER___Wireframe: NSObject, ___FILEBASENAMEASIDENTIFIER___WireframeInterface {
         // MARK: - VIPER Stack
-        var interactor = ___FILEBASENAMEASIDENTIFIER___Interactor()
-        var presenter = ___FILEBASENAMEASIDENTIFIER___Presenter()
-        var view = ___FILEBASENAMEASIDENTIFIER___View()
+        var moduleInteractor = ___FILEBASENAMEASIDENTIFIER___Interactor()
+        var modulePresenter = ___FILEBASENAMEASIDENTIFIER___Presenter()
+        var moduleView = ___FILEBASENAMEASIDENTIFIER___View()
+        var presenter : ___FILEBASENAMEASIDENTIFIER___Routing?
         
         // MARK: - Instance Variables
         var delegate: ___FILEBASENAMEASIDENTIFIER___Delegate?
@@ -21,9 +22,9 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe: NSObject, ___FILEBASENAMEASIDENTI
         override init() {
                 super.init()
                 
-                let i = interactor
-                let p = presenter
-                let v = view
+                let i = moduleInteractor
+                let p = modulePresenter
+                let v = moduleView
                 
                 i.presenter = p
                 
@@ -32,6 +33,8 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe: NSObject, ___FILEBASENAMEASIDENTI
                 p.wireframe = self
                 
                 v.presenter = p
+                
+                self.presenter = p
         }
         
         // MARK: Wireframe Interface
