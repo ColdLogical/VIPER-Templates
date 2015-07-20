@@ -17,7 +17,7 @@
 @interface ___FILEBASENAMEASIDENTIFIER___ViewTests : XCTestCase <___FILEBASENAMEASIDENTIFIER___PresenterInterface>
 
 @property (nonatomic, strong) XCTestExpectation *expectation;
-@property (nonatomic, strong) ___FILEBASNAMEASIDENTIFIER___View *view;
+@property (nonatomic, strong) ___FILEBASENAMEASIDENTIFIER___View *view;
 @property (nonatomic, strong) id object;
 
 @end

@@ -46,13 +46,13 @@
         XCTAssertNotNil(self.wireframe.modulePresenter, @"Presenter cannot be nil after init");
         XCTAssertNotNil(self.wireframe.moduleView, @"View cannot be nil after init");
         
-        XCTAssertTrue(self.wireframe.moduleInteractor.presenter == self.wireframe.presenter, @"Interactor's presenter must be the wireframe's presenter");
+        XCTAssertTrue(self.wireframe.moduleInteractor.presenter == self.wireframe.modulePresenter, @"Interactor's presenter must be the wireframe's presenter");
         
-        XCTAssertTrue(self.wireframe.modulePresenter.interactor == self.wireframe.interactor, @"Presenter's interactor must be the wireframe's interactor");
-        XCTAssertTrue(self.wireframe.modulePresenter.view == self.wireframe.view, @"Presenter's view must be the wireframe's view");
+        XCTAssertTrue(self.wireframe.modulePresenter.interactor == self.wireframe.moduleInteractor, @"Presenter's interactor must be the wireframe's interactor");
+        XCTAssertTrue(self.wireframe.modulePresenter.view == self.wireframe.moduleView, @"Presenter's view must be the wireframe's view");
         XCTAssertTrue(self.wireframe.modulePresenter.wireframe ==self.wireframe, @"Presenter's wireframe must be the wireframe");
         
-        XCTAssertTrue(self.wireframe.moduleView.presenter == self.wireframe.presenter, @"View's presenter must be the wireframe's presenter");
+        XCTAssertTrue(self.wireframe.moduleView.presenter == self.wireframe.modulePresenter, @"View's presenter must be the wireframe's presenter");
 }
 
 #pragma mark - Delegate
