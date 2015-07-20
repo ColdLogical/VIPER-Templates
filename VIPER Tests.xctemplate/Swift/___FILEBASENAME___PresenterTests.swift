@@ -12,7 +12,9 @@ import XCTest
 import ___PROJECTNAME___
 
 class ___FILEBASENAMEASIDENTIFIER___PresenterTests: XCTestCase, ___FILEBASENAMEASIDENTIFIER___InteractorInput, ___FILEBASENAMEASIDENTIFIER___ViewInterface, ___FILEBASENAMEASIDENTIFIER___WireframeInterface {
+        var expectation: XCTestExpecation?
         var presenter = ___FILEBASENAMEASIDENTIFIER___Presenter()
+        var object: AnyObject?
         
         override func setUp() {
                 super.setUp()
@@ -24,6 +26,8 @@ class ___FILEBASENAMEASIDENTIFIER___PresenterTests: XCTestCase, ___FILEBASENAMEA
         
         override func tearDown() {
                 super.tearDown()
+                expectation = nil;
+                object = nil;
         }
         
         // MARK: - Interactor Input

@@ -12,7 +12,9 @@ import XCTest
 import ___PROJECTNAME___
 
 class ___FILEBASENAMEASIDENTIFIER___InteractorTests: XCTestCase, ___FILEBASENAMEASIDENTIFIER___InteractorOutput {
+        var expectation: XCTestExpecation?
         var interactor = ___FILEBASENAMEASIDENTIFIER___Interactor()
+        var object: AnyObject?
         
         override func setUp() {
                 super.setUp()
@@ -21,6 +23,8 @@ class ___FILEBASENAMEASIDENTIFIER___InteractorTests: XCTestCase, ___FILEBASENAME
         
         override func tearDown() {
                 super.tearDown()
+                expectation = nil;
+                object = nil;
         }
         
         // MARK: - Interactor Output
