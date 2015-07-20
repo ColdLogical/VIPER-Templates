@@ -14,7 +14,9 @@
 
 @interface ___FILEBASENAMEASIDENTIFIER___InteractorTests : XCTestCase <___FILEBASENAMEASIDENTIFIER___InteractorOutput>
 
+@property (nonatomic, strong) XCTestExpectation *expectation;
 @property (nonatomic, strong) ___FILEBASENAMEASIDENTIFIER___Interactor *interactor;
+@property (nonatomic, strong) id object;
 
 @end
 
@@ -29,6 +31,8 @@
 - (void)tearDown {
         [super tearDown];
         self.interactor = nil;
+        self.expectation = nil;
+        self.object = nil;
 }
 
 #pragma mark - Interactor Output

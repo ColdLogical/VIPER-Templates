@@ -14,7 +14,9 @@
 
 @interface ___FILEBASENAMEASIDENTIFIER___PresenterTests : XCTestCase <___FILEBASENAMEASIDENTIFIER___InteractorInput, ___FILEBASENAMEASIDENTIFIER___ViewInterface, ___FILEBASENAMEASIDENTIFIER___WireframeInterface>
 
+@property (nonatomic, strong) XCTestExpectation *expectation;
 @property (nonatomic, strong) ___FILEBASENAMEASIDENTIFIER___Presenter *presenter;
+@property (nonatomic, strong) id object;
 
 @end
 
@@ -31,6 +33,8 @@
 - (void)tearDown {
         [super tearDown];
         self.presenter = nil;
+        self.expectation = nil;
+        self.object = nil;
 }
 
 #pragma mark - Interactor Input
