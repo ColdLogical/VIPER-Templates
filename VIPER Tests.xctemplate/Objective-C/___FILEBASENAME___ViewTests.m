@@ -38,6 +38,10 @@
         self.object = nil;
 }
 
+#pragma mark - Operational
+
+#pragma mark - View Interface
+
 #pragma mark - Presenter Interface
 
 @end

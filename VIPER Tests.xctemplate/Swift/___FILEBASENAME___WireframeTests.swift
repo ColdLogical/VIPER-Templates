@@ -36,14 +36,20 @@ class ___FILEBASENAMEASIDENTIFIER___WireframeTests: XCTestCase, ___FILEBASENAMEA
                 XCTAssertNotNil(wireframe.modulePresenter, "Presenter cannot be nil after init");
                 XCTAssertNotNil(wireframe.moduleView, "View cannot be nil after init");
                 
-                XCTAssertTrue(wireframe.modulePresenter.isEqual(wireframe.moduleInteractor.presenter!), "Interactor's presenter must be the wireframe's presenter");
+                XCTAssertEqualObjects(wireframe.modulePresenter.isEqual(wireframe.moduleInteractor.presenter!), "Interactor's presenter must be the module's presenter");
                 
-                XCTAssertTrue(wireframe.moduleInteractor.isEqual(wireframe.modulePresenter.interactor!), "Presenter's interactor must be the wireframe's interactor");
-                XCTAssertTrue(wireframe.moduleView.isEqual(wireframe.modulePresenter.view!), "Presenter's view must be the wireframe's view");
-                XCTAssertTrue(wireframe.isEqual(wireframe.modulePresenter.wireframe!), "Presenter's wireframe must be the wireframe");
+                XCTAssertEqualObjects(wireframe.moduleInteractor.isEqual(wireframe.modulePresenter.interactor!), "Presenter's interactor must be the module's interactor");
+                XCTAssertEqualObjects(wireframe.moduleView.isEqual(wireframe.modulePresenter.view!), "Presenter's view must be the module's view");
+                XCTAssertEqualObjects(wireframe.isEqual(wireframe.modulePresenter.wireframe!), "Presenter's wireframe must be the module'swireframe");
                 
-                XCTAssertTrue(wireframe.modulePresenter.isEqual(wireframe.moduleView.presenter!), "View's presenter must be the wireframe's presenter");
+                XCTAssertEqualObjects(wireframe.modulePresenter.isEqual(wireframe.moduleView.presenter!), "View's presenter must be the module's presenter");
+                
+                XCTAssertEqualObjects(wireframe.presenter.isEqual(wireframe.modulePresenter!), "Wireframe's presenter must be the module's presenter");
         }
+        
+        // MARK: - Operational
+        
+        // MARK: - Wireframe Interface
         
         // MARK: - Delegate
         

@@ -28,6 +28,10 @@ class ___FILEBASENAMEASIDENTIFIER___ViewTests: XCTestCase, ___FILEBASENAMEASIDEN
                 object = nil;
         }
         
+        // MARK: - Operational
+
+        // MARK: - View Interface
+
         // MARK: - Presenter Interface
         
 }

@@ -27,6 +27,10 @@ class ___FILEBASENAMEASIDENTIFIER___InteractorTests: XCTestCase, ___FILEBASENAME
                 object = nil;
         }
         
+        // MARK: - Operational
+
+        // MARK: - Interactor Input
+
         // MARK: - Interactor Output
         
 }

@@ -35,6 +35,10 @@
         self.object = nil;
 }
 
+#pragma mark - Operational
+
+#pragma mark - Interactor Input
+
 #pragma mark - Interactor Output
 
 @end

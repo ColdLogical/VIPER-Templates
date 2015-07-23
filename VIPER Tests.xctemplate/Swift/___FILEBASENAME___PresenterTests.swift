@@ -30,6 +30,14 @@ class ___FILEBASENAMEASIDENTIFIER___PresenterTests: XCTestCase, ___FILEBASENAMEA
                 object = nil;
         }
         
+        // MARK: - Operational
+
+        // MARK: - Interactor Output
+
+        // MARK: - Presenter Interface
+
+        // MARK: - Routing
+
         // MARK: - Interactor Input
         
         // MARK: - View Interface

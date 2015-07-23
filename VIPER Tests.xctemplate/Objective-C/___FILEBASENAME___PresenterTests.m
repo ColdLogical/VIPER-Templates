@@ -37,6 +37,14 @@
         self.object = nil;
 }
 
+#pragma mark - Operational
+
+#pragma mark - Interactor Output
+
+#pragma mark - Presenter Interface
+
+#pragma mark - Routing
+
 #pragma mark - Interactor Input
 
 #pragma mark - View Interface
