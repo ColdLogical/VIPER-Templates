@@ -40,6 +40,8 @@
 }
 
 - (void)testInit {
+        self.wireframe = [___FILEBASENAMEASIDENTIFIER___Wireframe new];
+        
         XCTAssertNotNil(self.wireframe, @"Wireframe cannot be nil after init");
         
         XCTAssertNotNil(self.wireframe.moduleInteractor, @"Interactor cannot be nil after init");

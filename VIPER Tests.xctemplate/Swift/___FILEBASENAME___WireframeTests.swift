@@ -30,6 +30,8 @@ class ___FILEBASENAMEASIDENTIFIER___WireframeTests: XCTestCase, ___FILEBASENAMEA
         }
         
         func testInit() {
+                wireframe = ___FILEBASENAMEASIDENTIFIER___Wireframe()
+                
                 XCTAssertNotNil(wireframe, "Wireframe cannot be nil after init")
                 
                 XCTAssertNotNil(wireframe.moduleInteractor, "Interactor cannot be nil after init");
