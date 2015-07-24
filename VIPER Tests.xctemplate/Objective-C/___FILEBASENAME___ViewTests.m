@@ -17,8 +17,9 @@
 @interface ___FILEBASENAMEASIDENTIFIER___ViewTests : XCTestCase <___FILEBASENAMEASIDENTIFIER___PresenterInterface>
 
 @property (nonatomic, strong) XCTestExpectation *expectation;
-@property (nonatomic, strong) ___FILEBASENAMEASIDENTIFIER___View *view;
 @property (nonatomic, strong) id object;
+@property (nonatomic, strong) ___FILEBASENAMEASIDENTIFIER___View *view;
+@property (nonatomic, strong) UIWindow *window;
 
 @end
 
@@ -26,10 +27,16 @@
 
 - (void)setUp {
         [super setUp];
+	
         UIStoryboard *sb =[UIStoryboard storyboardWithName:k___FILEBASENAMEASIDENTIFIER___Storyboard bundle:[NSBundle mainBundle]];
         self.view = [sb instantiateViewControllerWithIdentifier:k___FILEBASENAMEASIDENTIFIER___ViewIdentifier];
 	[self.view loadView];
+
         self.view.presenter = self;
+
+	self.window = [UIWindow new];
+        self.window.rootViewController = self.view;
+        [self.window makeKeyAndVisible];
 }
 
 - (void)tearDown {

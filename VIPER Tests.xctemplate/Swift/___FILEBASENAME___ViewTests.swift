@@ -13,20 +13,25 @@ import ___PROJECTNAME___
 
 class ___FILEBASENAMEASIDENTIFIER___ViewTests: XCTestCase, ___FILEBASENAMEASIDENTIFIER___PresenterInterface {
         var expectation: XCTestExpecation?
-        var view = ___FILEBASENAMEASIDENTIFIER___View()
         var object: AnyObject?
+        var view = ___FILEBASENAMEASIDENTIFIER___View()
+	var window = UIWindow()
         
         override func setUp() {
                 super.setUp()
+
                 view = ___FILEBASENAMEASIDENTIFIER___View()
 		view.loadView()
-                view.presenter = self;
+                view.presenter = self
+
+		window.rootViewController = view
+		window.makeKeyAndVisible()
         }
         
         override func tearDown() {
                 super.tearDown()
-                expectation = nil;
-                object = nil;
+                expectation = nil
+                object = nil
         }
         
         // MARK: - Operational
