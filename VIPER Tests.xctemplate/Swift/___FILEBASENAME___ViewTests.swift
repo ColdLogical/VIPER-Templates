@@ -19,6 +19,7 @@ class ___FILEBASENAMEASIDENTIFIER___ViewTests: XCTestCase, ___FILEBASENAMEASIDEN
         override func setUp() {
                 super.setUp()
                 view = ___FILEBASENAMEASIDENTIFIER___View()
+		view.loadView()
                 view.presenter = self;
         }
         

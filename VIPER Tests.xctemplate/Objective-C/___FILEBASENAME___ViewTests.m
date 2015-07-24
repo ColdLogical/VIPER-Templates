@@ -28,6 +28,7 @@
         [super setUp];
         UIStoryboard *sb =[UIStoryboard storyboardWithName:k___FILEBASENAMEASIDENTIFIER___Storyboard bundle:[NSBundle mainBundle]];
         self.view = [sb instantiateViewControllerWithIdentifier:k___FILEBASENAMEASIDENTIFIER___ViewIdentifier];
+	[self.view loadView];
         self.view.presenter = self;
 }
 
