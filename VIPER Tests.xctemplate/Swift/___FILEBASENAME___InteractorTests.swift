@@ -23,6 +23,7 @@ class ___FILEBASENAMEASIDENTIFIER___InteractorTests: XCTestCase, ___FILEBASENAME
         
         override func tearDown() {
                 super.tearDown()
+		interactor = ___FILEBASENAMEASIDENTIFIER___Interactor()
                 expectation = nil;
                 object = nil;
         }

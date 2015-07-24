@@ -30,6 +30,8 @@ class ___FILEBASENAMEASIDENTIFIER___ViewTests: XCTestCase, ___FILEBASENAMEASIDEN
         
         override func tearDown() {
                 super.tearDown()
+		view = ___FILEBASENAMEASIDENTIFIER___View()
+		window = UIWindow()
                 expectation = nil
                 object = nil
         }

@@ -18,13 +18,13 @@ class ___FILEBASENAMEASIDENTIFIER___WireframeTests: XCTestCase, ___FILEBASENAMEA
         
         override func setUp() {
                 super.setUp()
-                wireframe = ___FILEBASENAMEASIDENTIFIER___Wireframe()
                 wireframe.delegate = self;
                 wireframe.presenter = self;
         }
         
         override func tearDown() {
                 super.tearDown()
+		wireframe = ___FILEBASENAMEASIDENTIFIER___Wireframe()
                 expectation = nil;
                 object = nil;
         }

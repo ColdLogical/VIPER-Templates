@@ -42,6 +42,7 @@
 - (void)tearDown {
         [super tearDown];
         self.view = nil;
+	self.window = nil;
         self.expectation = nil;
         self.object = nil;
 }

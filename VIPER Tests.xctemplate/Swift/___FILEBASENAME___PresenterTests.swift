@@ -26,6 +26,7 @@ class ___FILEBASENAMEASIDENTIFIER___PresenterTests: XCTestCase, ___FILEBASENAMEA
         
         override func tearDown() {
                 super.tearDown()
+		presenter = ___FILEBASENAMEASIDENTIFIER___Presenter()
                 expectation = nil;
                 object = nil;
         }
