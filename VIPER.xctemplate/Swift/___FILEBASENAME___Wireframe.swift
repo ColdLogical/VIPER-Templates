@@ -14,7 +14,6 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe: NSObject, ___FILEBASENAMEASIDENTI
         var modulePresenter = ___FILEBASENAMEASIDENTIFIER___Presenter()
         var moduleView = ___FILEBASENAMEASIDENTIFIER___View()
         var presenter : ___FILEBASENAMEASIDENTIFIER___Routing?
-        var storyboard = UIStoryboard(name: k___FILEBASENAMEASIDENTIFIER___Storyboard, bundle: NSBundle.mainBundle())
 
         // Uncomment and delete the moduleView line above to use a navigationController from storyboard
         /*
@@ -44,6 +43,10 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe: NSObject, ___FILEBASENAMEASIDENTI
                 
                 self.presenter = p
         }
+
+	func storyboard() -> UIStoryboard {
+                return UIStoryboard(name: k___FILEBASENAMEASIDENTIFIER___Storyboard, bundle: NSBundle.mainBundle());
+	}
         
         // MARK: Wireframe Interface
         
