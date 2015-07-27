@@ -18,9 +18,9 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe: NSObject, ___FILEBASENAMEASIDENTI
 
         // Uncomment and delete the moduleView line above to use a navigationController from storyboard
         /*
-        var moduleNavigationController = storyboard.instantiateInitialViewController()
+        var moduleNavigationController = storyboard.instantiateViewControllerWithIdentifier(k___FILEBASENAMEASIDENTIFIER___NavigationController)
         var moduleView: ___FILEBASENAMEASIDENTIFIER___View = moduleNavigationController.viewControllers[0]
-        /*
+        */
 
         
         // MARK: - Instance Variables

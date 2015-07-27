@@ -63,16 +63,16 @@
         return _modulePresenter;
 }
 
- // Uncomment this lazy loader to utilize a navigation controller from storyboard that is the initial view controller
+ // Uncomment this lazy loader to utilize a navigation controller from storyboard that has the view controller identifier
 /*
 -(UINavigationController *)moduleNavigationController {
-        if(_navigationController != nil) {
-                return _navigationController;
+        if(_moduleNavigationController != nil) {
+                return _moduleNavigationController;
         }
         
-        self.navigationController = [[self storyboard] instantiateInitialViewController];
-        
-        return _navigationController;
+        self.moduleNavigationController = [[self storyboard] instantiateViewControllerWithIdentifier:k___FILEBASENAMEASIDENTIFIER___NavigationController];
+ 
+        return _moduleNavigationController;
 }
  */
 
@@ -84,7 +84,7 @@
         _moduleView = [[self storyboard] instantiateViewControllerWithIdentifier:k___FILEBASENAMEASIDENTIFIER___ViewIdentifier];
        // Uncomment this code and delete the above code to utilize a navigation controller from storyboard
         /*
-        _moduleView = self.navigationController.viewControllers[0];
+        _moduleView = self.moduleNavigationController.viewControllers[0];
         */
         
         return _moduleView;

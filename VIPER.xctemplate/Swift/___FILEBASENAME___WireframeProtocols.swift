@@ -7,9 +7,10 @@
 //
 
 // VIPER Module Constants
-let k___FILEBASENAMEASIDENTIFIER___NavigationControllerIdentifier = "___FILEBASENAMEASIDENTIFIER___NavigationController"
 let k___FILEBASENAMEASIDENTIFIER___StoryboardIdentifier = "___FILEBASENAMEASIDENTIFIER___"
 let k___FILEBASENAMEASIDENTIFIER___ViewIdentifier = "___FILEBASENAMEASIDENTIFIER___View"
+// Uncomment to utilize a navigation contoller from storyboard
+//let k___FILEBASENAMEASIDENTIFIER___NavigationControllerIdentifier = "___FILEBASENAMEASIDENTIFIER___NavigationController"
 
 // VIPER Interface to the Module
 protocol ___FILEBASENAMEASIDENTIFIER___Delegate {
