@@ -24,9 +24,12 @@
 @property (nonatomic, strong) ___FILEBASENAMEASIDENTIFIER___Presenter *modulePresenter;
 @property (nonatomic, strong) ___FILEBASENAMEASIDENTIFIER___View *moduleView;
 @property (nonatomic, weak) id<___FILEBASENAMEASIDENTIFIER___Routing> presenter;
+// Uncomment to utilize a navigation controller from storyboard
+/*
+@property (nonatomic, strong) UINavigationController *navigationController;
+ */
 
 // Instance Variables
-
 @property (nonatomic, weak) id<___FILEBASENAMEASIDENTIFIER___Delegate> delegate;
 
 // Instance Methods

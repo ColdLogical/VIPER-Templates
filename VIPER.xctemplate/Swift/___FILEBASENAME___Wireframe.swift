@@ -14,6 +14,14 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe: NSObject, ___FILEBASENAMEASIDENTI
         var modulePresenter = ___FILEBASENAMEASIDENTIFIER___Presenter()
         var moduleView = ___FILEBASENAMEASIDENTIFIER___View()
         var presenter : ___FILEBASENAMEASIDENTIFIER___Routing?
+        var storyboard = UIStoryboard(name: k___FILEBASENAMEASIDENTIFIER___Storyboard, bundle: NSBundle.mainBundle())
+
+        // Uncomment and delete the moduleView line above to use a navigationController from storyboard
+        /*
+        var moduleNavigationController = storyboard.instantiateInitialViewController()
+        var moduleView: ___FILEBASENAMEASIDENTIFIER___View = moduleNavigationController.viewControllers[0]
+        /*
+
         
         // MARK: - Instance Variables
         var delegate: ___FILEBASENAMEASIDENTIFIER___Delegate?
