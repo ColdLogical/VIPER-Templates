@@ -12,8 +12,10 @@ import XCTest
 import ___PROJECTNAME___
 
 class ___FILEBASENAMEASIDENTIFIER___WireframeTests: XCTestCase, ___FILEBASENAMEASIDENTIFIER___Delegate, ___FILEBASENAMEASIDENTIFIER___Routing {
-        var expectation: XCTestExpecation?
         var wireframe = ___FILEBASENAMEASIDENTIFIER___Wireframe()
+        
+        // MARK: - Test Objects
+        var expectation: XCTestExpecation?
         var object: AnyObject?
         
         override func setUp() {

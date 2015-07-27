@@ -12,10 +12,12 @@ import XCTest
 import ___PROJECTNAME___
 
 class ___FILEBASENAMEASIDENTIFIER___ViewTests: XCTestCase, ___FILEBASENAMEASIDENTIFIER___PresenterInterface {
-        var expectation: XCTestExpecation?
-        var object: AnyObject?
         var view = ___FILEBASENAMEASIDENTIFIER___View()
 	var window = UIWindow()
+        
+        // MARK: - Test Objects
+        var expectation: XCTestExpecation?
+        var object: AnyObject?
         
         override func setUp() {
                 super.setUp()

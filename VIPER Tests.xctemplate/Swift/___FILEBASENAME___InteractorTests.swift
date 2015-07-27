@@ -12,8 +12,10 @@ import XCTest
 import ___PROJECTNAME___
 
 class ___FILEBASENAMEASIDENTIFIER___InteractorTests: XCTestCase, ___FILEBASENAMEASIDENTIFIER___InteractorOutput {
-        var expectation: XCTestExpecation?
         var interactor = ___FILEBASENAMEASIDENTIFIER___Interactor()
+        
+        // MARK: - Test Objects
+        var expectation: XCTestExpecation?
         var object: AnyObject?
         
         override func setUp() {

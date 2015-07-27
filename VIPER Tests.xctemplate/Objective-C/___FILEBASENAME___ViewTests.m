@@ -16,10 +16,12 @@
 
 @interface ___FILEBASENAMEASIDENTIFIER___ViewTests : XCTestCase <___FILEBASENAMEASIDENTIFIER___PresenterInterface>
 
-@property (nonatomic, strong) XCTestExpectation *expectation;
-@property (nonatomic, strong) id object;
 @property (nonatomic, strong) ___FILEBASENAMEASIDENTIFIER___View *view;
 @property (nonatomic, strong) UIWindow *window;
+
+// Test Objects
+@property (nonatomic, strong) XCTestExpectation *expectation;
+@property (nonatomic, strong) id object;
 
 @end
 

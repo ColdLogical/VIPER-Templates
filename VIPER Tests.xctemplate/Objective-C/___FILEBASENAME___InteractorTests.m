@@ -14,8 +14,10 @@
 
 @interface ___FILEBASENAMEASIDENTIFIER___InteractorTests : XCTestCase <___FILEBASENAMEASIDENTIFIER___InteractorOutput>
 
-@property (nonatomic, strong) XCTestExpectation *expectation;
 @property (nonatomic, strong) ___FILEBASENAMEASIDENTIFIER___Interactor *interactor;
+
+// Test Objects
+@property (nonatomic, strong) XCTestExpectation *expectation;
 @property (nonatomic, strong) id object;
 
 @end

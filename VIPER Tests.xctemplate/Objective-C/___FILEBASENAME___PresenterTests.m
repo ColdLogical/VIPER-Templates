@@ -14,8 +14,10 @@
 
 @interface ___FILEBASENAMEASIDENTIFIER___PresenterTests : XCTestCase <___FILEBASENAMEASIDENTIFIER___InteractorInput, ___FILEBASENAMEASIDENTIFIER___ViewInterface, ___FILEBASENAMEASIDENTIFIER___WireframeInterface>
 
-@property (nonatomic, strong) XCTestExpectation *expectation;
 @property (nonatomic, strong) ___FILEBASENAMEASIDENTIFIER___Presenter *presenter;
+
+// Test Objects
+@property (nonatomic, strong) XCTestExpectation *expectation;
 @property (nonatomic, strong) id object;
 
 @end

@@ -17,8 +17,10 @@
 
 @interface ___FILEBASENAMEASIDENTIFIER___WireframeTests : XCTestCase <___FILEBASENAMEASIDENTIFIER___Delegate, ___FILEBASENAMEASIDENTIFIER___Routing>
 
-@property (nonatomic, strong) XCTestExpectation *expectation;
 @property (nonatomic, strong) ___FILEBASENAMEASIDENTIFIER___Wireframe *wireframe;
+
+// Test Objects
+@property (nonatomic, strong) XCTestExpectation *expectation;
 @property (nonatomic, strong) id object;
 
 @end
