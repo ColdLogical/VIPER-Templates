@@ -10,7 +10,7 @@ import UIKit
 
 class ___FILEBASENAMEASIDENTIFIER___View : UIViewController, ___FILEBASENAMEASIDENTIFIER___ViewInterface {
         // MARK: - VIPER Stack
-        var presenter : ___FILEBASENAMEASIDENTIFIER___PresenterInterface?
+        lazy var presenter : ___FILEBASENAMEASIDENTIFIER___PresenterInterface = ___FILEBASENAMEASIDENTIFIER___Presenter()
         
         // MARK: - Instance Variables
         

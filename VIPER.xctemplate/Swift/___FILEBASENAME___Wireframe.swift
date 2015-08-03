@@ -10,14 +10,18 @@ import UIKit
 
 class ___FILEBASENAMEASIDENTIFIER___Wireframe: NSObject, ___FILEBASENAMEASIDENTIFIER___WireframeInterface {
         // MARK: - VIPER Stack
-        var moduleInteractor = ___FILEBASENAMEASIDENTIFIER___Interactor()
-        var modulePresenter = ___FILEBASENAMEASIDENTIFIER___Presenter()
-        var moduleView = ___FILEBASENAMEASIDENTIFIER___View()
-        var presenter : ___FILEBASENAMEASIDENTIFIER___Routing?
+        lazy var moduleInteractor = ___FILEBASENAMEASIDENTIFIER___Interactor()
+        lazy var modulePresenter = ___FILEBASENAMEASIDENTIFIER___Presenter()
+        lazy var moduleView = ___FILEBASENAMEASIDENTIFIER___View()
+        lazy var presenter : ___FILEBASENAMEASIDENTIFIER___Routing = self.modulePresenter
 
         // Uncomment and delete the moduleView line above to use a navigationController from storyboard
         /*
-        var moduleNavigationController = storyboard.instantiateViewControllerWithIdentifier(k___FILEBASENAMEASIDENTIFIER___NavigationController)
+        var moduleNavigationController: UINavigationController = {
+                let sb = ___FILEBASENAMEASIDENTIFIER___Wireframe.storyboard()
+                var v = sb.instantiateViewControllerWithIdentifier("___FILEBASENAMEASIDENTIFIER___NavigationController") as! UINavigationController
+                return v
+        }()
         var moduleView: ___FILEBASENAMEASIDENTIFIER___View = moduleNavigationController.viewControllers[0]
         */
 
@@ -41,13 +45,13 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe: NSObject, ___FILEBASENAMEASIDENTI
                 
                 v.presenter = p
                 
-                self.presenter = p
+                presenter = p
         }
 
 	func storyboard() -> UIStoryboard {
                 return UIStoryboard(name: k___FILEBASENAMEASIDENTIFIER___Storyboard, bundle: NSBundle.mainBundle());
 	}
         
-        // MARK: Wireframe Interface
+        // MARK: - Wireframe Interface
         
 }

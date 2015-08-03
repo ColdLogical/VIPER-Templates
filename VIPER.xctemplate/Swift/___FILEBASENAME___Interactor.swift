@@ -10,12 +10,12 @@ import Foundation
 
 class ___FILEBASENAMEASIDENTIFIER___Interactor: NSObject, ___FILEBASENAMEASIDENTIFIER___InteractorInput {
         // MARK: - VIPER Stack
-        var presenter : ___FILEBASENAMEASIDENTIFIER___InteractorOutput?
+        lazy var presenter : ___FILEBASENAMEASIDENTIFIER___InteractorOutput = ___FILEBASENAMEASIDENTIFIER___Presenter()
         
         // MARK: - Instance Variables
         
         // MARK: - Operational
         
-        // MARK: Interactor Input
+        // MARK: - Interactor Input
         
 }
