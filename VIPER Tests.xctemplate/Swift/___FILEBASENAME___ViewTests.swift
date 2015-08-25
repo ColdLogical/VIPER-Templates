@@ -17,7 +17,6 @@ class ___FILEBASENAMEASIDENTIFIER___ViewTests: XCTestCase, ___FILEBASENAMEASIDEN
         
         // MARK: - Test Objects
         var expectation: XCTestExpecation?
-        var object: AnyObject?
         
         override func setUp() {
                 super.setUp()
@@ -35,7 +34,6 @@ class ___FILEBASENAMEASIDENTIFIER___ViewTests: XCTestCase, ___FILEBASENAMEASIDEN
 		view = ___FILEBASENAMEASIDENTIFIER___View()
 		window = UIWindow()
                 expectation = nil
-                object = nil
         }
         
         // MARK: - Operational

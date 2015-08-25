@@ -21,7 +21,6 @@
 
 // Test Objects
 @property (nonatomic, strong) XCTestExpectation *expectation;
-@property (nonatomic, strong) id object;
 
 @end
 
@@ -46,7 +45,6 @@
         self.view = nil;
 	self.window = nil;
         self.expectation = nil;
-        self.object = nil;
 }
 
 #pragma mark - Operational

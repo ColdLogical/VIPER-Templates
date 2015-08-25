@@ -15,8 +15,7 @@ class ___FILEBASENAMEASIDENTIFIER___WireframeTests: XCTestCase, ___FILEBASENAMEA
         var wireframe = ___FILEBASENAMEASIDENTIFIER___Wireframe()
         
         // MARK: - Test Objects
-        var expectation: XCTestExpecation?
-        var object: AnyObject?
+        var expectation: XCTestExpectation?
         
         override func setUp() {
                 super.setUp()
@@ -28,10 +27,10 @@ class ___FILEBASENAMEASIDENTIFIER___WireframeTests: XCTestCase, ___FILEBASENAMEA
                 super.tearDown()
 		wireframe = ___FILEBASENAMEASIDENTIFIER___Wireframe()
                 expectation = nil;
-                object = nil;
         }
         
-        func testInit() {
+        // MARK: - Init
+        func testInitWithNothingShouldInstantiateVIPERStackAndConnectLayers() {
                 wireframe = ___FILEBASENAMEASIDENTIFIER___Wireframe()
                 
                 XCTAssertNotNil(wireframe, "Wireframe cannot be nil after init")
@@ -51,6 +50,34 @@ class ___FILEBASENAMEASIDENTIFIER___WireframeTests: XCTestCase, ___FILEBASENAMEA
                 XCTAssertEqualObjects(wireframe.presenter.isEqual(wireframe.modulePresenter), "Wireframe's presenter must be the module's presenter");
         }
         
+        // MARK: - Lazy Loaders
+        func test___FILEBASENAMEASIDENTIFIER___InteractorLazyLoaderWithNilValueShouldInstantiateInteractor() {
+                wireframe.moduleInteractor = nil
+                
+                XCTAssertNotNil (wireframe.moduleInteractor, "Lazy loader should create a new interactor if it doesnt exist")
+                XCTAssertTrue (wireframe.moduleInteractor.isKindOfClass(___FILEBASENAMEASIDENTIFIER___Interactor), "Lazily loader should create an instance of ___FILEBASENAMEASIDENTIFIER___Interactor")
+        }
+
+        func test___FILEBASENAMEASIDENTIFIER___PresenterLazyLoaderWithNilValueShouldInstantiatePresenter() {
+                wireframe.modulePresenter = nil
+                
+                XCTAssertNotNil (wireframe.modulePresenter, "Lazy loader should create a new presenter if it doesnt exist")
+                XCTAssertTrue (wireframe.modulePresenter.isKindOfClass(___FILEBASENAMEASIDENTIFIER___Presenter), "Lazily loader should create an instance of ___FILEBASENAMEASIDENTIFIER___Presenter")
+        }
+
+        func test___FILEBASENAMEASIDENTIFIER___ViewLazyLoaderWithNilValueShouldInstantiateView() {
+                wireframe.moduleView = nil
+                
+                XCTAssertNotNil (wireframe.moduleView, "Lazy loader should create a new view if it doesnt exist")
+                XCTAssertTrue (wireframe.moduleView.isKindOfClass(___FILEBASENAMEASIDENTIFIER___View), "Lazily loader should create an instance of ___FILEBASENAMEASIDENTIFIER___View")
+        }
+
+        func testStoryboardWithNothingShouldReturnStoryboardWithk___FILEBASENAMEASIDENTIFIER___StoryboardIdentifier() {
+                let storyboard = wireframe.storyboard()
+                
+                XCTAssertEqualObjects (k___FILEBASENAMEASIDENTIFIER___Storyboard, storyboard.valueForKey("name"), "Storyboard identifier should be the constant identifier defined in the ___FILEBASENAMEASIDENTIFIER___WireframeProtocols file")
+        }
+
         // MARK: - Operational
         
         // MARK: - Wireframe Interface

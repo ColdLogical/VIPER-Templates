@@ -21,7 +21,6 @@
 
 // Test Objects
 @property (nonatomic, strong) XCTestExpectation *expectation;
-@property (nonatomic, strong) id object;
 
 @end
 
@@ -38,10 +37,10 @@
         [super tearDown];
         self.wireframe = nil;
         self.expectation = nil;
-        self.object = nil;
 }
 
-- (void)testInit {
+#pragma mark - Init
+- (void)testInitWithNothingShouldInstantiateVIPERStackAndConnectLayers {
         self.wireframe = [___FILEBASENAMEASIDENTIFIER___Wireframe new];
         
         XCTAssertNotNil(self.wireframe, @"Wireframe cannot be nil after init");
@@ -59,6 +58,34 @@
         XCTAssertEqualObjects(self.wireframe.moduleView.presenter, self.wireframe.modulePresenter, @"View's presenter must be the module's presenter");
         
         XCTAssertEqualObjects(self.wireframe.presenter, self.wireframe.modulePresenter, @"Wireframe's presenter must be the module's presenter");
+}
+
+#pragma mark - Lazy Loaders
+-(void)test___FILEBASENAMEASIDENTIFIER___InteractorLazyLoaderWithNilValueShouldInstantiateInteractor {
+        self.wireframe.moduleInteractor = nil;
+        
+        XCTAssertNotNil (self.wireframe.moduleInteractor, @"Lazy loader should create a new interactor if it doesnt exist");
+        XCTAssertTrue ([self.wireframe.moduleInteractor isKindOfClass:[___FILEBASENAMEASIDENTIFIER___Interactor class]], @"Lazily loader should create an instance of ___FILEBASENAMEASIDENTIFIER___Interactor");
+}
+
+-(void)test___FILEBASENAMEASIDENTIFIER___PresenterLazyLoaderWithNilValueShouldInstantiatePresenter {
+        self.wireframe.modulePresenter = nil;
+        
+        XCTAssertNotNil (self.wireframe.modulePresenter, @"Lazy loader should create a new presenter if it doesnt exist");
+        XCTAssertTrue ([self.wireframe.modulePresenter isKindOfClass:[___FILEBASENAMEASIDENTIFIER___Presenter class]], @"Lazily loader should create an instance of ___FILEBASENAMEASIDENTIFIER___Presenter");
+}
+
+-(void)test___FILEBASENAMEASIDENTIFIER___ViewLazyLoaderWithNilValueShouldInstantiateView {
+        self.wireframe.moduleView = nil;
+        
+        XCTAssertNotNil (self.wireframe.moduleView, @"Lazy loader should create a new view if it doesnt exist");
+        XCTAssertTrue ([self.wireframe.moduleView isKindOfClass:[___FILEBASENAMEASIDENTIFIER___View class]], @"Lazily loader should create an instance of ___FILEBASENAMEASIDENTIFIER___View");
+}
+
+-(void)testStoryboardWithNothingShouldReturnStoryboardWithk___FILEBASENAMEASIDENTIFIER___StoryboardIdentifier {
+        UIStoryboard *storyboard = [self.wireframe storyboard];
+        
+        XCTAssertEqualObjects (k___FILEBASENAMEASIDENTIFIER___Storyboard, [storyboard valueForKey:@"name"], @"Storyboard identifier should be the constant identifier defined in the ___FILEBASENAMEASIDENTIFIER___WireframeProtocols file");
 }
 
 #pragma mark - Operational

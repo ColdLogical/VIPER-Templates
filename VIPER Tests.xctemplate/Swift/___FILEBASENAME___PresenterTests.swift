@@ -16,7 +16,6 @@ class ___FILEBASENAMEASIDENTIFIER___PresenterTests: XCTestCase, ___FILEBASENAMEA
         
         // MARK: - Test Objects
         var expectation: XCTestExpecation?
-        var object: AnyObject?
         
         override func setUp() {
                 super.setUp()
@@ -30,7 +29,6 @@ class ___FILEBASENAMEASIDENTIFIER___PresenterTests: XCTestCase, ___FILEBASENAMEA
                 super.tearDown()
 		presenter = ___FILEBASENAMEASIDENTIFIER___Presenter()
                 expectation = nil;
-                object = nil;
         }
         
         // MARK: - Operational

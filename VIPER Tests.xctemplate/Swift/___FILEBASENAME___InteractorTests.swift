@@ -16,7 +16,6 @@ class ___FILEBASENAMEASIDENTIFIER___InteractorTests: XCTestCase, ___FILEBASENAME
         
         // MARK: - Test Objects
         var expectation: XCTestExpecation?
-        var object: AnyObject?
         
         override func setUp() {
                 super.setUp()
@@ -27,7 +26,6 @@ class ___FILEBASENAMEASIDENTIFIER___InteractorTests: XCTestCase, ___FILEBASENAME
                 super.tearDown()
 		interactor = ___FILEBASENAMEASIDENTIFIER___Interactor()
                 expectation = nil;
-                object = nil;
         }
         
         // MARK: - Operational

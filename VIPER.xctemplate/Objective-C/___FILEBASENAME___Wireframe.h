@@ -33,5 +33,6 @@
 @property (nonatomic, weak) id<___FILEBASENAMEASIDENTIFIER___Delegate> delegate;
 
 // Instance Methods
+- (UIStoryboard *)storyboard;
 
 @end
