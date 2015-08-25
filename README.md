@@ -5,6 +5,9 @@
 4. Start Xcode and create a new file (File > New > File or ⌘N)
 5. Choose VIPER or VIPER Test
 
+# Updating
+1. Pull the repository changes
+
 # VIPER - Objective-C
 
 - `Interactor.h`
