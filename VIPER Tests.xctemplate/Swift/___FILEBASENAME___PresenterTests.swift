@@ -15,7 +15,7 @@ class ___FILEBASENAMEASIDENTIFIER___PresenterTests: XCTestCase, ___FILEBASENAMEA
         var presenter = ___FILEBASENAMEASIDENTIFIER___Presenter()
         
         // MARK: - Test Objects
-        var expectation: XCTestExpecation?
+        var expectation: XCTestExpectation?
         
         override func setUp() {
                 super.setUp()

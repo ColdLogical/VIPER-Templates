@@ -16,7 +16,7 @@ class ___FILEBASENAMEASIDENTIFIER___ViewTests: XCTestCase, ___FILEBASENAMEASIDEN
 	var window = UIWindow()
         
         // MARK: - Test Objects
-        var expectation: XCTestExpecation?
+        var expectation: XCTestExpectation?
         
         override func setUp() {
                 super.setUp()

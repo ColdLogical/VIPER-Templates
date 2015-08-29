@@ -15,7 +15,7 @@ class ___FILEBASENAMEASIDENTIFIER___InteractorTests: XCTestCase, ___FILEBASENAME
         var interactor = ___FILEBASENAMEASIDENTIFIER___Interactor()
         
         // MARK: - Test Objects
-        var expectation: XCTestExpecation?
+        var expectation: XCTestExpectation?
         
         override func setUp() {
                 super.setUp()
