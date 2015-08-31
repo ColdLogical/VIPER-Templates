@@ -7,6 +7,6 @@
 //
 
 // VIPER Interface for communication from Presenter -> View
-protocol ___FILEBASENAMEASIDENTIFIER___ViewInterface {
+protocol ___FILEBASENAMEASIDENTIFIER___ViewInterface : class {
         
 }

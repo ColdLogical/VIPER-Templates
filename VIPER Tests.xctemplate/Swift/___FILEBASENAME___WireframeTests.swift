@@ -39,15 +39,15 @@ class ___FILEBASENAMEASIDENTIFIER___WireframeTests: XCTestCase, ___FILEBASENAMEA
                 XCTAssertNotNil(wireframe.modulePresenter, "Presenter cannot be nil after init")
                 XCTAssertNotNil(wireframe.moduleView, "View cannot be nil after init")
                 
-                XCTAssertEqualObjects(wireframe.modulePresenter.isEqual(wireframe.moduleInteractor.presenter), "Interactor's presenter must be the module's presenter")
+                XCTAssert (wireframe.modulePresenter === wireframe.moduleInteractor.presenter ? true : false, "Interactor's presenter must be the module's presenter")
                 
-                XCTAssertEqualObjects(wireframe.moduleInteractor.isEqual(wireframe.modulePresenter.interactor), "Presenter's interactor must be the module's interactor")
-                XCTAssertEqualObjects(wireframe.moduleView.isEqual(wireframe.modulePresenter.view), "Presenter's view must be the module's view")
-                XCTAssertEqualObjects(wireframe.isEqual(wireframe.modulePresenter.wireframe), "Presenter's wireframe must be the module'swireframe")
+                XCTAssert(wireframe.moduleInteractor === wireframe.modulePresenter.interactor ? true : false, "Presenter's interactor must be the module's interactor")
+                XCTAssert(wireframe.moduleView === wireframe.modulePresenter.view ? true : false, "Presenter's view must be the module's view")
+                XCTAssert(wireframe === wireframe.modulePresenter.wireframe ? true : false, "Presenter's wireframe must be the module'swireframe")
                 
-                XCTAssertEqualObjects(wireframe.modulePresenter.isEqual(wireframe.moduleView.presenter), "View's presenter must be the module's presenter")
+                XCTAssert(wireframe.modulePresenter === wireframe.moduleView.presenter ? true : false, "View's presenter must be the module's presenter")
                 
-                XCTAssertEqualObjects(wireframe.presenter.isEqual(wireframe.modulePresenter), "Wireframe's presenter must be the module's presenter")
+                XCTAssert(wireframe.presenter === wireframe.modulePresenter ? true : false, "Wireframe's presenter must be the module's presenter")
         }
         
         // MARK: - Lazy Loaders
@@ -69,7 +69,7 @@ class ___FILEBASENAMEASIDENTIFIER___WireframeTests: XCTestCase, ___FILEBASENAMEA
         func testStoryboardWithNothingShouldReturnStoryboardWithk___FILEBASENAMEASIDENTIFIER___StoryboardIdentifier() {
                 let storyboard = ___FILEBASENAMEASIDENTIFIER___Wireframe.storyboard()
                 
-                XCTAssertEqualObjects (k___FILEBASENAMEASIDENTIFIER___Storyboard, storyboard.valueForKey("name"), "Storyboard identifier should be the constant identifier defined in the ___FILEBASENAMEASIDENTIFIER___WireframeProtocols file")
+                XCTAssertEqual (k___FILEBASENAMEASIDENTIFIER___StoryboardIdentifier, storyboard.valueForKey("name") as! String, "Storyboard identifier should be the constant identifier defined in the ___FILEBASENAMEASIDENTIFIER___WireframeProtocols file")
         }
 
         // MARK: - Operational
