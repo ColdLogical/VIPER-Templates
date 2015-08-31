@@ -12,7 +12,11 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe: NSObject, ___FILEBASENAMEASIDENTI
         // MARK: - VIPER Stack
         lazy var moduleInteractor = ___FILEBASENAMEASIDENTIFIER___Interactor()
         lazy var modulePresenter = ___FILEBASENAMEASIDENTIFIER___Presenter()
-        lazy var moduleView = ___FILEBASENAMEASIDENTIFIER___View()
+        lazy var moduleView: ___FILEBASENAMEASIDENTIFIER___View = {
+                let sb = ___FILEBASENAMEASIDENTIFIER___Wireframe.storyboard()
+                let vc = sb.instantiateViewControllerWithIdentifier(k___FILEBASENAMEASIDENTIFIER___ViewIdentifier) as! ___FILEBASENAMEASIDENTIFIER___View
+                return vc
+        }()
         lazy var presenter : ___FILEBASENAMEASIDENTIFIER___Routing = self.modulePresenter
 
         // Uncomment and delete the moduleView line above to use a navigationController from storyboard

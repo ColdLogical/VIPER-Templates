@@ -67,7 +67,7 @@ class ___FILEBASENAMEASIDENTIFIER___WireframeTests: XCTestCase, ___FILEBASENAMEA
         }
 
         func testStoryboardWithNothingShouldReturnStoryboardWithk___FILEBASENAMEASIDENTIFIER___StoryboardIdentifier() {
-                let storyboard = wireframe.storyboard()
+                let storyboard = ___FILEBASENAMEASIDENTIFIER___Wireframe.storyboard()
                 
                 XCTAssertEqualObjects (k___FILEBASENAMEASIDENTIFIER___Storyboard, storyboard.valueForKey("name"), "Storyboard identifier should be the constant identifier defined in the ___FILEBASENAMEASIDENTIFIER___WireframeProtocols file")
         }

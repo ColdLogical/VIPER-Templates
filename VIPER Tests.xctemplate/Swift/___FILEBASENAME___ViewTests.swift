@@ -21,7 +21,8 @@ class ___FILEBASENAMEASIDENTIFIER___ViewTests: XCTestCase, ___FILEBASENAMEASIDEN
         override func setUp() {
                 super.setUp()
 
-                view = ___FILEBASENAMEASIDENTIFIER___View()
+                let sb = UIStoryboard(name:k___FILEBASENAMEASIDENTIFIER___StoryboardIdentifier, bundle:NSBundle.mainBundle())
+                view = sb.instantiateViewControllerWithIdentifier(k___FILEBASENAMEASIDENTIFIER___ViewIdentifier) as! ___FILEBASENAMEASIDENTIFIER___View
 		view.loadView()
                 view.presenter = self
 
