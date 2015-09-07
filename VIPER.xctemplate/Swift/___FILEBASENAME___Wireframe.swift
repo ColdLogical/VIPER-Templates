@@ -52,8 +52,8 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe: NSObject, ___FILEBASENAMEASIDENTI
                 presenter = p
         }
 
-	func storyboard() -> UIStoryboard {
-                return UIStoryboard(name: k___FILEBASENAMEASIDENTIFIER___Storyboard, bundle: NSBundle.mainBundle());
+	class func storyboard() -> UIStoryboard {
+                return UIStoryboard(name: k___FILEBASENAMEASIDENTIFIER___Storyboard, bundle: NSBundle(forClass: ___FILEBASENAMEASIDENTIFIER___Wireframe.self))
 	}
         
         // MARK: - Wireframe Interface
