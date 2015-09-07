@@ -13,11 +13,11 @@ let k___FILEBASENAMEASIDENTIFIER___ViewIdentifier = "___FILEBASENAMEASIDENTIFIER
 //let k___FILEBASENAMEASIDENTIFIER___NavigationControllerIdentifier = "___FILEBASENAMEASIDENTIFIER___NavigationController"
 
 // VIPER Interface to the Module
-protocol ___FILEBASENAMEASIDENTIFIER___Delegate {
+protocol ___FILEBASENAMEASIDENTIFIER___Delegate : class {
         
 }
 
 // VIPER Interface for communication from Presenter -> Wireframe
-protocol ___FILEBASENAMEASIDENTIFIER___WireframeInterface {
+protocol ___FILEBASENAMEASIDENTIFIER___WireframeInterface : class {
         
 }
