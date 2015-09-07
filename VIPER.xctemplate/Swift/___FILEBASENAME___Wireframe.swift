@@ -21,12 +21,12 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe: NSObject, ___FILEBASENAMEASIDENTI
 
         // Uncomment and delete the moduleView line above to use a navigationController from storyboard
         /*
-        var moduleNavigationController: UINavigationController = {
+        lazy var moduleNavigationController: UINavigationController = {
                 let sb = ___FILEBASENAMEASIDENTIFIER___Wireframe.storyboard()
                 var v = sb.instantiateViewControllerWithIdentifier("___FILEBASENAMEASIDENTIFIER___NavigationController") as! UINavigationController
                 return v
         }()
-        var moduleView: ___FILEBASENAMEASIDENTIFIER___View = moduleNavigationController.viewControllers[0]
+        lazy var moduleView: ___FILEBASENAMEASIDENTIFIER___View = self.moduleNavigationController.viewControllers[0] as! ___FILEBASENAMEASIDENTIFIER___View
         */
 
         
