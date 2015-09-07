@@ -23,7 +23,7 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe: NSObject, ___FILEBASENAMEASIDENTI
         /*
         lazy var moduleNavigationController: UINavigationController = {
                 let sb = ___FILEBASENAMEASIDENTIFIER___Wireframe.storyboard()
-                var v = sb.instantiateViewControllerWithIdentifier("___FILEBASENAMEASIDENTIFIER___NavigationController") as! UINavigationController
+                var v = sb.instantiateViewControllerWithIdentifier(k___FILEBASENAMEASIDENTIFIER___NavigationControllerIdentifier) as! UINavigationController
                 return v
         }()
         lazy var moduleView: ___FILEBASENAMEASIDENTIFIER___View = self.moduleNavigationController.viewControllers[0] as! ___FILEBASENAMEASIDENTIFIER___View
