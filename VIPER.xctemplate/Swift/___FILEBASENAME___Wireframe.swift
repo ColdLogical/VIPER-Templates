@@ -20,17 +20,16 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe: NSObject, ___FILEBASENAMEASIDENTI
         lazy var presenter : ___FILEBASENAMEASIDENTIFIER___Routing = self.modulePresenter
 
         // Uncomment and delete the moduleView line above to use a navigationController from storyboard
-        
+        /*
         lazy var moduleNavigationController: UINavigationController = {
                 let sb = ___FILEBASENAMEASIDENTIFIER___Wireframe.storyboard()
                 let v = sb.instantiateViewControllerWithIdentifier(k___FILEBASENAMEASIDENTIFIER___NavigationControllerIdentifier) as! UINavigationController
                 return v
         }()
-        lazy var moduleView: ___FILEBASENAMEASIDENTIFIER___View {
-                return moduleNavigationController.viewControllers[0] as! ___FILEBASENAMEASIDENTIFIER___View
-        }
-
-
+        lazy var moduleView: ___FILEBASENAMEASIDENTIFIER___View = {
+                return self.moduleNavigationController.viewControllers[0] as! ___FILEBASENAMEASIDENTIFIER___View
+        }()
+        */
         
         // MARK: - Instance Variables
         var delegate: ___FILEBASENAMEASIDENTIFIER___Delegate?
