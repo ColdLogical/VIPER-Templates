@@ -9,7 +9,7 @@
 import UIKit
 import XCTest
 
-import ___PROJECTNAME___
+@testable import ___PROJECTNAME___
 
 class ___FILEBASENAMEASIDENTIFIER___ViewTests: XCTestCase, ___FILEBASENAMEASIDENTIFIER___PresenterInterface {
         var view = ___FILEBASENAMEASIDENTIFIER___View()
@@ -21,7 +21,7 @@ class ___FILEBASENAMEASIDENTIFIER___ViewTests: XCTestCase, ___FILEBASENAMEASIDEN
         override func setUp() {
                 super.setUp()
 
-                let sb = UIStoryboard(name: k___FILEBASENAMEASIDENTIFIER___StoryboardIdentifier, bundle: NSBundle(forClass: k___FILEBASENAMEASIDENTIFIER___View.self))
+                let sb = UIStoryboard(name: k___FILEBASENAMEASIDENTIFIER___StoryboardIdentifier, bundle: NSBundle(forClass: ___FILEBASENAMEASIDENTIFIER___View.self))
                 view = sb.instantiateViewControllerWithIdentifier(k___FILEBASENAMEASIDENTIFIER___ViewIdentifier) as! ___FILEBASENAMEASIDENTIFIER___View
 		view.loadView()
                 view.presenter = self

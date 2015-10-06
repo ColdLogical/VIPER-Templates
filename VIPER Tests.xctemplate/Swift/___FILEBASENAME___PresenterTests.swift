@@ -9,7 +9,7 @@
 import Foundation
 import XCTest
 
-import ___PROJECTNAME___
+@testable import ___PROJECTNAME___
 
 class ___FILEBASENAMEASIDENTIFIER___PresenterTests: XCTestCase, ___FILEBASENAMEASIDENTIFIER___InteractorInput, ___FILEBASENAMEASIDENTIFIER___ViewInterface, ___FILEBASENAMEASIDENTIFIER___WireframeInterface {
         var presenter = ___FILEBASENAMEASIDENTIFIER___Presenter()

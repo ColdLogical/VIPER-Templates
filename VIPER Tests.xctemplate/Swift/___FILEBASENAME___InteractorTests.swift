@@ -9,7 +9,7 @@
 import Foundation
 import XCTest
 
-import ___PROJECTNAME___
+@testable import ___PROJECTNAME___
 
 class ___FILEBASENAMEASIDENTIFIER___InteractorTests: XCTestCase, ___FILEBASENAMEASIDENTIFIER___InteractorOutput {
         var interactor = ___FILEBASENAMEASIDENTIFIER___Interactor()

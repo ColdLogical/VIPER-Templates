@@ -9,7 +9,7 @@
 import UIKit
 import XCTest
 
-import ___PROJECTNAME___
+@testable import ___PROJECTNAME___
 
 class ___FILEBASENAMEASIDENTIFIER___WireframeTests: XCTestCase, ___FILEBASENAMEASIDENTIFIER___Delegate, ___FILEBASENAMEASIDENTIFIER___Routing {
         var wireframe = ___FILEBASENAMEASIDENTIFIER___Wireframe()
