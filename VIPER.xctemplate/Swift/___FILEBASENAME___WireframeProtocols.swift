@@ -17,6 +17,16 @@ protocol ___FILEBASENAMEASIDENTIFIER___Delegate : class {
         
 }
 
+// Interface Abstraction for working with the VIPER Module
+protocol ___FILEBASENAMEASIDENTIFIER___ModuleInterface : class {
+        
+}
+
+// VIPER Interface for manipulating the navigation
+protocol ___FILEBASENAMEASIDENTIFIER___Navigation: class {
+        
+}
+
 // VIPER Interface for communication from Presenter -> Wireframe
 protocol ___FILEBASENAMEASIDENTIFIER___WireframeInterface : class {
         

@@ -8,16 +8,17 @@
 
 import UIKit
 
-class ___FILEBASENAMEASIDENTIFIER___Wireframe: NSObject, ___FILEBASENAMEASIDENTIFIER___WireframeInterface {
+class ___FILEBASENAMEASIDENTIFIER___Wireframe: NSObject, ___FILEBASENAMEASIDENTIFIER___ModuleInterface, ___FILEBASENAMEASIDENTIFIER___WireframeInterface {
         // MARK: - VIPER Stack
         lazy var moduleInteractor = ___FILEBASENAMEASIDENTIFIER___Interactor()
         lazy var modulePresenter = ___FILEBASENAMEASIDENTIFIER___Presenter()
-        lazy var moduleView: ___FILEBASENAMEASIDENTIFIER___View {
+        lazy var moduleView: ___FILEBASENAMEASIDENTIFIER___View = {
                 let sb = ___FILEBASENAMEASIDENTIFIER___Wireframe.storyboard()
                 let vc = sb.instantiateViewControllerWithIdentifier(k___FILEBASENAMEASIDENTIFIER___ViewIdentifier) as! ___FILEBASENAMEASIDENTIFIER___View
                 return vc
-        }
+        }()
         lazy var presenter : ___FILEBASENAMEASIDENTIFIER___Routing = self.modulePresenter
+        lazy var view : ___FILEBASENAMEASIDENTIFIER___Navigation = self.moduleView
 
         // Uncomment and delete the moduleView line above to use a navigationController from storyboard
         /*
@@ -34,7 +35,7 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe: NSObject, ___FILEBASENAMEASIDENTI
         // MARK: - Instance Variables
         var delegate: ___FILEBASENAMEASIDENTIFIER___Delegate?
         
-        // MARK: - Operational
+        // MARK: - Initialization
         override init() {
                 super.init()
                 
@@ -56,6 +57,10 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe: NSObject, ___FILEBASENAMEASIDENTI
 	class func storyboard() -> UIStoryboard {
                 return UIStoryboard(name: k___FILEBASENAMEASIDENTIFIER___StoryboardIdentifier, bundle: NSBundle(forClass: ___FILEBASENAMEASIDENTIFIER___Wireframe.self))
 	}
+        
+        // MARK: - Operational
+        
+        // MARK: - Module Interface
         
         // MARK: - Wireframe Interface
         

@@ -20,6 +20,7 @@ class ___FILEBASENAMEASIDENTIFIER___InteractorTests: XCTestCase, ___FILEBASENAME
         override func setUp() {
                 super.setUp()
                 interactor = ___FILEBASENAMEASIDENTIFIER___Interactor()
+                interactor.presenter = self
         }
         
         override func tearDown() {
