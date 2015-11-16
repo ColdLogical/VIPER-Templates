@@ -9,6 +9,6 @@
 // Forward Class Declarations
 
 // VIPER Interface for communication from Presenter to Interactor
-@protocol ___FILEBASENAME___InteractorInput <NSObject>
+@protocol ___FILEBASENAME___PresenterToInteractorInterface <NSObject>
 
 @end

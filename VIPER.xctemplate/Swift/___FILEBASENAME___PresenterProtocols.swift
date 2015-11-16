@@ -7,16 +7,16 @@
 //
 
 // VIPER Interface for communication from Interactor -> Presenter
-protocol ___FILEBASENAMEASIDENTIFIER___InteractorOutput : class {
+protocol ___FILEBASENAMEASIDENTIFIER___InteractorToPresenterInterface : class {
         
 }
 
 // VIPER Interface for communication from View -> Presenter
-protocol ___FILEBASENAMEASIDENTIFIER___PresenterInterface : class {
+protocol ___FILEBASENAMEASIDENTIFIER___ViewToPresenterInterface : class {
         
 }
 
 // VIPER Interface for communication from Wireframe -> Presenter
-protocol ___FILEBASENAMEASIDENTIFIER___Routing : class {
+protocol ___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterface : class {
         
 }

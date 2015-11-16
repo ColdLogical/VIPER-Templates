@@ -12,10 +12,12 @@
 #import "___FILEBASENAMEASIDENTIFIER___ViewProtocols.h"
 #import "___FILEBASENAMEASIDENTIFIER___PresenterProtocols.h"
 
-@interface ___FILEBASENAMEASIDENTIFIER___View: UIViewController <___FILEBASENAMEASIDENTIFIER___ViewInterface>
+@interface ___FILEBASENAMEASIDENTIFIER___View: UIViewController <
+        ___FILEBASENAMEASIDENTIFIER___PresenterToViewInterface
+        >
 
 // VIPER Stack
-@property (nonatomic, weak) id<___FILEBASENAMEASIDENTIFIER___PresenterInterface> presenter;
+@property (nonatomic, weak) id<___FILEBASENAMEASIDENTIFIER___ViewToPresenterInterface> presenter;
 
 // Outlets
 

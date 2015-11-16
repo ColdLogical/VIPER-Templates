@@ -25,13 +25,14 @@
 
 - (void)setUp {
         [super setUp];
+        
         self.interactor = [___FILEBASENAMEASIDENTIFIER___Interactor new];
+        
         self.interactor.presenter = self;
 }
 
 - (void)tearDown {
         [super tearDown];
-        self.interactor = nil;
         self.expectation = nil;
 }
 

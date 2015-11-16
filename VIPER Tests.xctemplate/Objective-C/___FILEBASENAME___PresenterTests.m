@@ -25,7 +25,9 @@
 
 - (void)setUp {
         [super setUp];
+        
         self.presenter = [___FILEBASENAMEASIDENTIFIER___Presenter new];
+        
         self.presenter.interactor = self;
         self.presenter.view = self;
         self.presenter.wireframe = self;
@@ -33,7 +35,6 @@
 
 - (void)tearDown {
         [super tearDown];
-        self.presenter = nil;
         self.expectation = nil;
 }
 

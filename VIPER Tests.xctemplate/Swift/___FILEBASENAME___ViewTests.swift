@@ -24,15 +24,14 @@ class ___FILEBASENAMEASIDENTIFIER___ViewTests: XCTestCase, ___FILEBASENAMEASIDEN
                 let sb = UIStoryboard(name: k___FILEBASENAMEASIDENTIFIER___StoryboardIdentifier, bundle: NSBundle(forClass: ___FILEBASENAMEASIDENTIFIER___View.self))
                 view = sb.instantiateViewControllerWithIdentifier(k___FILEBASENAMEASIDENTIFIER___ViewIdentifier) as! ___FILEBASENAMEASIDENTIFIER___View
 		view.loadView()
-                view.presenter = self
-
 		window.rootViewController = view
 		window.makeKeyAndVisible()
+                
+                view.presenter = self
         }
         
         override func tearDown() {
                 super.tearDown()
-		view = ___FILEBASENAMEASIDENTIFIER___View()
 		window = UIWindow()
                 expectation = nil
         }

@@ -81,7 +81,7 @@
                 return _moduleView;
         }
         
-        _moduleView = [[self storyboard] instantiateViewControllerWithIdentifier:k___FILEBASENAMEASIDENTIFIER___ViewIdentifier];
+        _moduleView = [[___FILEBASENAMEASIDENTIFIER___Wireframe storyboard] instantiateViewControllerWithIdentifier:k___FILEBASENAMEASIDENTIFIER___ViewIdentifier];
        // Uncomment this code and delete the above code to utilize a navigation controller from storyboard
         /*
         _moduleView = self.moduleNavigationController.viewControllers[0];
@@ -90,7 +90,7 @@
         return _moduleView;
 }
 
--(UIStoryboard *)storyboard {
++(UIStoryboard *)storyboard {
         return [UIStoryboard storyboardWithName:k___FILEBASENAMEASIDENTIFIER___Storyboard bundle:[NSBundle mainBundle]];
 }
 

@@ -8,11 +8,15 @@
 
 import Foundation
 
-class ___FILEBASENAMEASIDENTIFIER___Presenter : NSObject, ___FILEBASENAMEASIDENTIFIER___InteractorOutput, ___FILEBASENAMEASIDENTIFIER___PresenterInterface, ___FILEBASENAMEASIDENTIFIER___Routing {
+class ___FILEBASENAMEASIDENTIFIER___Presenter : NSObject,
+        ___FILEBASENAMEASIDENTIFIER___InteractorToPresenterInterface,
+        ___FILEBASENAMEASIDENTIFIER___ViewToPresenterInterface,
+        ___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterface
+        {
         // MARK: - VIPER Stack
-        lazy var interactor : ___FILEBASENAMEASIDENTIFIER___InteractorInput = ___FILEBASENAMEASIDENTIFIER___Interactor()
-        lazy var view : ___FILEBASENAMEASIDENTIFIER___ViewInterface = ___FILEBASENAMEASIDENTIFIER___View()
-        lazy var wireframe : ___FILEBASENAMEASIDENTIFIER___WireframeInterface = ___FILEBASENAMEASIDENTIFIER___Wireframe()
+        lazy var interactor : ___FILEBASENAMEASIDENTIFIER___PresenterToInteractorInterface = ___FILEBASENAMEASIDENTIFIER___Interactor()
+        lazy var view : ___FILEBASENAMEASIDENTIFIER___PresenterToViewInterface = ___FILEBASENAMEASIDENTIFIER___View()
+        lazy var wireframe : ___FILEBASENAMEASIDENTIFIER___PresesnterToWireframeInterface = ___FILEBASENAMEASIDENTIFIER___Wireframe()
         
         // MARK: - Instance Variables
         

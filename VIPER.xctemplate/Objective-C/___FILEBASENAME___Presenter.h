@@ -14,12 +14,16 @@
 #import "___FILEBASENAMEASIDENTIFIER___ViewProtocols.h"
 #import "___FILEBASENAMEASIDENTIFIER___WireframeProtocols.h"
 
-@interface ___FILEBASENAMEASIDENTIFIER___Presenter : NSObject <___FILEBASENAMEASIDENTIFIER___InteractorOutput, ___FILEBASENAMEASIDENTIFIER___Routing, ___FILEBASENAMEASIDENTIFIER___PresenterInterface>
+@interface ___FILEBASENAMEASIDENTIFIER___Presenter : NSObject <
+        ___FILEBASENAMEASIDENTIFIER___InteractorToPresenterInterface,
+        ___FILEBASENAMEASIDENTIFIER___ViewToPresenterInterface,
+        ___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterface
+        >
 
 // VIPER References
-@property (nonatomic, weak) id<___FILEBASENAMEASIDENTIFIER___InteractorInput> interactor;
-@property (nonatomic, weak) id<___FILEBASENAMEASIDENTIFIER___ViewInterface> view;
-@property (nonatomic, weak) id<___FILEBASENAMEASIDENTIFIER___WireframeInterface> wireframe;
+@property (nonatomic, weak) id<___FILEBASENAMEASIDENTIFIER___PresenterToInteractorInterface> interactor;
+@property (nonatomic, weak) id<___FILEBASENAMEASIDENTIFIER___PresenterToViewInterface> view;
+@property (nonatomic, weak) id<___FILEBASENAMEASIDENTIFIER___PresenterToWireframeInterface> wireframe;
 
 // Instance Variables
 

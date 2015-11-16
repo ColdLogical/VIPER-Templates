@@ -28,14 +28,15 @@
 
 - (void)setUp {
         [super setUp];
+        
         self.wireframe = [___FILEBASENAMEASIDENTIFIER___Wireframe new];
+        
         self.wireframe.delegate = self;
         self.wireframe.presenter = self;
 }
 
 - (void)tearDown {
         [super tearDown];
-        self.wireframe = nil;
         self.expectation = nil;
 }
 

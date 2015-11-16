@@ -9,16 +9,16 @@
 // Forward Class Declarations
 
 // VIPER Interface for communication from Interactor -> Presenter
-@protocol ___FILEBASENAME___InteractorOutput <NSObject>
+@protocol ___FILEBASENAMEASIDENTIFIER___InteractorToPresenterInterface <NSObject>
 
 @end
 
 // VIPER Interface for communication from View -> Presenter
-@protocol ___FILEBASENAME___PresenterInterface <NSObject>
+@protocol ___FILEBASENAMEASIDENTIFIER___ViewToPresenterInterface <NSObject>
 
 @end
 
 // VIPER Interface for communication from Wireframe -> Presenter
-@protocol ___FILEBASENAME___Routing <NSObject>
+@protocol ___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterface <NSObject>
 
 @end

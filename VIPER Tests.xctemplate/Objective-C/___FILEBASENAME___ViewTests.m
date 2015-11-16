@@ -32,18 +32,15 @@
         UIStoryboard *sb =[UIStoryboard storyboardWithName:k___FILEBASENAMEASIDENTIFIER___Storyboard bundle:[NSBundle mainBundle]];
         self.view = [sb instantiateViewControllerWithIdentifier:k___FILEBASENAMEASIDENTIFIER___ViewIdentifier];
 	[self.view loadView];
-
-        self.view.presenter = self;
-
 	self.window = [UIWindow new];
         self.window.rootViewController = self.view;
         [self.window makeKeyAndVisible];
+
+        self.view.presenter = self;
 }
 
 - (void)tearDown {
         [super tearDown];
-        self.view = nil;
-	self.window = nil;
         self.expectation = nil;
 }
 

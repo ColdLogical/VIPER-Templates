@@ -8,9 +8,11 @@
 
 import Foundation
 
-class ___FILEBASENAMEASIDENTIFIER___Interactor: NSObject, ___FILEBASENAMEASIDENTIFIER___InteractorInput {
+class ___FILEBASENAMEASIDENTIFIER___Interactor: NSObject,
+        ___FILEBASENAMEASIDENTIFIER___PresenterToInteractorInterface
+        {
         // MARK: - VIPER Stack
-        lazy var presenter : ___FILEBASENAMEASIDENTIFIER___InteractorOutput = ___FILEBASENAMEASIDENTIFIER___Presenter()
+        lazy var presenter : ___FILEBASENAMEASIDENTIFIER___InteractorToPresenterInterface = ___FILEBASENAMEASIDENTIFIER___Presenter()
         
         // MARK: - Instance Variables
         

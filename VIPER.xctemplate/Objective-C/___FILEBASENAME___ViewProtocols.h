@@ -7,6 +7,6 @@
 //
 
 // VIPER Interface for communication from Presenter -> View
-@protocol ___FILEBASENAME___ViewInterface <NSObject>
+@protocol ___FILEBASENAMEASIDENTIFIER___PresenterToViewInterface <NSObject>
 
 @end

@@ -12,10 +12,12 @@
 #import "___FILEBASENAMEASIDENTIFIER___InteractorProtocols.h"
 #import "___FILEBASENAMEASIDENTIFIER___PresenterProtocols.h"
 
-@interface ___FILEBASENAMEASIDENTIFIER___Interactor : NSObject <___FILEBASENAMEASIDENTIFIER___InteractorInput>
+@interface ___FILEBASENAMEASIDENTIFIER___Interactor : NSObject <
+        ___FILEBASENAMEASIDENTIFIER___PresenterToInteractorInterface
+        >
 
 // VIPER Stack
-@property (nonatomic, weak) id<___FILEBASENAMEASIDENTIFIER___InteractorOutput> presenter;
+@property (nonatomic, weak) id<___FILEBASENAMEASIDENTIFIER___InteractorToPresenterInterface> presenter;
 
 // Instance Variables
 
