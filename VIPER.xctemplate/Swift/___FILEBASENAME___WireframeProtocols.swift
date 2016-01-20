@@ -23,6 +23,6 @@ protocol ___FILEBASENAMEASIDENTIFIER___ModuleInterface : class {
 }
 
 // VIPER Interface for communication from Presenter -> Wireframe
-protocol ___FILEBASENAMEASIDENTIFIER___PresesnterToWireframeInterface : class {
+protocol ___FILEBASENAMEASIDENTIFIER___PresenterToWireframeInterface : class {
         
 }

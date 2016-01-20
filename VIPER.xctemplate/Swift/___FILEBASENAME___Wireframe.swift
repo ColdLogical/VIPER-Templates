@@ -10,7 +10,7 @@ import UIKit
 
 class ___FILEBASENAMEASIDENTIFIER___ : NSObject,
         ___FILEBASENAMEASIDENTIFIER___ModuleInterface,
-        ___FILEBASENAMEASIDENTIFIER___PresesnterToWireframeInterface
+        ___FILEBASENAMEASIDENTIFIER___PresenterToWireframeInterface
         {
         // MARK: - VIPER Stack
         lazy var moduleInteractor = ___FILEBASENAMEASIDENTIFIER___Interactor()
