@@ -16,7 +16,7 @@ class ___FILEBASENAMEASIDENTIFIER___Presenter : NSObject,
         // MARK: - VIPER Stack
         lazy var interactor : ___FILEBASENAMEASIDENTIFIER___PresenterToInteractorInterface = ___FILEBASENAMEASIDENTIFIER___Interactor()
         lazy var view : ___FILEBASENAMEASIDENTIFIER___PresenterToViewInterface = ___FILEBASENAMEASIDENTIFIER___View()
-        lazy var wireframe : ___FILEBASENAMEASIDENTIFIER___PresesnterToWireframeInterface = ___FILEBASENAMEASIDENTIFIER___()
+        lazy var wireframe : ___FILEBASENAMEASIDENTIFIER___PresenterToWireframeInterface = ___FILEBASENAMEASIDENTIFIER___()
         
         // MARK: - Instance Variables
         
