@@ -21,6 +21,6 @@ class ___FILEBASENAMEASIDENTIFIER___View : UIViewController,
         
         // MARK: - Operational
         
-        // MARK: - View Interface
+        // MARK: - Presenter to View Interface
         
 }

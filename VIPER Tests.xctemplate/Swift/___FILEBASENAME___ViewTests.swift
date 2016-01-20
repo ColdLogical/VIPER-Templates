@@ -11,7 +11,9 @@ import XCTest
 
 @testable import ___PROJECTNAME___
 
-class ___FILEBASENAMEASIDENTIFIER___ViewTests: XCTestCase, ___FILEBASENAMEASIDENTIFIER___PresenterInterface {
+class ___FILEBASENAMEASIDENTIFIER___ViewTests: XCTestCase,
+        ___FILEBASENAMEASIDENTIFIER___ViewToPresenterInterface
+        {
         var view = ___FILEBASENAMEASIDENTIFIER___View()
 	var window = UIWindow()
         
@@ -21,25 +23,20 @@ class ___FILEBASENAMEASIDENTIFIER___ViewTests: XCTestCase, ___FILEBASENAMEASIDEN
         override func setUp() {
                 super.setUp()
 
-                let sb = UIStoryboard(name: k___FILEBASENAMEASIDENTIFIER___StoryboardIdentifier, bundle: NSBundle(forClass: ___FILEBASENAMEASIDENTIFIER___View.self))
-                view = sb.instantiateViewControllerWithIdentifier(k___FILEBASENAMEASIDENTIFIER___ViewIdentifier) as! ___FILEBASENAMEASIDENTIFIER___View
-		view.loadView()
-		window.rootViewController = view
-		window.makeKeyAndVisible()
+                _ = view.view
                 
                 view.presenter = self
         }
         
         override func tearDown() {
                 super.tearDown()
-		window = UIWindow()
                 expectation = nil
         }
         
         // MARK: - Operational
 
-        // MARK: - View Interface
+        // MARK: - Presenter to View Interface
 
-        // MARK: - Presenter Interface
+        // MARK: - View to Presenter Interface
         
 }

@@ -11,7 +11,9 @@ import XCTest
 
 @testable import ___PROJECTNAME___
 
-class ___FILEBASENAMEASIDENTIFIER___InteractorTests: XCTestCase, ___FILEBASENAMEASIDENTIFIER___InteractorOutput {
+class ___FILEBASENAMEASIDENTIFIER___InteractorTests: XCTestCase,
+        ___FILEBASENAMEASIDENTIFIER___InteractorToPresenterInterface
+        {
         var interactor = ___FILEBASENAMEASIDENTIFIER___Interactor()
         
         // MARK: - Test Objects
@@ -32,8 +34,8 @@ class ___FILEBASENAMEASIDENTIFIER___InteractorTests: XCTestCase, ___FILEBASENAME
         
         // MARK: - Operational
 
-        // MARK: - Interactor Input
+        // MARK: - Presenter to Interactor Interface
 
-        // MARK: - Interactor Output
+        // MARK: - Interactor to Presenter Interface
         
 }

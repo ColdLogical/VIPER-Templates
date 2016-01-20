@@ -11,7 +11,11 @@ import XCTest
 
 @testable import ___PROJECTNAME___
 
-class ___FILEBASENAMEASIDENTIFIER___PresenterTests: XCTestCase, ___FILEBASENAMEASIDENTIFIER___InteractorInput, ___FILEBASENAMEASIDENTIFIER___ViewInterface, ___FILEBASENAMEASIDENTIFIER___WireframeInterface {
+class ___FILEBASENAMEASIDENTIFIER___PresenterTests: XCTestCase,
+        ___FILEBASENAMEASIDENTIFIER___PresenterToInteractorInterface,
+        ___FILEBASENAMEASIDENTIFIER___PresenterToViewInterface,
+        ___FILEBASENAMEASIDENTIFIER___PresenterToWireframeInterface
+        {
         var presenter = ___FILEBASENAMEASIDENTIFIER___Presenter()
         
         // MARK: - Test Objects
@@ -34,16 +38,16 @@ class ___FILEBASENAMEASIDENTIFIER___PresenterTests: XCTestCase, ___FILEBASENAMEA
         
         // MARK: - Operational
 
-        // MARK: - Interactor Output
+        // MARK: - Interactor to Presenter Interface
 
-        // MARK: - Presenter Interface
+        // MARK: - View to Presenter Interface
 
-        // MARK: - Routing
+        // MARK: - Wireframe to Presenter Interface
 
-        // MARK: - Interactor Input
+        // MARK: - Presenter to Interactor Input
         
-        // MARK: - View Interface
+        // MARK: - Presenter to View Interface
         
-        // MARK: - Wireframe Interface
+        // MARK: - Presenter to Wireframe Interface
         
 }

@@ -18,6 +18,6 @@ class ___FILEBASENAMEASIDENTIFIER___Interactor: NSObject,
         
         // MARK: - Operational
         
-        // MARK: - Interactor Input
+        // MARK: - Presenter To Interactor Interface
         
 }

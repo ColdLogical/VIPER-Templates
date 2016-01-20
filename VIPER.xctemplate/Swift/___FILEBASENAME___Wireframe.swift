@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ___FILEBASENAMEASIDENTIFIER___Wireframe: NSObject,
+class ___FILEBASENAMEASIDENTIFIER___ : NSObject,
         ___FILEBASENAMEASIDENTIFIER___ModuleInterface,
         ___FILEBASENAMEASIDENTIFIER___PresesnterToWireframeInterface
         {
@@ -57,6 +57,7 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe: NSObject,
                 v.presenter = p
                 
                 presenter = p
+                view = v
         }
 
 	class func storyboard() -> UIStoryboard {

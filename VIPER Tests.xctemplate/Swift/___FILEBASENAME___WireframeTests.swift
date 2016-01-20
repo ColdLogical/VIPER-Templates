@@ -11,8 +11,11 @@ import XCTest
 
 @testable import ___PROJECTNAME___
 
-class ___FILEBASENAMEASIDENTIFIER___WireframeTests: XCTestCase, ___FILEBASENAMEASIDENTIFIER___Delegate, ___FILEBASENAMEASIDENTIFIER___Routing {
-        var wireframe = ___FILEBASENAMEASIDENTIFIER___Wireframe()
+class ___FILEBASENAMEASIDENTIFIER___WireframeTests: XCTestCase,
+        ___FILEBASENAMEASIDENTIFIER___Delegate,
+        ___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterface
+        {
+        var wireframe = ___FILEBASENAMEASIDENTIFIER___()
         
         // MARK: - Test Objects
         var expectation: XCTestExpectation?
@@ -20,7 +23,7 @@ class ___FILEBASENAMEASIDENTIFIER___WireframeTests: XCTestCase, ___FILEBASENAMEA
         override func setUp() {
                 super.setUp()
                 
-		wireframe = ___FILEBASENAMEASIDENTIFIER___Wireframe()
+		wireframe = ___FILEBASENAMEASIDENTIFIER___()
                 
                 wireframe.delegate = self;
                 wireframe.presenter = self;
@@ -33,7 +36,7 @@ class ___FILEBASENAMEASIDENTIFIER___WireframeTests: XCTestCase, ___FILEBASENAMEA
         
         // MARK: - Init
         func testInitWithNothingShouldInstantiateVIPERStackAndConnectLayers() {
-                wireframe = ___FILEBASENAMEASIDENTIFIER___Wireframe()
+                wireframe = ___FILEBASENAMEASIDENTIFIER___()
                 
                 XCTAssertNotNil(wireframe, "Wireframe cannot be nil after init")
                 
@@ -78,9 +81,9 @@ class ___FILEBASENAMEASIDENTIFIER___WireframeTests: XCTestCase, ___FILEBASENAMEA
         
         // MARK: - Module Interface
         
-        // MARK: - Wireframe Interface
+        // MARK: - Presenter to Wireframe Interface
         
         // MARK: - Delegate
         
-        // MARK: - Routing
+        // MARK: - Wireframe to Presenter Interface
 }
