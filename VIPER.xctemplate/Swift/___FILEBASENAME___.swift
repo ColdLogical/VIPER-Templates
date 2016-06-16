@@ -8,16 +8,16 @@
 
 import UIKit
 
-class ___FILEBASENAMEASIDENTIFIER___ : NSObject,
-        ___FILEBASENAMEASIDENTIFIER___ModuleInterface,
-        ___FILEBASENAMEASIDENTIFIER___PresenterToWireframeInterface
+class ___FILEBASENAMEASIDENTIFIER___ : NSObject
+        , ___FILEBASENAMEASIDENTIFIER___ModuleInterface
+        , ___FILEBASENAMEASIDENTIFIER___PresenterToWireframeInterface
         {
         // MARK: - VIPER Stack
         lazy var moduleInteractor = ___FILEBASENAMEASIDENTIFIER___Interactor()
         // Uncomment the comment lines and delete the moduleView line default code to use a navigationController from storyboard
         /*
         lazy var moduleNavigationController: UINavigationController = {
-                let sb = ___FILEBASENAMEASIDENTIFIER___Wireframe.storyboard()
+                let sb = ___FILEBASENAMEASIDENTIFIER___.storyboard()
                 let v = sb.instantiateViewControllerWithIdentifier(k___FILEBASENAMEASIDENTIFIER___NavigationControllerIdentifier) as! UINavigationController
                 return v
         }()
@@ -30,7 +30,7 @@ class ___FILEBASENAMEASIDENTIFIER___ : NSObject,
         */
         
         lazy var moduleView: ___FILEBASENAMEASIDENTIFIER___View = {
-                let sb = ___FILEBASENAMEASIDENTIFIER___Wireframe.storyboard()
+                let sb = ___FILEBASENAMEASIDENTIFIER___.storyboard()
                 let vc = sb.instantiateViewControllerWithIdentifier(k___FILEBASENAMEASIDENTIFIER___ViewIdentifier) as! ___FILEBASENAMEASIDENTIFIER___View
                 return vc
         }()
@@ -61,7 +61,7 @@ class ___FILEBASENAMEASIDENTIFIER___ : NSObject,
         }
 
 	class func storyboard() -> UIStoryboard {
-                return UIStoryboard(name: k___FILEBASENAMEASIDENTIFIER___StoryboardIdentifier, bundle: NSBundle(forClass: ___FILEBASENAMEASIDENTIFIER___Wireframe.self))
+                return UIStoryboard(name: k___FILEBASENAMEASIDENTIFIER___StoryboardIdentifier, bundle: NSBundle(forClass: ___FILEBASENAMEASIDENTIFIER___.self))
 	}
         
         // MARK: - Operational

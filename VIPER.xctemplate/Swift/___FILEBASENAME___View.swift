@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ___FILEBASENAMEASIDENTIFIER___View : UIViewController,
-        ___FILEBASENAMEASIDENTIFIER___NavigationInterface,
-        ___FILEBASENAMEASIDENTIFIER___PresenterToViewInterface
+class ___FILEBASENAMEASIDENTIFIER___View : UIViewController
+        , ___FILEBASENAMEASIDENTIFIER___NavigationInterface
+        , ___FILEBASENAMEASIDENTIFIER___PresenterToViewInterface
         {
         // MARK: - VIPER Stack
         lazy var presenter : ___FILEBASENAMEASIDENTIFIER___ViewToPresenterInterface = ___FILEBASENAMEASIDENTIFIER___Presenter()
