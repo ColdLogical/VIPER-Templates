@@ -13,7 +13,7 @@ class ___FILEBASENAMEASIDENTIFIER___View : UIViewController
         , ___FILEBASENAMEASIDENTIFIER___PresenterToViewInterface
         {
         // MARK: - VIPER Stack
-        lazy var presenter : ___FILEBASENAMEASIDENTIFIER___ViewToPresenterInterface = ___FILEBASENAMEASIDENTIFIER___Presenter()
+        weak var presenter : ___FILEBASENAMEASIDENTIFIER___ViewToPresenterInterface!
         
         // MARK: - Instance Variables
         

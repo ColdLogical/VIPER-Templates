@@ -38,7 +38,7 @@ class ___FILEBASENAMEASIDENTIFIER___ : NSObject
         lazy var view : ___FILEBASENAMEASIDENTIFIER___NavigationInterface = self.moduleView
 
         // MARK: - Instance Variables
-        var delegate: ___FILEBASENAMEASIDENTIFIER___Delegate?
+        weak var delegate: ___FILEBASENAMEASIDENTIFIER___Delegate?
         
         // MARK: - Initialization
         override init() {
