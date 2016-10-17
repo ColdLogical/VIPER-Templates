@@ -26,5 +26,6 @@
 @property (nonatomic, weak) id<___FILEBASENAMEASIDENTIFIER___PresenterToWireframeInterface> wireframe;
 
 // Instance Variables
+@property (nonatomic, weak) id<___FILEBASENAMEASIDENTIFIER___Delegate> delegate;
 
 @end

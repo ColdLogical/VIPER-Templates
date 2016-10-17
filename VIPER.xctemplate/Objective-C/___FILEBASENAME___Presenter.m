@@ -16,10 +16,13 @@
 
 #pragma mark - Operational
 
-#pragma mark - Interactor Output
+#pragma mark - Interactor to Presenter Interface
 
-#pragma mark - Presenter Interface
+#pragma mark - View to Presenter Interface
 
-#pragma mark - Routing
+#pragma mark - Wireframe to Presenter Interface
+-(void)setDelegate:(id<___FILEBASENAMEASIDENTIFIER___Delegate>)newDelegate {
+        _delegate = newDelegate;
+}
 
 @end

@@ -14,7 +14,7 @@ let k___FILEBASENAMEASIDENTIFIER___ViewIdentifier = "___FILEBASENAMEASIDENTIFIER
 
 // Interface Abstraction for working with the VIPER Module
 protocol ___FILEBASENAMEASIDENTIFIER___ModuleInterface : class {
-        
+        var delegate: ___FILEBASENAMEASIDENTIFIER___Delegate? { get set }
 }
 
 // VIPER Interface for communication from Presenter -> Wireframe

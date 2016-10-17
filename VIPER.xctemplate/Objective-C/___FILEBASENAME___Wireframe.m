@@ -95,6 +95,15 @@
 }
 
 #pragma mark - Operational
+-(id)delegate {
+        return self.presenter.delegate;
+}
+
+-(void)setDelegate:(id<___FILEBASENAMEASIDENTIFIER___Delegate>)newDelegate {
+        [self.presenter setDelegate:newDelegate];
+}
+
+#pragma mark - Module Interface
 
 #pragma mark - Wireframe Interface
 

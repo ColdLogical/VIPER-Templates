@@ -16,6 +16,6 @@
 
 #pragma mark - Operational
 
-#pragma mark - Interactor Input
+#pragma mark - Presenter To Interactor Interface
 
 @end

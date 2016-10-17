@@ -29,7 +29,6 @@
 @property (nonatomic, strong) ___FILEBASENAMEASIDENTIFIER___View *moduleView;
 
 // Instance Variables
-@property (nonatomic, weak) id<___FILEBASENAMEASIDENTIFIER___Delegate> delegate;
 @property (nonatomic, weak) id<___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterface> presenter;
 // Uncomment to utilize a navigation controller from storyboard
 /*

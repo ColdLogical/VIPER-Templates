@@ -14,8 +14,11 @@
 static NSString *k___FILEBASENAMEASIDENTIFIER___Storyboard = @"___FILEBASENAMEASIDENTIFIER___";
 static NSString *k___FILEBASENAMEASIDENTIFIER___ViewIdentifier = @"___FILEBASENAMEASIDENTIFIER___View";
 
-// VIPER Interface for the module
-@protocol ___FILEBASENAMEASIDENTIFIER___Delegate <NSObject>
+// Interface Abstraction for working with the VIPER Module
+@protocol ___FILEBASENAMEASIDENTIFIER___ModuleInterface <NSObject> 
+
+-(id)delegate;
+-(void)setDelegate:(id<___FILEBASENAMEASIDENTIFIER___Delegate>)newDelegate;
 
 @end
 

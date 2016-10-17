@@ -16,6 +16,6 @@
 
 #pragma mark - Operational
 
-#pragma mark - View Interface
+#pragma mark - Presenter to View Interface
 
 @end
