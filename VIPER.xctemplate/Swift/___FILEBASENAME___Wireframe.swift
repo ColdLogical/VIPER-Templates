@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ___FILEBASENAMEASIDENTIFIER___ : NSObject
+class ___FILEBASENAMEASIDENTIFIER___Wireframe : NSObject
         , ___FILEBASENAMEASIDENTIFIER___ModuleInterface
         , ___FILEBASENAMEASIDENTIFIER___PresenterToWireframeInterface
         {
