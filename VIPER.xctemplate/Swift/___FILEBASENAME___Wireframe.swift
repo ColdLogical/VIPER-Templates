@@ -28,7 +28,7 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe : NSObject
                 //      instantiation to use a navigationController from storyboard
                 //let vc = self.moduleNavigationController.viewControllers[0] as! ___FILEBASENAMEASIDENTIFIER___View
                 
-                let sb = ___FILEBASENAMEASIDENTIFIER___.storyboard()
+                let sb = ___FILEBASENAMEASIDENTIFIER___Wireframe.storyboard()
                 let vc = sb.instantiateViewController(withIdentifier: k___FILEBASENAMEASIDENTIFIER___ViewIdentifier) as! ___FILEBASENAMEASIDENTIFIER___View
                 
                 let _ = vc.view
@@ -70,7 +70,7 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe : NSObject
         }
 
 	class func storyboard() -> UIStoryboard {
-                return UIStoryboard(name: k___FILEBASENAMEASIDENTIFIER___StoryboardIdentifier, bundle: Bundle(for: ___FILEBASENAMEASIDENTIFIER___.self))
+                return UIStoryboard(name: k___FILEBASENAMEASIDENTIFIER___StoryboardIdentifier, bundle: Bundle(for: ___FILEBASENAMEASIDENTIFIER___Wireframe.self))
 	}
         
         // MARK: - Operational
