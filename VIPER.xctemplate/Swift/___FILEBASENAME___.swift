@@ -14,31 +14,40 @@ class ___FILEBASENAMEASIDENTIFIER___ : NSObject
         {
         // MARK: - VIPER Stack
         lazy var moduleInteractor = ___FILEBASENAMEASIDENTIFIER___Interactor()
-        // Uncomment the comment lines and delete the moduleView line default code to use a navigationController from storyboard
+        // Uncomment to use a navigationController from storyboard
         /*
         lazy var moduleNavigationController: UINavigationController = {
                 let sb = ___FILEBASENAMEASIDENTIFIER___.storyboard()
-                let v = sb.instantiateViewControllerWithIdentifier(k___FILEBASENAMEASIDENTIFIER___NavigationControllerIdentifier) as! UINavigationController
-                return v
+                let nc = sb.instantiateViewController(withIdentifier: k___FILEBASENAMEASIDENTIFIER___NavigationControllerIdentifier) as! UINavigationController
+                return nc
         }()
         */
         lazy var modulePresenter = ___FILEBASENAMEASIDENTIFIER___Presenter()
-        /*
         lazy var moduleView: ___FILEBASENAMEASIDENTIFIER___View = {
-                return self.moduleNavigationController.viewControllers[0] as! ___FILEBASENAMEASIDENTIFIER___View
-        }()
-        */
-        
-        lazy var moduleView: ___FILEBASENAMEASIDENTIFIER___View = {
+                // Uncomment the commented line below and delete the storyboard
+                //      instantiation to use a navigationController from storyboard
+                //let vc = self.moduleNavigationController.viewControllers[0] as! ___FILEBASENAMEASIDENTIFIER___View
+                
                 let sb = ___FILEBASENAMEASIDENTIFIER___.storyboard()
-                let vc = sb.instantiateViewControllerWithIdentifier(k___FILEBASENAMEASIDENTIFIER___ViewIdentifier) as! ___FILEBASENAMEASIDENTIFIER___View
+                let vc = sb.instantiateViewController(withIdentifier: k___FILEBASENAMEASIDENTIFIER___ViewIdentifier) as! ___FILEBASENAMEASIDENTIFIER___View
+                
+                let _ = vc.view
+         
                 return vc
         }()
+        
         lazy var presenter : ___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterface = self.modulePresenter
         lazy var view : ___FILEBASENAMEASIDENTIFIER___NavigationInterface = self.moduleView
 
         // MARK: - Instance Variables
-        weak var delegate: ___FILEBASENAMEASIDENTIFIER___Delegate?
+        var delegate: ___FILEBASENAMEASIDENTIFIER___Delegate? {
+                get {
+                        return presenter.delegate
+                }
+                set {
+                        presenter.set(newDelegate: newValue)
+                }
+        }
         
         // MARK: - Initialization
         override init() {
@@ -61,7 +70,7 @@ class ___FILEBASENAMEASIDENTIFIER___ : NSObject
         }
 
 	class func storyboard() -> UIStoryboard {
-                return UIStoryboard(name: k___FILEBASENAMEASIDENTIFIER___StoryboardIdentifier, bundle: NSBundle(forClass: ___FILEBASENAMEASIDENTIFIER___.self))
+                return UIStoryboard(name: k___FILEBASENAMEASIDENTIFIER___StoryboardIdentifier, bundle: Bundle(for: ___FILEBASENAMEASIDENTIFIER___.self))
 	}
         
         // MARK: - Operational

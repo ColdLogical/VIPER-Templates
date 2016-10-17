@@ -19,6 +19,7 @@ class ___FILEBASENAMEASIDENTIFIER___Presenter : NSObject
         weak var wireframe : ___FILEBASENAMEASIDENTIFIER___PresenterToWireframeInterface!
         
         // MARK: - Instance Variables
+        weak var delegate: ___FILEBASENAMEASIDENTIFIER___Delegate?
         
         // MARK: - Operational
         
@@ -27,5 +28,7 @@ class ___FILEBASENAMEASIDENTIFIER___Presenter : NSObject
         // MARK: - View to Presenter Interface
         
         // MARK: - Wireframe to Presenter Interface
-        
+        func set(newDelegate: ___FILEBASENAMEASIDENTIFIER___Delegate?) {
+                delegate = newDelegate
+        }
 }

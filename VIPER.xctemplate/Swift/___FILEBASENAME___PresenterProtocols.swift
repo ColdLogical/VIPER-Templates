@@ -6,6 +6,11 @@
 //___COPYRIGHT___
 //
 
+// VIPER Interface to the Module
+protocol ___FILEBASENAMEASIDENTIFIER___Delegate : class {
+        
+}
+
 // VIPER Interface for communication from Interactor -> Presenter
 protocol ___FILEBASENAMEASIDENTIFIER___InteractorToPresenterInterface : class {
         
@@ -18,5 +23,6 @@ protocol ___FILEBASENAMEASIDENTIFIER___ViewToPresenterInterface : class {
 
 // VIPER Interface for communication from Wireframe -> Presenter
 protocol ___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterface : class {
-        
+        weak var delegate: TestDelegate? { get }
+        func set(newDelegate: ___FILEBASENAMEASIDENTIFIER___Delegate?)
 }

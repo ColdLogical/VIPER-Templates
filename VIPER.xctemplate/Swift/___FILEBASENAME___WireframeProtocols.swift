@@ -12,11 +12,6 @@
 let k___FILEBASENAMEASIDENTIFIER___StoryboardIdentifier = "___FILEBASENAMEASIDENTIFIER___"
 let k___FILEBASENAMEASIDENTIFIER___ViewIdentifier = "___FILEBASENAMEASIDENTIFIER___View"
 
-// VIPER Interface to the Module
-protocol ___FILEBASENAMEASIDENTIFIER___Delegate : class {
-        
-}
-
 // Interface Abstraction for working with the VIPER Module
 protocol ___FILEBASENAMEASIDENTIFIER___ModuleInterface : class {
         
