@@ -12,6 +12,7 @@ import XCTest
 @testable import ___PROJECTNAME___
 
 class ___FILEBASENAMEASIDENTIFIER___WireframeTests: XCTestCase
+        , ___FILEBASENAMEASIDENTIFIER___Delegate
         , ___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterface
         {
         var wireframe = ___FILEBASENAMEASIDENTIFIER___Wireframe()

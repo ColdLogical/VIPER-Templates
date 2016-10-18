@@ -45,7 +45,7 @@ class ___FILEBASENAMEASIDENTIFIER___PresenterTests: XCTestCase
 
         // MARK: - Wireframe to Presenter Interface
         func testSetDelegateWithAnythingShouldSetPresentersDelegate() {
-                presenter.delegate = self
+                presenter.set(newDelegate: self)
                 
                 XCTAssert(presenter.delegate === self)
         }

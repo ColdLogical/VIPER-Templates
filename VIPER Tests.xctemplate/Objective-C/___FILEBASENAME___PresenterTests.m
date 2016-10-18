@@ -50,6 +50,11 @@
 #pragma mark - View to Presenter Interface
 
 #pragma mark - Wireframe to Presenter Interface
+-(void)testSetDelegateWithAnythingShouldSetPresentersDelegate {
+        self.presenter.delegate = self;
+        
+        XCTAssertEqualObjects (self.presenter.delegate, self);
+}
 
 #pragma mark - Presenter to Interactor Interface
 

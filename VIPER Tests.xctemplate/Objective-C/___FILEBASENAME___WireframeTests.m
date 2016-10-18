@@ -16,7 +16,8 @@
 #import "___FILEBASENAMEASIDENTIFIER___View.h"
 
 @interface ___FILEBASENAMEASIDENTIFIER___WireframeTests : XCTestCase <
-        ___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterface
+        ___FILEBASENAMEASIDENTIFIER___Delegate
+        , ___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterface
         >
 
 @property (nonatomic, strong) ___FILEBASENAMEASIDENTIFIER___Wireframe *wireframe;
@@ -33,7 +34,6 @@
         
         self.wireframe = [___FILEBASENAMEASIDENTIFIER___Wireframe new];
         
-        self.wireframe.delegate = self;
         self.wireframe.presenter = self;
 }
 
@@ -95,9 +95,9 @@
 -(void)testGetDelegateWithSelfAsDelegateShouldAskPresenterForDelegate {
         self.expectation = [self expectationWithDescription:@"Presenter get delegate from delegate accessor"];
         
-        id delegate = wireframe.delegate
+        id delegate = self.wireframe.delegate;
         
-        XCTAssertEqualObjects(delegate, self)
+        XCTAssertEqualObjects(delegate, self);
         
         [self waitForExpectationsWithTimeout:5
                                      handler:^(NSError *error) {
@@ -111,7 +111,7 @@
 - (void)testSetDelegateWithAnythingShouldTellPresenterToSetNewDelegate {
         self.expectation = [self expectationWithDescription:@"Presenter set new delegate from delegate modifier"];
         
-        wireframe.delegate = self
+        self.wireframe.delegate = self;
         
         [self waitForExpectationsWithTimeout:5
                                      handler:^(NSError *error) {
@@ -132,13 +132,13 @@
                 [self.expectation fulfill];
         }
         
-        return self
+        return self;
 }
 
 -(void)setDelegate:(id<___FILEBASENAMEASIDENTIFIER___Delegate>)newDelegate {
         if([self.expectation.description isEqualToString:@"Presenter set new delegate from delegate modifier"]) {
                 [self.expectation fulfill];
-                XCTAssertEqualObjects(newDelegate, self)
+                XCTAssertEqualObjects(newDelegate, self);
         }
 }
 
