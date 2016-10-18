@@ -11,9 +11,8 @@ import XCTest
 
 @testable import ___PROJECTNAME___
 
-class ___FILEBASENAMEASIDENTIFIER___WireframeTests: XCTestCase,
-        ___FILEBASENAMEASIDENTIFIER___Delegate,
-        ___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterface
+class ___FILEBASENAMEASIDENTIFIER___WireframeTests: XCTestCase
+        , ___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterface
         {
         var wireframe = ___FILEBASENAMEASIDENTIFIER___Wireframe()
         
@@ -25,7 +24,6 @@ class ___FILEBASENAMEASIDENTIFIER___WireframeTests: XCTestCase,
                 
 		wireframe = ___FILEBASENAMEASIDENTIFIER___Wireframe()
                 
-                wireframe.delegate = self;
                 wireframe.presenter = self;
         }
         
@@ -125,7 +123,7 @@ class ___FILEBASENAMEASIDENTIFIER___WireframeTests: XCTestCase,
         func set(newDelegate: ___FILEBASENAMEASIDENTIFIER___Delegate?) {
                 if expectation?.description ==  "Presenter set new delegate from delegate modifier" {
                         expectation?.fulfill()
-                        XCTAssert(delegate === self)
+                        XCTAssert(newDelegate === self)
                 }
         }
 }

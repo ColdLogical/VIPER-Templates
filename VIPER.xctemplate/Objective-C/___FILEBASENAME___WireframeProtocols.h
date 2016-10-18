@@ -17,8 +17,7 @@ static NSString *k___FILEBASENAMEASIDENTIFIER___ViewIdentifier = @"___FILEBASENA
 // Interface Abstraction for working with the VIPER Module
 @protocol ___FILEBASENAMEASIDENTIFIER___ModuleInterface <NSObject> 
 
--(id)delegate;
--(void)setDelegate:(id<___FILEBASENAMEASIDENTIFIER___Delegate>)newDelegate;
+@property (nonatomic, weak) id<___FILEBASENAMEASIDENTIFIER___Delegate> delegate;
 
 @end
 

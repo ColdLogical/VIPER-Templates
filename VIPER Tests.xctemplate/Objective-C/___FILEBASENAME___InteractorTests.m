@@ -12,7 +12,9 @@
 #import "___FILEBASENAMEASIDENTIFIER___Interactor.h"
 #import "___FILEBASENAMEASIDENTIFIER___InteractorProtocols.h"
 
-@interface ___FILEBASENAMEASIDENTIFIER___InteractorTests : XCTestCase <___FILEBASENAMEASIDENTIFIER___InteractorOutput>
+@interface ___FILEBASENAMEASIDENTIFIER___InteractorTests : XCTestCase <
+        ___FILEBASENAMEASIDENTIFIER___InteractorToPresenterInterface
+        >
 
 @property (nonatomic, strong) ___FILEBASENAMEASIDENTIFIER___Interactor *interactor;
 
@@ -38,8 +40,8 @@
 
 #pragma mark - Operational
 
-#pragma mark - Interactor Input
+#pragma mark - Presenter to Interactor Interface
 
-#pragma mark - Interactor Output
+#pragma mark - Interactor to Presenter Interface
 
 @end

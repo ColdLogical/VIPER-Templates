@@ -12,7 +12,12 @@
 #import "___FILEBASENAMEASIDENTIFIER___Presenter.h"
 #import "___FILEBASENAMEASIDENTIFIER___PresenterProtocols.h"
 
-@interface ___FILEBASENAMEASIDENTIFIER___PresenterTests : XCTestCase <___FILEBASENAMEASIDENTIFIER___InteractorInput, ___FILEBASENAMEASIDENTIFIER___ViewInterface, ___FILEBASENAMEASIDENTIFIER___WireframeInterface>
+@interface ___FILEBASENAMEASIDENTIFIER___PresenterTests : XCTestCase <
+        ___FILEBASENAMEASIDENTIFIER___Delegate
+        , ___FILEBASENAMEASIDENTIFIER___PresenterToInteractorInterface
+        , ___FILEBASENAMEASIDENTIFIER___PresenterToViewInterface
+        , ___FILEBASENAMEASIDENTIFIER___PresenterToWireframeInterface
+        >
 
 @property (nonatomic, strong) ___FILEBASENAMEASIDENTIFIER___Presenter *presenter;
 
@@ -40,16 +45,16 @@
 
 #pragma mark - Operational
 
-#pragma mark - Interactor Output
+#pragma mark - Interactor to Presenter Interface
 
-#pragma mark - Presenter Interface
+#pragma mark - View to Presenter Interface
 
-#pragma mark - Routing
+#pragma mark - Wireframe to Presenter Interface
 
-#pragma mark - Interactor Input
+#pragma mark - Presenter to Interactor Interface
 
-#pragma mark - View Interface
+#pragma mark - Presenter to View Interface
 
-#pragma mark - Wireframe Interface
+#pragma mark - Presenter to Wireframe Interface
 
 @end

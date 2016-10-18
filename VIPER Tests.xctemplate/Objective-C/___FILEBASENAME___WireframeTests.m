@@ -15,7 +15,9 @@
 #import "___FILEBASENAMEASIDENTIFIER___Presenter.h"
 #import "___FILEBASENAMEASIDENTIFIER___View.h"
 
-@interface ___FILEBASENAMEASIDENTIFIER___WireframeTests : XCTestCase <___FILEBASENAMEASIDENTIFIER___Delegate, ___FILEBASENAMEASIDENTIFIER___Routing>
+@interface ___FILEBASENAMEASIDENTIFIER___WireframeTests : XCTestCase <
+        ___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterface
+        >
 
 @property (nonatomic, strong) ___FILEBASENAMEASIDENTIFIER___Wireframe *wireframe;
 
@@ -84,17 +86,60 @@
 }
 
 -(void)testStoryboardWithNothingShouldReturnStoryboardWithk___FILEBASENAMEASIDENTIFIER___StoryboardIdentifier {
-        UIStoryboard *storyboard = [self.wireframe storyboard];
+        UIStoryboard *storyboard = [___FILEBASENAMEASIDENTIFIER___Wireframe storyboard];
         
         XCTAssertEqualObjects (k___FILEBASENAMEASIDENTIFIER___Storyboard, [storyboard valueForKey:@"name"], @"Storyboard identifier should be the constant identifier defined in the ___FILEBASENAMEASIDENTIFIER___WireframeProtocols file");
 }
 
 #pragma mark - Operational
+-(void)testGetDelegateWithSelfAsDelegateShouldAskPresenterForDelegate {
+        self.expectation = [self expectationWithDescription:@"Presenter get delegate from delegate accessor"];
+        
+        id delegate = wireframe.delegate
+        
+        XCTAssertEqualObjects(delegate, self)
+        
+        [self waitForExpectationsWithTimeout:5
+                                     handler:^(NSError *error) {
+                                             self.expectation = nil;
+                                             if (error) {
+                                                     XCTFail (@"Presenter never asked for delegate");
+                                             }
+                                     }];
+}
 
-#pragma mark - Wireframe Interface
+- (void)testSetDelegateWithAnythingShouldTellPresenterToSetNewDelegate {
+        self.expectation = [self expectationWithDescription:@"Presenter set new delegate from delegate modifier"];
+        
+        wireframe.delegate = self
+        
+        [self waitForExpectationsWithTimeout:5
+                                     handler:^(NSError *error) {
+                                             self.expectation = nil;
+                                             if (error) {
+                                                     XCTFail (@"Presenter was never told to set delegate");
+                                             }
+                                     }];
+}
+
+#pragma mark - Presenter to Wireframe Interface
 
 #pragma mark - Delegate
 
-#pragma mark - Routing
+#pragma mark - Wireframe to Presenter Interface
+-(id<___FILEBASENAMEASIDENTIFIER___Delegate>)delegate {
+        if([self.expectation.description isEqualToString:@"Presenter get delegate from delegate accessor"]) {
+                [self.expectation fulfill];
+        }
+        
+        return self
+}
+
+-(void)setDelegate:(id<___FILEBASENAMEASIDENTIFIER___Delegate>)newDelegate {
+        if([self.expectation.description isEqualToString:@"Presenter set new delegate from delegate modifier"]) {
+                [self.expectation fulfill];
+                XCTAssertEqualObjects(newDelegate, self)
+        }
+}
 
 @end

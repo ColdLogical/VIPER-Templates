@@ -11,8 +11,8 @@ import XCTest
 
 @testable import ___PROJECTNAME___
 
-class ___FILEBASENAMEASIDENTIFIER___InteractorTests: XCTestCase,
-        ___FILEBASENAMEASIDENTIFIER___InteractorToPresenterInterface
+class ___FILEBASENAMEASIDENTIFIER___InteractorTests: XCTestCase
+        , ___FILEBASENAMEASIDENTIFIER___InteractorToPresenterInterface
         {
         var interactor = ___FILEBASENAMEASIDENTIFIER___Interactor()
         

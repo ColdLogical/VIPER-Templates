@@ -11,10 +11,11 @@ import XCTest
 
 @testable import ___PROJECTNAME___
 
-class ___FILEBASENAMEASIDENTIFIER___PresenterTests: XCTestCase,
-        ___FILEBASENAMEASIDENTIFIER___PresenterToInteractorInterface,
-        ___FILEBASENAMEASIDENTIFIER___PresenterToViewInterface,
-        ___FILEBASENAMEASIDENTIFIER___PresenterToWireframeInterface
+class ___FILEBASENAMEASIDENTIFIER___PresenterTests: XCTestCase
+        , ___FILEBASENAMEASIDENTIFIER___Delegate
+        , ___FILEBASENAMEASIDENTIFIER___PresenterToInteractorInterface
+        , ___FILEBASENAMEASIDENTIFIER___PresenterToViewInterface
+        , ___FILEBASENAMEASIDENTIFIER___PresenterToWireframeInterface
         {
         var presenter = ___FILEBASENAMEASIDENTIFIER___Presenter()
         
@@ -43,8 +44,13 @@ class ___FILEBASENAMEASIDENTIFIER___PresenterTests: XCTestCase,
         // MARK: - View to Presenter Interface
 
         // MARK: - Wireframe to Presenter Interface
+        func testSetDelegateWithAnythingShouldSetPresentersDelegate() {
+                presenter.delegate = self
+                
+                XCTAssert(presenter.delegate === self)
+        }
 
-        // MARK: - Presenter to Interactor Input
+        // MARK: - Presenter to Interactor Interface
         
         // MARK: - Presenter to View Interface
         

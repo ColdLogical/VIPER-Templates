@@ -11,8 +11,8 @@ import XCTest
 
 @testable import ___PROJECTNAME___
 
-class ___FILEBASENAMEASIDENTIFIER___ViewTests: XCTestCase,
-        ___FILEBASENAMEASIDENTIFIER___ViewToPresenterInterface
+class ___FILEBASENAMEASIDENTIFIER___ViewTests: XCTestCase
+        , ___FILEBASENAMEASIDENTIFIER___ViewToPresenterInterface
         {
         var view = ___FILEBASENAMEASIDENTIFIER___View()
 	var window = UIWindow()

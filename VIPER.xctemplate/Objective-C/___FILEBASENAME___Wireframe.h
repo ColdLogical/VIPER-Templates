@@ -20,7 +20,8 @@
 @class ___FILEBASENAMEASIDENTIFIER___View;
 
 @interface ___FILEBASENAMEASIDENTIFIER___Wireframe : NSObject <
-        ___FILEBASENAMEASIDENTIFIER___PresenterToWireframeInterface
+        ___FILEBASENAMEASIDENTIFIER___ModuleInterface
+        , ___FILEBASENAMEASIDENTIFIER___PresenterToWireframeInterface
         >
 
 // VIPER Stack

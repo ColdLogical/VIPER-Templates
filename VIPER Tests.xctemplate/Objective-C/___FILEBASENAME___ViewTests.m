@@ -14,7 +14,9 @@
 #import "___FILEBASENAMEASIDENTIFIER___Wireframe.h"
 #import "___FILEBASENAMEASIDENTIFIER___ViewProtocols.h"
 
-@interface ___FILEBASENAMEASIDENTIFIER___ViewTests : XCTestCase <___FILEBASENAMEASIDENTIFIER___PresenterInterface>
+@interface ___FILEBASENAMEASIDENTIFIER___ViewTests : XCTestCase <
+        ___FILEBASENAMEASIDENTIFIER___ViewToPresenterInterface
+        >
 
 @property (nonatomic, strong) ___FILEBASENAMEASIDENTIFIER___View *view;
 @property (nonatomic, strong) UIWindow *window;
@@ -46,8 +48,8 @@
 
 #pragma mark - Operational
 
-#pragma mark - View Interface
+#pragma mark - Presenter to View Interface
 
-#pragma mark - Presenter Interface
+#pragma mark - View to Presenter Interface
 
 @end
