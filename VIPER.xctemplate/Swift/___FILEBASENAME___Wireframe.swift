@@ -17,7 +17,7 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe : NSObject
         // Uncomment to use a navigationController from storyboard
         /*
         lazy var moduleNavigationController: UINavigationController = {
-                let sb = ___FILEBASENAMEASIDENTIFIER___.storyboard()
+                let sb = ___FILEBASENAMEASIDENTIFIER___Wireframe.storyboard()
                 let nc = sb.instantiateViewController(withIdentifier: k___FILEBASENAMEASIDENTIFIER___NavigationControllerIdentifier) as! UINavigationController
                 return nc
         }()
@@ -27,15 +27,23 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe : NSObject
                 // Uncomment the commented line below and delete the storyboard
                 //      instantiation to use a navigationController from storyboard
                 //let vc = self.moduleNavigationController.viewControllers[0] as! ___FILEBASENAMEASIDENTIFIER___View
-                
                 let sb = ___FILEBASENAMEASIDENTIFIER___Wireframe.storyboard()
                 let vc = sb.instantiateViewController(withIdentifier: k___FILEBASENAMEASIDENTIFIER___ViewIdentifier) as! ___FILEBASENAMEASIDENTIFIER___View
-                
                 let _ = vc.view
-         
                 return vc
         }()
-        
+
+        // MARK: - Computed VIPER Variables
+        var presenter : ___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterface {
+                get {
+                    return self.modulePresenter
+                }
+        }
+        var view : ___FILEBASENAMEASIDENTIFIER___NavigationInterface {
+                get {
+                        return self.moduleView
+                }
+        }
         lazy var presenter : ___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterface = self.modulePresenter
         lazy var view : ___FILEBASENAMEASIDENTIFIER___NavigationInterface = self.moduleView
 
@@ -69,9 +77,10 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe : NSObject
                 view = v
         }
 
-	class func storyboard() -> UIStoryboard {
-                return UIStoryboard(name: k___FILEBASENAMEASIDENTIFIER___StoryboardIdentifier, bundle: Bundle(for: ___FILEBASENAMEASIDENTIFIER___Wireframe.self))
-	}
+    	class func storyboard() -> UIStoryboard {
+                return UIStoryboard(name: k___FILEBASENAMEASIDENTIFIER___StoryboardIdentifier,
+                                    bundle: Bundle(for: ___FILEBASENAMEASIDENTIFIER___Wireframe.self))
+    	}
         
         // MARK: - Operational
         

@@ -20,6 +20,14 @@ class ___FILEBASENAMEASIDENTIFIER___Presenter : NSObject
         
         // MARK: - Instance Variables
         weak var delegate: ___FILEBASENAMEASIDENTIFIER___Delegate?
+        var moduleWireframe: ___FILEBASENAMEASIDENTIFIER___Wireframe {
+                get {
+                        if let mw = self.wireframe as? ___FILEBASENAMEASIDENTIFIER___Wireframe {
+                                return mw
+                        }
+                        return ___FILEBASENAMEASIDENTIFIER___Wireframe()
+                }
+        }
         
         // MARK: - Operational
         
