@@ -44,8 +44,6 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe : NSObject
                         return self.moduleView
                 }
         }
-        lazy var presenter : ___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterface = self.modulePresenter
-        lazy var view : ___FILEBASENAMEASIDENTIFIER___NavigationInterface = self.moduleView
 
         // MARK: - Instance Variables
         var delegate: ___FILEBASENAMEASIDENTIFIER___Delegate? {
@@ -53,7 +51,7 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe : NSObject
                         return presenter.delegate
                 }
                 set {
-                        presenter.set(newDelegate: newValue)
+                        presenter.set(delegate: newValue)
                 }
         }
         
@@ -72,9 +70,6 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe : NSObject
                 p.wireframe = self
                 
                 v.presenter = p
-                
-                presenter = p
-                view = v
         }
 
     	class func storyboard() -> UIStoryboard {

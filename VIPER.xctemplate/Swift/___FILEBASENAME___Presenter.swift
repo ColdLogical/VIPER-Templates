@@ -20,12 +20,10 @@ class ___FILEBASENAMEASIDENTIFIER___Presenter : NSObject
         
         // MARK: - Instance Variables
         weak var delegate: ___FILEBASENAMEASIDENTIFIER___Delegate?
-        var moduleWireframe: ___FILEBASENAMEASIDENTIFIER___Wireframe {
+        var moduleWireframe: ___FILEBASENAMEASIDENTIFIER___ModuleInterface {
                 get {
-                        if let mw = self.wireframe as? ___FILEBASENAMEASIDENTIFIER___Wireframe {
-                                return mw
-                        }
-                        return ___FILEBASENAMEASIDENTIFIER___Wireframe()
+                        let mw = self.wireframe as! ___FILEBASENAMEASIDENTIFIER___ModuleInterface
+                        return mw
                 }
         }
         
@@ -36,7 +34,7 @@ class ___FILEBASENAMEASIDENTIFIER___Presenter : NSObject
         // MARK: - View to Presenter Interface
         
         // MARK: - Wireframe to Presenter Interface
-        func set(newDelegate: ___FILEBASENAMEASIDENTIFIER___Delegate?) {
+        func set(delegate newDelegate: ___FILEBASENAMEASIDENTIFIER___Delegate?) {
                 delegate = newDelegate
         }
 }

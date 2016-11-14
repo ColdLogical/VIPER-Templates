@@ -24,5 +24,5 @@ protocol ___FILEBASENAMEASIDENTIFIER___ViewToPresenterInterface : class {
 // VIPER Interface for communication from Wireframe -> Presenter
 protocol ___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterface : class {
         weak var delegate: ___FILEBASENAMEASIDENTIFIER___Delegate? { get }
-        func set(newDelegate: ___FILEBASENAMEASIDENTIFIER___Delegate?)
+        func set(delegate newDelegate: ___FILEBASENAMEASIDENTIFIER___Delegate?)
 }
