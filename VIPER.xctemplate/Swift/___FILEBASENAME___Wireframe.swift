@@ -8,17 +8,14 @@
 
 import UIKit
 
-class ___FILEBASENAMEASIDENTIFIER___Wireframe : NSObject
-        , ___FILEBASENAMEASIDENTIFIER___ModuleInterface
-        , ___FILEBASENAMEASIDENTIFIER___PresenterToWireframeInterface
-        {
+class ___FILEBASENAMEASIDENTIFIER___Wireframe: NSObject {
         // MARK: - VIPER Stack
         lazy var moduleInteractor = ___FILEBASENAMEASIDENTIFIER___Interactor()
         // Uncomment to use a navigationController from storyboard
         /*
         lazy var moduleNavigationController: UINavigationController = {
                 let sb = ___FILEBASENAMEASIDENTIFIER___Wireframe.storyboard()
-                let nc = sb.instantiateViewController(withIdentifier: k___FILEBASENAMEASIDENTIFIER___NavigationControllerIdentifier) as! UINavigationController
+                let nc = (sb.instantiateViewController(withIdentifier: k___FILEBASENAMEASIDENTIFIER___NavigationControllerIdentifier) as? UINavigationController)!
                 return nc
         }()
         */
@@ -28,18 +25,18 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe : NSObject
                 //      instantiation to use a navigationController from storyboard
                 //let vc = self.moduleNavigationController.viewControllers[0] as! ___FILEBASENAMEASIDENTIFIER___View
                 let sb = ___FILEBASENAMEASIDENTIFIER___Wireframe.storyboard()
-                let vc = sb.instantiateViewController(withIdentifier: k___FILEBASENAMEASIDENTIFIER___ViewIdentifier) as! ___FILEBASENAMEASIDENTIFIER___View
+                let vc = (sb.instantiateViewController(withIdentifier: k___FILEBASENAMEASIDENTIFIER___ViewIdentifier) as? ___FILEBASENAMEASIDENTIFIER___View)!
                 let _ = vc.view
                 return vc
         }()
 
         // MARK: - Computed VIPER Variables
-        var presenter : ___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterface {
+        var presenter: ___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterface {
                 get {
                     return self.modulePresenter
                 }
         }
-        var view : ___FILEBASENAMEASIDENTIFIER___NavigationInterface {
+        var view: ___FILEBASENAMEASIDENTIFIER___NavigationInterface {
                 get {
                         return self.moduleView
                 }
@@ -54,21 +51,21 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe : NSObject
                         presenter.set(delegate: newValue)
                 }
         }
-        
+
         // MARK: - Initialization
         override init() {
                 super.init()
-                
+
                 let i = moduleInteractor
                 let p = modulePresenter
                 let v = moduleView
-                
+
                 i.presenter = p
-                
+
                 p.interactor = i
                 p.view = v
                 p.wireframe = self
-                
+
                 v.presenter = p
         }
 
@@ -76,11 +73,17 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe : NSObject
                 return UIStoryboard(name: k___FILEBASENAMEASIDENTIFIER___StoryboardIdentifier,
                                     bundle: Bundle(for: ___FILEBASENAMEASIDENTIFIER___Wireframe.self))
     	}
-        
+
         // MARK: - Operational
-        
-        // MARK: - Module Interface
-        
-        // MARK: - Wireframe Interface
-        
+
+}
+
+// MARK: - Module Interface
+extension ___FILEBASENAMEASIDENTIFIER___Wireframe: ___FILEBASENAMEASIDENTIFIER___ModuleInterface {
+
+}
+
+// MARK: - Wireframe Interface
+extension ___FILEBASENAMEASIDENTIFIER___Wireframe: ___FILEBASENAMEASIDENTIFIER___PresenterToWireframeInterface {
+
 }

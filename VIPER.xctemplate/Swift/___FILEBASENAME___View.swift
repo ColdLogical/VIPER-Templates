@@ -8,19 +8,22 @@
 
 import UIKit
 
-class ___FILEBASENAMEASIDENTIFIER___View : UIViewController
-        , ___FILEBASENAMEASIDENTIFIER___NavigationInterface
-        , ___FILEBASENAMEASIDENTIFIER___PresenterToViewInterface
-        {
+class ___FILEBASENAMEASIDENTIFIER___View: UIViewController {
         // MARK: - VIPER Stack
-        weak var presenter : ___FILEBASENAMEASIDENTIFIER___ViewToPresenterInterface!
-        
+        weak var presenter: ___FILEBASENAMEASIDENTIFIER___ViewToPresenterInterface!
+
         // MARK: - Instance Variables
-        
+
         // MARK: - Outlets
-        
+
         // MARK: - Operational
-        
-        // MARK: - Presenter to View Interface
-        
+
+}
+
+// MARK: - Navigation Interface
+extension ___FILEBASENAMEASIDENTIFIER___View: ___FILEBASENAMEASIDENTIFIER___NavigationInterface { }
+
+// MARK: - Presenter to View Interface
+extension ___FILEBASENAMEASIDENTIFIER___View: ___FILEBASENAMEASIDENTIFIER___PresenterToViewInterface {
+
 }
