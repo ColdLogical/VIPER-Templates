@@ -43,14 +43,6 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe: NSObject {
         }
 
         // MARK: - Instance Variables
-        var delegate: ___FILEBASENAMEASIDENTIFIER___Delegate? {
-                get {
-                        return presenter.delegate
-                }
-                set {
-                        presenter.set(delegate: newValue)
-                }
-        }
 
         // MARK: - Initialization
         override init() {
@@ -80,7 +72,14 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe: NSObject {
 
 // MARK: - Module Interface
 extension ___FILEBASENAMEASIDENTIFIER___Wireframe: ___FILEBASENAMEASIDENTIFIER___ModuleInterface {
-
+        var delegate: ___FILEBASENAMEASIDENTIFIER___Delegate? {
+                get {
+                        return presenter.delegate
+                }
+                set {
+                        presenter.set(delegate: newValue)
+                }
+        }
 }
 
 // MARK: - Wireframe Interface
