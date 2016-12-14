@@ -31,16 +31,8 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe: NSObject {
         }()
 
         // MARK: - Computed VIPER Variables
-        var presenter: ___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterface {
-                get {
-                    return self.modulePresenter
-                }
-        }
-        var view: ___FILEBASENAMEASIDENTIFIER___NavigationInterface {
-                get {
-                        return self.moduleView
-                }
-        }
+        lazy var presenter: ___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterface = self.modulePresenter
+        lazy var view: ___FILEBASENAMEASIDENTIFIER___NavigationInterface = self.moduleView
 
         // MARK: - Instance Variables
 
