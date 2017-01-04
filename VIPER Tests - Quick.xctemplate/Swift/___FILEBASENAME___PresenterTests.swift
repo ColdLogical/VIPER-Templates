@@ -21,7 +21,7 @@ class ___FILEBASENAMEASIDENTIFIER___PresenterSpec: QuickSpec {
                 var viewMock: ___FILEBASENAMEASIDENTIFIER___PresenterToViewInterfaceMock!
                 var wireframeMock: ___FILEBASENAMEASIDENTIFIER___WireframeInterfacesMock!
 
-                describe("a sports presenter's") {
+                describe("a ___FILEBASENAMEASIDENTIFIER___ presenters") {
                         beforeEach {
                                 presenter = ___FILEBASENAMEASIDENTIFIER___Presenter()
 

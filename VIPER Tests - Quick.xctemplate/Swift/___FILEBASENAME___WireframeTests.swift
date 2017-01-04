@@ -18,7 +18,7 @@ class ___FILEBASENAMEASIDENTIFIER___WireframeSpec: QuickSpec {
 
                 var presenterMock: ___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterfaceMock!
 
-                describe("a ___FILEBASENAMEASIDENTIFIER___ wireframe's") {
+                describe("a ___FILEBASENAMEASIDENTIFIER___ wireframes") {
                         beforeEach {
                                 wireframe = ___FILEBASENAMEASIDENTIFIER___Wireframe()
 

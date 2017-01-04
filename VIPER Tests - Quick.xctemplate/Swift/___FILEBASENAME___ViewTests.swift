@@ -18,7 +18,7 @@ class ___FILEBASENAMEASIDENTIFIER___ViewSpec: QuickSpec {
 
                 var presenterMock: ___FILEBASENAMEASIDENTIFIER___ViewToPresenterInterfaceMock!
 
-                describe("a ___FILEBASENAMEASIDENTIFIER___ view's") {
+                describe("a ___FILEBASENAMEASIDENTIFIER___ views") {
                         beforeEach {
                                 view = ___FILEBASENAMEASIDENTIFIER___View()
                                 presenterMock = ___FILEBASENAMEASIDENTIFIER___ViewToPresenterInterfaceMock()

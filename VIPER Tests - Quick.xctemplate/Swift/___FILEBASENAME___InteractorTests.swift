@@ -18,7 +18,7 @@ class ___FILEBASENAMEASIDENTIFIER___InteractorSpec: QuickSpec {
 
                 var presenterMock: ___FILEBASENAMEASIDENTIFIER___InteractorToPresenterInterfaceMock!
 
-                describe("a ___FILEBASENAMEASIDENTIFIER___ interactor's") {
+                describe("a ___FILEBASENAMEASIDENTIFIER___ interactors") {
                         beforeEach {
                                 interactor = ___FILEBASENAMEASIDENTIFIER___Interactor()
                                 presenterMock = ___FILEBASENAMEASIDENTIFIER___InteractorToPresenterInterfaceMock()
