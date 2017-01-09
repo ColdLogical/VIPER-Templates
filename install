@@ -6,7 +6,7 @@ eval cd $SOURCE_DIRECTORY
 
 echo Creating symbolic links
 sudo ln -s "$TEMPLATE_DIRECTORY/VIPER.xctemplate" VIPER.xctemplate
-sudo ln -s "$TEMPLATE_DIRECTORY/VIPER Swift2.3.xctemplate" "VIPER Swift2.3.xctemplate"
+sudo ln -s "$TEMPLATE_DIRECTORY/VIPER Swift 2.3.xctemplate" "VIPER Swift 2.3.xctemplate"
 sudo ln -s "$TEMPLATE_DIRECTORY/VIPER Tests.xctemplate" "VIPER Tests.xctemplate"
 sudo ln -s "$TEMPLATE_DIRECTORY/VIPER Tests - Quick.xctemplate" "VIPER Tests - Quick.xctemplate"
 echo Done

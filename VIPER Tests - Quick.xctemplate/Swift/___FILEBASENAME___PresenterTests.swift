@@ -11,6 +11,7 @@ import Quick
 
 @testable import ___PROJECTNAME___
 
+ // swiftlint:disable:next type_body_length
 class ___FILEBASENAMEASIDENTIFIER___PresenterSpec: QuickSpec {
         // swiftlint:disable:next function_body_length
         override func spec() {
@@ -24,7 +25,6 @@ class ___FILEBASENAMEASIDENTIFIER___PresenterSpec: QuickSpec {
                 describe("a ___FILEBASENAMEASIDENTIFIER___ presenters") {
                         beforeEach {
                                 presenter = ___FILEBASENAMEASIDENTIFIER___Presenter()
-
                                 delegateMock = ___FILEBASENAMEASIDENTIFIER___DelegateMock()
                                 interactorMock = ___FILEBASENAMEASIDENTIFIER___PresenterToInteractorInterfaceMock()
                                 viewMock = ___FILEBASENAMEASIDENTIFIER___PresenterToViewInterfaceMock()
@@ -71,3 +71,4 @@ class ___FILEBASENAMEASIDENTIFIER___PresenterSpec: QuickSpec {
                 }
         }
 }
+// swiftlint:disable:this file_length

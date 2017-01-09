@@ -11,20 +11,23 @@ import Quick
 
 @testable import ___PROJECTNAME___
 
+ // swiftlint:disable:next type_body_length
 class ___FILEBASENAMEASIDENTIFIER___WireframeSpec: QuickSpec {
         // swiftlint:disable:next function_body_length
         override func spec() {
                 var wireframe: ___FILEBASENAMEASIDENTIFIER___Wireframe!
 
                 var presenterMock: ___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterfaceMock!
+                var viewMock: ___FILEBASENAMEASIDENTIFIER___NavigationInterfaceMock!
 
                 describe("a ___FILEBASENAMEASIDENTIFIER___ wireframes") {
                         beforeEach {
                                 wireframe = ___FILEBASENAMEASIDENTIFIER___Wireframe()
-
                                 presenterMock = ___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterfaceMock()
+                                viewMock = ___FILEBASENAMEASIDENTIFIER___NavigationInterfaceMock()
 
                                 wireframe.presenter = presenterMock
+                                wireframe.view = viewMock
                         }
 
                         // MARK: - Init
@@ -51,43 +54,6 @@ class ___FILEBASENAMEASIDENTIFIER___WireframeSpec: QuickSpec {
 
                                         expect(wireframe.presenter).to(beIdenticalTo(wireframe.modulePresenter))
                                         expect(wireframe.view).to(beIdenticalTo(wireframe.moduleView))
-                                }
-                        }
-
-                        // MARK: - Lazy Loaders
-                        describe("interactor lazy loader") {
-                                it("instantiates the interactor") {
-                                        // Arrange
-
-                                        // Act
-
-                                        // Assert
-                                        expect(wireframe.moduleInteractor).toNot(beNil())
-                                        expect(wireframe.moduleInteractor).to(beAKindOf(___FILEBASENAMEASIDENTIFIER___Interactor))
-                                }
-                        }
-
-                        describe("presenter lazy loader") {
-                                it("instantiates the presenter") {
-                                        // Arrange
-
-                                        // Act
-
-                                        // Assert
-                                        expect(wireframe.modulePresenter).toNot(beNil())
-                                        expect(wireframe.modulePresenter).to(beAKindOf(___FILEBASENAMEASIDENTIFIER___Presenter))
-                                }
-                        }
-
-                        describe("view lazy loader") {
-                                it("instantiates the view") {
-                                        // Arrange
-
-                                        // Act
-
-                                        // Assert
-                                        expect(wireframe.moduleView).toNot(beNil())
-                                        expect(wireframe.moduleView).to(beAKindOf(___FILEBASENAMEASIDENTIFIER___View))
                                 }
                         }
 
@@ -139,3 +105,4 @@ class ___FILEBASENAMEASIDENTIFIER___WireframeSpec: QuickSpec {
                 }
         }
 }
+// swiftlint:disable:this file_length

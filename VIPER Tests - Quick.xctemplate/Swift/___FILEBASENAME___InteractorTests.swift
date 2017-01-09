@@ -11,6 +11,7 @@ import Quick
 
 @testable import ___PROJECTNAME___
 
+ // swiftlint:disable:next type_body_length
 class ___FILEBASENAMEASIDENTIFIER___InteractorSpec: QuickSpec {
         // swiftlint:disable:next function_body_length
         override func spec() {
@@ -32,3 +33,4 @@ class ___FILEBASENAMEASIDENTIFIER___InteractorSpec: QuickSpec {
                 }
         }
 }
+// swiftlint:disable:this file_length
