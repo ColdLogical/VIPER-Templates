@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ___FILEBASENAMEASIDENTIFIER___Presenter: NSObject {
+class ___FILEBASENAMEASIDENTIFIER___Presenter {
         // MARK: - VIPER Stack
         weak var interactor: ___FILEBASENAMEASIDENTIFIER___PresenterToInteractorInterface!
         weak var view: ___FILEBASENAMEASIDENTIFIER___PresenterToViewInterface!
@@ -16,12 +16,7 @@ class ___FILEBASENAMEASIDENTIFIER___Presenter: NSObject {
 
         // MARK: - Instance Variables
         weak var delegate: ___FILEBASENAMEASIDENTIFIER___Delegate?
-        var moduleWireframe: ___FILEBASENAMEASIDENTIFIER___ModuleInterface {
-                get {
-                        let mw = (self.wireframe as? ___FILEBASENAMEASIDENTIFIER___ModuleInterface)!
-                        return mw
-                }
-        }
+        lazy var moduleWireframe: ___FILEBASENAMEASIDENTIFIER___ = (self.wireframe as? ___FILEBASENAMEASIDENTIFIER___)!
 
         // MARK: - Operational
 

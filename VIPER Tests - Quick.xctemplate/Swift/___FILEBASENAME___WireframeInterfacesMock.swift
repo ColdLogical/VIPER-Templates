@@ -14,12 +14,15 @@ class ___FILEBASENAMEASIDENTIFIER___WireframeInterfacesMock {
         // MARK: - Input Variables
 }
 
-extension ___FILEBASENAMEASIDENTIFIER___WireframeInterfacesMock: ___FILEBASENAMEASIDENTIFIER___ModuleInterface {
+extension ___FILEBASENAMEASIDENTIFIER___WireframeInterfacesMock: ___FILEBASENAMEASIDENTIFIER___ {
         var delegate: ___FILEBASENAMEASIDENTIFIER___Delegate? {
                 get {
+                        functionsCalled.append(#function)
                         return nil
                 }
-                set { }
+            set {
+                functionsCalled.append(#function)
+            }
         }
 }
 

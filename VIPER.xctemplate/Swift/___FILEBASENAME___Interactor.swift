@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ___FILEBASENAMEASIDENTIFIER___Interactor: NSObject {
+class ___FILEBASENAMEASIDENTIFIER___Interactor {
         // MARK: - VIPER Stack
         weak var presenter: ___FILEBASENAMEASIDENTIFIER___InteractorToPresenterInterface!
 

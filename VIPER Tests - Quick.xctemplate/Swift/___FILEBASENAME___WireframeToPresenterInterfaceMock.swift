@@ -18,13 +18,13 @@ class ___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterfaceMock {
 extension ___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterfaceMock: ___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterface {
         weak var delegate: ___FILEBASENAMEASIDENTIFIER___Delegate? {
                 get {
-                        functionsCalled.append("delegate:get")
+                        functionsCalled.append(#function)
                         return nil
                 }
         }
 
         func set(delegate newDelegate: ___FILEBASENAMEASIDENTIFIER___Delegate?) {
-                functionsCalled.append("set:delegate")
+                functionsCalled.append(#function)
 
                 modifiedDelegate = newDelegate
         }

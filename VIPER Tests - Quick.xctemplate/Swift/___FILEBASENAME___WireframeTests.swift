@@ -81,7 +81,7 @@ class ___FILEBASENAMEASIDENTIFIER___WireframeSpec: QuickSpec {
                                         let _ = wireframe.delegate
 
                                         // Assert
-                                        expect(presenterMock.functionsCalled).to(contain("delegate:get"))
+                                        expect(presenterMock.functionsCalled).to(contain("delegate"))
                                 }
                         }
 
@@ -94,7 +94,7 @@ class ___FILEBASENAMEASIDENTIFIER___WireframeSpec: QuickSpec {
                                         wireframe.delegate = delegateMock
 
                                         // Assert
-                                        expect(presenterMock.functionsCalled).to(contain("set:delegate"))
+                                        expect(presenterMock.functionsCalled).to(contain("set(delegate:)"))
                                         expect(presenterMock.modifiedDelegate).to(beIdenticalTo(delegateMock))
                                 }
                         }

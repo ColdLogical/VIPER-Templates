@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ___FILEBASENAMEASIDENTIFIER___Wireframe: NSObject {
+class ___FILEBASENAMEASIDENTIFIER___Wireframe {
         // MARK: - VIPER Stack
         lazy var moduleInteractor = ___FILEBASENAMEASIDENTIFIER___Interactor()
         // Uncomment to use a navigationController from storyboard
@@ -37,9 +37,7 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe: NSObject {
         // MARK: - Instance Variables
 
         // MARK: - Initialization
-        override init() {
-                super.init()
-
+        init() {
                 let i = moduleInteractor
                 let p = modulePresenter
                 let v = moduleView
@@ -63,7 +61,7 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe: NSObject {
 }
 
 // MARK: - Module Interface
-extension ___FILEBASENAMEASIDENTIFIER___Wireframe: ___FILEBASENAMEASIDENTIFIER___ModuleInterface {
+extension ___FILEBASENAMEASIDENTIFIER___Wireframe: ___FILEBASENAMEASIDENTIFIER___ {
         var delegate: ___FILEBASENAMEASIDENTIFIER___Delegate? {
                 get {
                         return presenter.delegate
