@@ -1,7 +1,7 @@
 import Nimble
 import Quick
 
-@testable import ___PACKAGENAME___
+@testable import ___PROJECTNAME___
 
  // swiftlint:disable:next type_body_length
 class ___FILEBASENAMEASIDENTIFIER___InteractorSpec: QuickSpec {
