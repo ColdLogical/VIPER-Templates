@@ -1,11 +1,3 @@
-//
-//  ___FILENAME___
-//  ___PROJECTNAME___
-//
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//___COPYRIGHT___
-//
-
 import Nimble
 import Quick
 
@@ -20,7 +12,7 @@ class ___FILEBASENAMEASIDENTIFIER___WireframeSpec: QuickSpec {
                 var presenterMock: ___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterfaceMock!
                 var viewMock: ___FILEBASENAMEASIDENTIFIER___NavigationInterfaceMock!
 
-                describe("a ___FILEBASENAMEASIDENTIFIER___ wireframes") {
+                describe("a ___FILEBASENAMEASIDENTIFIER___ wireframe") {
                         beforeEach {
                                 wireframe = ___FILEBASENAMEASIDENTIFIER___Wireframe()
                                 presenterMock = ___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterfaceMock()
@@ -68,7 +60,7 @@ class ___FILEBASENAMEASIDENTIFIER___WireframeSpec: QuickSpec {
                                         // Assert
                                         let storyboardName = storyboard.valueForKey("name") as? String
                                         expect(storyboardName).toNot(beNil())
-                                        expect(storyboardName).to(equal(k___FILEBASENAMEASIDENTIFIER___StoryboardIdentifier))
+                                        expect(storyboardName).to(equal(___FILEBASENAMEASIDENTIFIER___Constants.storyboardIdentifier))
                                 }
                         }
 

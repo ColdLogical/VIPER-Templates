@@ -1,21 +1,13 @@
-//
-//  ___FILENAME___
-//  ___PROJECTNAME___
-//
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//___COPYRIGHT___
-//
-
 import UIKit
 
-class ___FILEBASENAMEASIDENTIFIER___Wireframe: NSObject {
+class ___FILEBASENAMEASIDENTIFIER___Wireframe {
         // MARK: - VIPER Stack
         lazy var moduleInteractor = ___FILEBASENAMEASIDENTIFIER___Interactor()
         // Uncomment to use a navigationController from storyboard
         /*
         lazy var moduleNavigationController: UINavigationController = {
                 let sb = ___FILEBASENAMEASIDENTIFIER___Wireframe.storyboard()
-                let nc = (sb.instantiateViewControllerWithIdentifier(k___FILEBASENAMEASIDENTIFIER___NavigationControllerIdentifier) as? UINavigationController)!
+                let nc = (sb.instantiateViewControllerWithIdentifier(___FILEBASENAMEASIDENTIFIER___Constants.navigationControllerIdentifier) as? UINavigationController)!
                 return nc
         }()
         */
@@ -25,7 +17,7 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe: NSObject {
                 //      instantiation to use a navigationController from storyboard
                 //let vc = self.moduleNavigationController.viewControllers[0] as! ___FILEBASENAMEASIDENTIFIER___View
                 let sb = ___FILEBASENAMEASIDENTIFIER___Wireframe.storyboard()
-                let vc = (sb.instantiateViewControllerWithIdentifier(k___FILEBASENAMEASIDENTIFIER___ViewIdentifier) as? ___FILEBASENAMEASIDENTIFIER___View)!
+                let vc = (sb.instantiateViewControllerWithIdentifier(___FILEBASENAMEASIDENTIFIER___Constants.viewIdentifier) as? ___FILEBASENAMEASIDENTIFIER___View)!
                 let _ = vc.view
                 return vc
         }()
@@ -37,9 +29,7 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe: NSObject {
         // MARK: - Instance Variables
 
         // MARK: - Initialization
-        override init() {
-                super.init()
-
+        init() {
                 let i = moduleInteractor
                 let p = modulePresenter
                 let v = moduleView
@@ -54,7 +44,7 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe: NSObject {
         }
 
     	class func storyboard() -> UIStoryboard {
-                return UIStoryboard(name: k___FILEBASENAMEASIDENTIFIER___StoryboardIdentifier,
+                return UIStoryboard(name: ___FILEBASENAMEASIDENTIFIER___Constants.storyboardIdentifier,
                                     bundle: NSBundle(forClass: ___FILEBASENAMEASIDENTIFIER___Wireframe.self))
     	}
 
@@ -63,7 +53,7 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe: NSObject {
 }
 
 // MARK: - Module Interface
-extension ___FILEBASENAMEASIDENTIFIER___Wireframe: ___FILEBASENAMEASIDENTIFIER___ModuleInterface {
+extension ___FILEBASENAMEASIDENTIFIER___Wireframe: ___FILEBASENAMEASIDENTIFIER___ {
         var delegate: ___FILEBASENAMEASIDENTIFIER___Delegate? {
                 get {
                         return presenter.delegate
@@ -74,7 +64,7 @@ extension ___FILEBASENAMEASIDENTIFIER___Wireframe: ___FILEBASENAMEASIDENTIFIER__
         }
 }
 
-// MARK: - Wireframe Interface
+// MARK: - Presenter to Wireframe Interface
 extension ___FILEBASENAMEASIDENTIFIER___Wireframe: ___FILEBASENAMEASIDENTIFIER___PresenterToWireframeInterface {
 
 }

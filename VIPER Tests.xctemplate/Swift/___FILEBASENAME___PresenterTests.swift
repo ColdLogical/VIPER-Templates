@@ -1,11 +1,3 @@
-//
-//  ___FILENAME___
-//  ___PROJECTNAME___
-//
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//___COPYRIGHT___
-//
-
 import Foundation
 import XCTest
 
@@ -40,8 +32,12 @@ class ___FILEBASENAMEASIDENTIFIER___PresenterTests: XCTestCase {
 
         // MARK: - Wireframe to Presenter Interface
         func testSetDelegateWithAnythingShouldSetPresentersDelegate() {
+                // Arrange
+
+                // Act
                 presenter.set(delegate: self)
 
+                // Assert
                 XCTAssert(presenter.delegate === self)
         }
 }

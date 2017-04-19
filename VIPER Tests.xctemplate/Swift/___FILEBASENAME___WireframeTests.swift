@@ -1,11 +1,3 @@
-//
-//  ___FILENAME___
-//  ___PROJECTNAME___
-//
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//___COPYRIGHT___
-//
-
 import UIKit
 import XCTest
 
@@ -32,10 +24,13 @@ class ___FILEBASENAMEASIDENTIFIER___WireframeTests: XCTestCase {
 
         // MARK: - Init
         func testInitWithNothingShouldInstantiateVIPERStackAndConnectLayers() {
+                // Arrange
                 wireframe = ___FILEBASENAMEASIDENTIFIER___Wireframe()
 
+                // Act
+            
+                // Assert
                 XCTAssertNotNil(wireframe, "Wireframe cannot be nil after init")
-
                 XCTAssertNotNil(wireframe.moduleInteractor, "Interactor cannot be nil after init")
                 XCTAssertNotNil(wireframe.modulePresenter, "Presenter cannot be nil after init")
                 XCTAssertNotNil(wireframe.moduleView, "View cannot be nil after init")
@@ -49,38 +44,29 @@ class ___FILEBASENAMEASIDENTIFIER___WireframeTests: XCTestCase {
                 XCTAssert(wireframe.modulePresenter === wireframe.moduleView.presenter ? true : false, "View's presenter must be the module's presenter")
 
                 XCTAssert(wireframe.presenter === wireframe.modulePresenter ? true : false, "Wireframe's presenter must be the module's presenter")
+                XCTAssert(wireframe.view === wireframe.moduleView ? true : false, "Wireframe's view must be the module's view")
         }
 
-        // MARK: - Lazy Loaders
-        func test___FILEBASENAMEASIDENTIFIER___InteractorLazyLoaderWithNilValueShouldInstantiateInteractor() {
-                XCTAssertNotNil (wireframe.moduleInteractor, "Lazy loader should create a new interactor if it doesnt exist")
-                XCTAssertTrue ((wireframe.moduleInteractor as Any) is ___FILEBASENAMEASIDENTIFIER___Interactor, "Lazy loader should create an instance of ___FILEBASENAMEASIDENTIFIER___Interactor")
-        }
-
-        func test___FILEBASENAMEASIDENTIFIER___PresenterLazyLoaderWithNilValueShouldInstantiatePresenter() {
-                XCTAssertNotNil (wireframe.modulePresenter, "Lazy loader should create a new presenter if it doesnt exist")
-                XCTAssertTrue ((wireframe.modulePresenter as Any) is ___FILEBASENAMEASIDENTIFIER___Presenter, "Lazy loader should create an instance of ___FILEBASENAMEASIDENTIFIER___Presenter")
-        }
-
-        func test___FILEBASENAMEASIDENTIFIER___ViewLazyLoaderWithNilValueShouldInstantiateView() {
-                XCTAssertNotNil (wireframe.moduleView, "Lazy loader should create a new view if it doesnt exist")
-                XCTAssertTrue ((wireframe.moduleView as Any) is ___FILEBASENAMEASIDENTIFIER___View, "Lazy loader should create an instance of ___FILEBASENAMEASIDENTIFIER___View")
-        }
-
-        func testStoryboardWithNothingShouldReturnStoryboardWithk___FILEBASENAMEASIDENTIFIER___StoryboardIdentifier() {
+        // MARK: - Class Functions
+        func testStoryboardWithNothingShouldReturnStoryboardWith___FILEBASENAMEASIDENTIFIER___ConstantsStoryboardIdentifier() {
+                // Arrange
                 let storyboard = ___FILEBASENAMEASIDENTIFIER___Wireframe.storyboard()
 
-                XCTAssertEqual (k___FILEBASENAMEASIDENTIFIER___StoryboardIdentifier, storyboard.value(forKey: "name") as? String, "Storyboard identifier should be the constant identifier defined in the ___FILEBASENAMEASIDENTIFIER___WireframeProtocols file")
+                // Act
+
+                // Assert
+                XCTAssertEqual (___FILEBASENAMEASIDENTIFIER___Constants.storyboardIdentifier, storyboard.value(forKey: "name") as? String, "Storyboard identifier should be the constant identifier defined in the ___FILEBASENAMEASIDENTIFIER___WireframeProtocols file")
         }
 
         // MARK: - Operational
-        func testGetDelegateWithSelfAsDelegateShouldAskPresenterForDelegate() {
+        func testGetDelegateWithAnyDelegateShouldAskPresenterForDelegate() {
+                // Arrange
                 expectation = expectation(description: "Presenter get delegate from delegate accessor")
 
-                let delegate = wireframe.delegate
+                // Act
+                let _ = wireframe.delegate
 
-                XCTAssert(delegate === self)
-
+                // Assert
                 waitForExpectations(timeout: 5, handler: {
                         (error: Error?) -> Void in
                         if error != nil {
@@ -90,10 +76,13 @@ class ___FILEBASENAMEASIDENTIFIER___WireframeTests: XCTestCase {
         }
 
         func testSetDelegateWithAnythingShouldTellPresenterToSetNewDelegate() {
+                // Arrange
                 expectation = expectation(description: "Presenter set new delegate from delegate modifier")
 
+                // Act
                 wireframe.delegate = self
 
+                // Assert
                 waitForExpectations(timeout: 5, handler: {
                         (error: Error?) -> Void in
                         if error != nil {

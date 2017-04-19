@@ -1,11 +1,3 @@
-//
-//  ___FILENAME___
-//  ___PROJECTNAME___
-//
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//___COPYRIGHT___
-//
-
 import Nimble
 import Quick
 
@@ -19,7 +11,7 @@ class ___FILEBASENAMEASIDENTIFIER___ViewSpec: QuickSpec {
 
                 var presenterMock: ___FILEBASENAMEASIDENTIFIER___ViewToPresenterInterfaceMock!
 
-                describe("a ___FILEBASENAMEASIDENTIFIER___ views") {
+                describe("a ___FILEBASENAMEASIDENTIFIER___ view") {
                         beforeEach {
                                 view = ___FILEBASENAMEASIDENTIFIER___View()
                                 presenterMock = ___FILEBASENAMEASIDENTIFIER___ViewToPresenterInterfaceMock()

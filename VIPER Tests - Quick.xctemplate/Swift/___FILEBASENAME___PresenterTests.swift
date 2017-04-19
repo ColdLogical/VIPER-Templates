@@ -1,11 +1,3 @@
-//
-//  ___FILENAME___
-//  ___PROJECTNAME___
-//
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//___COPYRIGHT___
-//
-
 import Nimble
 import Quick
 
@@ -22,7 +14,7 @@ class ___FILEBASENAMEASIDENTIFIER___PresenterSpec: QuickSpec {
                 var viewMock: ___FILEBASENAMEASIDENTIFIER___PresenterToViewInterfaceMock!
                 var wireframeMock: ___FILEBASENAMEASIDENTIFIER___WireframeInterfacesMock!
 
-                describe("a ___FILEBASENAMEASIDENTIFIER___ presenters") {
+                describe("a ___FILEBASENAMEASIDENTIFIER___ presenter") {
                         beforeEach {
                                 presenter = ___FILEBASENAMEASIDENTIFIER___Presenter()
                                 delegateMock = ___FILEBASENAMEASIDENTIFIER___DelegateMock()

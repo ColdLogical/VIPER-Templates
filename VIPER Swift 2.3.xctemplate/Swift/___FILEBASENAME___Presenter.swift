@@ -1,14 +1,6 @@
-//
-//  ___FILENAME___
-//  ___PROJECTNAME___
-//
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//___COPYRIGHT___
-//
-
 import Foundation
 
-class ___FILEBASENAMEASIDENTIFIER___Presenter: NSObject {
+class ___FILEBASENAMEASIDENTIFIER___Presenter {
         // MARK: - VIPER Stack
         weak var interactor: ___FILEBASENAMEASIDENTIFIER___PresenterToInteractorInterface!
         weak var view: ___FILEBASENAMEASIDENTIFIER___PresenterToViewInterface!
@@ -16,9 +8,9 @@ class ___FILEBASENAMEASIDENTIFIER___Presenter: NSObject {
 
         // MARK: - Instance Variables
         weak var delegate: ___FILEBASENAMEASIDENTIFIER___Delegate?
-        var moduleWireframe: ___FILEBASENAMEASIDENTIFIER___ModuleInterface {
+        var moduleWireframe: ___FILEBASENAMEASIDENTIFIER___ {
                 get {
-                        let mw = (self.wireframe as? ___FILEBASENAMEASIDENTIFIER___ModuleInterface)!
+                        let mw = (self.wireframe as? ___FILEBASENAMEASIDENTIFIER___)!
                         return mw
                 }
         }
