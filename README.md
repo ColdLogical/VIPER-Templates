@@ -1,52 +1,45 @@
 # Installation
 
-1. Open VIPERTemplates repository
-3. Run the install script (double click)
-4. Start Xcode and create a new file (File > New > File or ⌘N)
-5. Choose VIPER or VIPER Test
+1. Clone the VIPERTemplates repository
+1. Run the install script (double click)
+  - This creates a symbolic link in the /Applications/Xcode directory to the templates
+  - Note: if your Xcode is not installed in the diffault location, then you will need to change this path
+1. Open an Xcode project
+1. Create a new file (File > New > File or ⌘N)
+1. Choose VIPER
+1. Set your VIPER stack base name
+1. Continue adding files as regular to your app target
+1. Repeat steps 4->8 for VIPER Test, adding the files to your test target
 
 # Updating
 1. Pull the repository changes
+  - `git pull`
+    - Since we created a symbolic link above, updating the repository changes the templates in xcode without needing to do any other steps.
 
-# VIPER - Objective-C
+# VIPER
 
-- `Interactor.h`
-- `Interactor.m`
-- `InteractorProtocols.h` - Interactor Input protocol
-- `Presenter.h`
-- `Presenter.m`
-- `PresenterProtocols.h` - Interactor Output, Presenter Interface, Routing protocols
-- `View.h`
-- `View.m`
-- `ViewProtocols.h` - View Interface protocol
-- `Wireframe.h`
-- `Wireframe.m`
-- `WireframeProtocols.h` - Module Delegate and Wireframe Interface protocols
+- `Interactor`
+- `InteractorProtocols` - Presenter->Interactor protocol
+- `Presenter`
+- `PresenterProtocols` - Delegate, Interactor->Presenter, View->Presenter, Wireframe->Presenter protocols
+- `View`
+- `ViewProtocols` - Navigation and Presenter->View protocols
+- `Wireframe`
+- `WireframeProtocols` - Module and Presenter->Wireframe protocols
 
-# VIPER - Swift
+# VIPER Tests
 
-- `Interactor.swift`
-- `InteractorProtocols.swift` - Interactor Input protocol
-- `Presenter.swift`
-- `PresenterProtocols.swift` - Interactor Output, Presenter Interface, Routing protocols
-- `View.swift`
-- `ViewProtocols.swift` - View Interface protocol
-- `Wireframe.swift`
-- `WireframeProtocols.swift` - Module Delegate and Wireframe Interface protocols
-
-# VIPER Tests - Objective-C
-
-- `InteractorTests.m`
-- `PresenterTests.m`
-- `ViewTests.m`
-- `WireframeTests.m`
-
-# VIPER Tests - Swift
-
-- `InteractorTests.swift`
-- `PresenterTests.swift`
-- `ViewTests.swift`
-- `WireframeTests.swif`
+- `DelegateMock` - mocked interface for the stacks delegate
+- `InteractorTests`
+- `InteractorToPresenterInterfaceMock`
+- `PresenterTests`
+- `PresenterToInteractorInterfaceMock`
+- `PresenterToViewInterfaceMock`
+- `ViewTests`
+- `ViewToPresenterInterfaceMock`
+- `WireframeInterfacesMock` - mocks both the module interface and the PresenterToWireframeInterface since these objects need to be the same internally
+- `WireframeTests`
+- `WireframeToPresenterInterfaceMock`
 
 # TODO
 
