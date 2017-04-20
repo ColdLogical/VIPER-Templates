@@ -16,6 +16,8 @@
   - `git pull`
     - Since we created a symbolic link above, updating the repository changes the templates in xcode without needing to do any other steps.
 
+*Note: When Xcode updates, it replaces the template folder. All you need to do is run the install script again, and the templates will be available.*
+
 # VIPER
 
 - `Interactor`
