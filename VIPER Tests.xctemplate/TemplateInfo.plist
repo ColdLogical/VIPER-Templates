@@ -24,6 +24,44 @@
 			<key>Type</key>
 			<string>text</string>
 		</dict>
+		<dict>
+			<key>Identifier</key>
+			<string>testingFrameworkChoice</string>
+			<key>Required</key>
+			<true/>
+			<key>Name</key>
+			<string>Testing Framework:</string>
+			<key>Description</key>
+			<string>The testing framework to use. Either XCTest or Quick &amp; Nimble</string>
+			<key>Type</key>
+			<string>popup</string>
+			<key>Default</key>
+			<string>XCTest</string>
+			<key>Values</key>
+			<array>
+				<string>XCTest</string>
+				<string>Quick &amp; Nimble</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Identifier</key>
+			<string>swiftVersionChoice</string>
+			<key>Required</key>
+			<true/>
+			<key>Name</key>
+			<string>Swift Version:</string>
+			<key>Description</key>
+			<string>The version of Swift</string>
+			<key>Type</key>
+			<string>popup</string>
+			<key>Default</key>
+			<string>Swift 3.0</string>
+			<key>Values</key>
+			<array>
+				<string>Swift 2.3</string>
+				<string>Swift 3.0</string>
+			</array>
+		</dict>
 	</array>
 	<key>Platforms</key>
 	<array>

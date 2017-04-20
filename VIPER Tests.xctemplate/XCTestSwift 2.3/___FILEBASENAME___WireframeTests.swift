@@ -27,7 +27,7 @@ class ___FILEBASENAMEASIDENTIFIER___WireframeTests: XCTestCase {
                 wireframe = ___FILEBASENAMEASIDENTIFIER___Wireframe()
 
                 // Act
-            
+
                 // Assert
                 XCTAssertNotNil(wireframe, "Wireframe cannot be nil after init")
                 XCTAssertNotNil(wireframe.moduleInteractor, "Interactor cannot be nil after init")
@@ -54,7 +54,7 @@ class ___FILEBASENAMEASIDENTIFIER___WireframeTests: XCTestCase {
                 // Act
 
                 // Assert
-                let storyboardName = storyboard.value(forKey: "name") as? String
+                let storyboardName = storyboard.valueForKey("name") as? String
                 XCTAssertNotNil(storyboardName)
                 XCTAssertEqual(___FILEBASENAMEASIDENTIFIER___Constants.storyboardIdentifier, storyboardName, "Storyboard identifier should be the constant identifier defined in the ___FILEBASENAMEASIDENTIFIER___WireframeProtocols file")
         }

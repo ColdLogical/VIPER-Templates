@@ -24,6 +24,25 @@
 			<key>Type</key>
 			<string>text</string>
 		</dict>
+		<dict>
+			<key>Identifier</key>
+			<string>swiftVersionChoice</string>
+			<key>Required</key>
+			<true/>
+			<key>Name</key>
+			<string>Swift Version:</string>
+			<key>Description</key>
+			<string>The version of Swift</string>
+			<key>Type</key>
+			<string>popup</string>
+			<key>Default</key>
+			<string>Swift 3.0</string>
+			<key>Values</key>
+			<array>
+				<string>Swift 2.3</string>
+				<string>Swift 3.0</string>
+			</array>
+		</dict>
 	</array>
 	<key>Platforms</key>
 	<array>
