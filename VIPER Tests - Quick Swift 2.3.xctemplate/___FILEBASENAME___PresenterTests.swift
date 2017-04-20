@@ -30,7 +30,7 @@ class ___FILEBASENAMEASIDENTIFIER___PresenterSpec: QuickSpec {
 
                         // MARK: - Operational
                         describe("module wireframe computed variable") {
-                                it("returns the wireframe as a Sports module interface object") {
+                                it("returns the wireframe as a ___FILEBASENAMEASIDENTIFIER___ object") {
                                         // Arrange
 
                                         // Act
@@ -49,15 +49,14 @@ class ___FILEBASENAMEASIDENTIFIER___PresenterSpec: QuickSpec {
                         describe("set delegate function") {
                                 it("sets the input as the new delegate") {
                                         // Arrange
-                                        let presenter = ___FILEBASENAMEASIDENTIFIER___Presenter()
                                         presenter.delegate = nil
-                                        let delegateMock = ___FILEBASENAMEASIDENTIFIER___DelegateMock()
+                                        let testDelegate = ___FILEBASENAMEASIDENTIFIER___DelegateMock()
 
                                         // Act
-                                        presenter.set(delegate: delegateMock)
+                                        presenter.set(delegate: testDelegate)
 
                                         // Assert
-                                        expect(presenter.delegate).to(beIdenticalTo(delegateMock))
+                                        expect(presenter.delegate).to(beIdenticalTo(testDelegate))
                                 }
                         }
                 }

@@ -1,11 +1,3 @@
-//
-//  ___FILENAME___
-//  ___PROJECTNAME___
-//
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//___COPYRIGHT___
-//
-
 import UIKit
 
 class ___FILEBASENAMEASIDENTIFIER___Wireframe {
@@ -15,7 +7,7 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe {
         /*
         lazy var moduleNavigationController: UINavigationController = {
                 let sb = ___FILEBASENAMEASIDENTIFIER___Wireframe.storyboard()
-                let nc = (sb.instantiateViewController(withIdentifier: k___FILEBASENAMEASIDENTIFIER___NavigationControllerIdentifier) as? UINavigationController)!
+                let nc = (sb.instantiateViewController(withIdentifier: ___FILEBASENAMEASIDENTIFIER___Constants.navigationControllerIdentifier) as? UINavigationController)!
                 return nc
         }()
         */
@@ -25,8 +17,8 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe {
                 //      instantiation to use a navigationController from storyboard
                 //let vc = self.moduleNavigationController.viewControllers[0] as! ___FILEBASENAMEASIDENTIFIER___View
                 let sb = ___FILEBASENAMEASIDENTIFIER___Wireframe.storyboard()
-                let vc = (sb.instantiateViewController(withIdentifier: k___FILEBASENAMEASIDENTIFIER___ViewIdentifier) as? ___FILEBASENAMEASIDENTIFIER___View)!
-                let _ = vc.view
+                let vc = (sb.instantiateViewController(withIdentifier: ___FILEBASENAMEASIDENTIFIER___Constants.viewIdentifier) as? ___FILEBASENAMEASIDENTIFIER___View)!
+                _ = vc.view
                 return vc
         }()
 
@@ -52,7 +44,7 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe {
         }
 
     	class func storyboard() -> UIStoryboard {
-                return UIStoryboard(name: k___FILEBASENAMEASIDENTIFIER___StoryboardIdentifier,
+                return UIStoryboard(name: ___FILEBASENAMEASIDENTIFIER___Constants.storyboardIdentifier,
                                     bundle: Bundle(for: ___FILEBASENAMEASIDENTIFIER___Wireframe.self))
     	}
 
@@ -72,7 +64,7 @@ extension ___FILEBASENAMEASIDENTIFIER___Wireframe: ___FILEBASENAMEASIDENTIFIER__
         }
 }
 
-// MARK: - Wireframe Interface
+// MARK: - Presenter to Wireframe Interface
 extension ___FILEBASENAMEASIDENTIFIER___Wireframe: ___FILEBASENAMEASIDENTIFIER___PresenterToWireframeInterface {
 
 }

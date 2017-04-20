@@ -1,11 +1,3 @@
-//
-//  ___FILENAME___
-//  ___PROJECTNAME___
-//
-//  Created by ___FULLUSERNAME___ on ___DATE___.
-//___COPYRIGHT___
-//
-
 import Foundation
 
 class ___FILEBASENAMEASIDENTIFIER___Presenter {
@@ -16,7 +8,12 @@ class ___FILEBASENAMEASIDENTIFIER___Presenter {
 
         // MARK: - Instance Variables
         weak var delegate: ___FILEBASENAMEASIDENTIFIER___Delegate?
-        lazy var moduleWireframe: ___FILEBASENAMEASIDENTIFIER___ = (self.wireframe as? ___FILEBASENAMEASIDENTIFIER___)!
+        var moduleWireframe: ___FILEBASENAMEASIDENTIFIER___ {
+                get {
+                        let mw = (self.wireframe as? ___FILEBASENAMEASIDENTIFIER___)!
+                        return mw
+                }
+        }
 
         // MARK: - Operational
 

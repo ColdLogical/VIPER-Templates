@@ -70,7 +70,7 @@ class ___FILEBASENAMEASIDENTIFIER___WireframeSpec: QuickSpec {
                                         // Arrange
 
                                         // Act
-                                        let _ = wireframe.delegate
+                                        _ = wireframe.delegate
 
                                         // Assert
                                         expect(presenterMock.functionsCalled).to(contain("delegate"))

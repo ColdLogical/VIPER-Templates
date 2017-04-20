@@ -4,22 +4,21 @@ import XCTest
 @testable import ___PROJECTNAME___
 
 class ___FILEBASENAMEASIDENTIFIER___WireframeTests: XCTestCase {
-        var wireframe = ___FILEBASENAMEASIDENTIFIER___Wireframe()
+        var wireframe: ___FILEBASENAMEASIDENTIFIER___Wireframe!
 
         // MARK: - Test Objects
-        var expectation: XCTestExpectation?
+        var presenterMock: ___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterfaceMock!
+        var viewMock: ___FILEBASENAMEASIDENTIFIER___NavigationInterfaceMock!
 
         override func setUp() {
                 super.setUp()
 
                 wireframe = ___FILEBASENAMEASIDENTIFIER___Wireframe()
+                presenterMock = ___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterfaceMock()
+                viewMock = ___FILEBASENAMEASIDENTIFIER___NavigationInterfaceMock()
 
-                wireframe.presenter = self
-        }
-
-        override func tearDown() {
-                super.tearDown()
-                expectation = nil
+                wireframe.presenter = presenterMock
+                wireframe.view = viewMock
         }
 
         // MARK: - Init
@@ -55,73 +54,36 @@ class ___FILEBASENAMEASIDENTIFIER___WireframeTests: XCTestCase {
                 // Act
 
                 // Assert
-                XCTAssertEqual (___FILEBASENAMEASIDENTIFIER___Constants.storyboardIdentifier, storyboard.value(forKey: "name") as? String, "Storyboard identifier should be the constant identifier defined in the ___FILEBASENAMEASIDENTIFIER___WireframeProtocols file")
+                let storyboardName = storyboard.value(forKey: "name") as? String
+                XCTAssertNotNil(storyboardName)
+                XCTAssertEqual(___FILEBASENAMEASIDENTIFIER___Constants.storyboardIdentifier, storyboardName, "Storyboard identifier should be the constant identifier defined in the ___FILEBASENAMEASIDENTIFIER___WireframeProtocols file")
         }
 
         // MARK: - Operational
         func testGetDelegateWithAnyDelegateShouldAskPresenterForDelegate() {
                 // Arrange
-                expectation = expectation(description: "Presenter get delegate from delegate accessor")
 
                 // Act
-                let _ = wireframe.delegate
+                _ = wireframe.delegate
 
                 // Assert
-                waitForExpectations(timeout: 5, handler: {
-                        (error: Error?) -> Void in
-                        if error != nil {
-                                XCTFail("Presenter never asked for delegate")
-                        }
-                })
+                XCTAssertTrue(presenterMock.functionsCalled.contains("delegate"))
         }
 
         func testSetDelegateWithAnythingShouldTellPresenterToSetNewDelegate() {
                 // Arrange
-                expectation = expectation(description: "Presenter set new delegate from delegate modifier")
+                let testDelegate = TestDelegateMock()
 
                 // Act
-                wireframe.delegate = self
+                wireframe.delegate = testDelegate
 
                 // Assert
-                waitForExpectations(timeout: 5, handler: {
-                        (error: Error?) -> Void in
-                        if error != nil {
-                                XCTFail("Presenter was never told to set delegate")
-                        }
-                })
+                XCTAssertTrue(presenterMock.functionsCalled.contains("set(delegate:)"))
+                XCTAssertTrue(presenterMock.modifiedDelegate === testDelegate)
         }
 
         // MARK: - Module Interface
 
         // MARK: - Presenter to Wireframe Interface
 
-}
-
-// MARK: - Delegate
-extension ___FILEBASENAMEASIDENTIFIER___WireframeTests: ___FILEBASENAMEASIDENTIFIER___Delegate {
-
-}
-
-// MARK: - Navigation Interface
-extension ___FILEBASENAMEASIDENTIFIER___WireframeTests: ___FILEBASENAMEASIDENTIFIER___NavigationInterface {
-
-}
-
-// MARK: - Wireframe to Presenter Interface
-extension ___FILEBASENAMEASIDENTIFIER___WireframeTests: ___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterface {
-        weak var delegate: ___FILEBASENAMEASIDENTIFIER___Delegate? {
-                get {
-                        if expectation?.description ==  "Presenter get delegate from delegate accessor" {
-                                expectation?.fulfill()
-                        }
-                        return self
-                }
-        }
-
-        func set(delegate newDelegate: ___FILEBASENAMEASIDENTIFIER___Delegate?) {
-                if expectation?.description ==  "Presenter set new delegate from delegate modifier" {
-                        expectation?.fulfill()
-                        XCTAssert(newDelegate === self)
-                }
-        }
 }
