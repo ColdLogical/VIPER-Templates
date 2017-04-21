@@ -2,7 +2,7 @@
 
 Here is a quick video showing you how to quickly install these templates:
 
-[![VIPER - Installing](https://imgur.com/a/pCJlQ)](https://www.youtube.com/watch?v=RLrOUUecjGI "VIPER - Installing")
+[![VIPER - Installing](http://imgur.com/K6BZUHl)](https://www.youtube.com/watch?v=RLrOUUecjGI "VIPER - Installing")
 
 1. Clone the VIPERTemplates repository
 1. Run the install script (double click)
