@@ -25,7 +25,7 @@ Here is a quick video showing you how to quickly install these templates:
 # VIPER
 VIPER is a 6 tier architecture that abstracts module tasks into each tier such that everything has a single responsibility. Its conforms to SOLID design principles and is an implementation of Clean Architecture concepts.
 
-Head over to the [VIPERTemplates Wiki](https://github.com/ColdLogical/VIPERTemplates/wiki] for some in-depth information
+Head over to the [VIPERTemplates Wiki](https://github.com/ColdLogical/VIPERTemplates/wiki) for some in-depth information
 
 # What Do the VIPERTemplates Create?
 These templates create fully configured, and tested, base VIPER stacks in either Swift 2.3 or 3.0. There is also the ability to choose between XCTest and Quick & Nimble unit tests.
