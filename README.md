@@ -23,6 +23,14 @@ Here is a quick video showing you how to quickly install these templates:
 *Note: When Xcode updates, it replaces the template folder. All you need to do is run the install script again, and the templates will be available.*
 
 # VIPER
+VIPER is a 6 tier architecture that abstracts module tasks into each tier such that everything has a single responsibility. Its conforms to SOLID design principles and is an implementation of Clean Architecture concepts.
+
+Head over to the [VIPERTemplates Wiki](https://github.com/ColdLogical/VIPERTemplates/wiki] for some in-depth information
+
+# What Do the VIPERTemplates Create?
+These templates create fully configured, and tested, base VIPER stacks in either Swift 2.3 or 3.0. There is also the ability to choose between XCTest and Quick & Nimble unit tests.
+
+### VIPER Template
 
 - `Interactor`
 - `InteractorProtocols` - Presenter->Interactor protocol
@@ -33,7 +41,7 @@ Here is a quick video showing you how to quickly install these templates:
 - `Wireframe`
 - `WireframeProtocols` - Module and Presenter->Wireframe protocols
 
-# VIPER Tests
+#### VIPER Tests Template
 
 - `DelegateMock` - mocked interface for the stacks delegate
 - `InteractorTests`
