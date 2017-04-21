@@ -1,6 +1,7 @@
 # Installation
 
 Here is a quick video showing you how to quickly install these templates:
+
 [![VIPER - Installing](https://imgur.com/a/pCJlQ)](https://www.youtube.com/watch?v=RLrOUUecjGI "VIPER - Installing")
 
 1. Clone the VIPERTemplates repository
