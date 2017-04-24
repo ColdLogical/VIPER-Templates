@@ -1,6 +1,6 @@
 # Installing
 
-Here is a quick video showing you how to quickly install these templates:
+Here is a short video showing you how to install these templates:
 
 [![VIPER - Installing](http://imgur.com/K6BZUHl.png)](https://www.youtube.com/watch?v=RLrOUUecjGI "VIPER - Installing")
 
