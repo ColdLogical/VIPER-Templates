@@ -1,4 +1,4 @@
-# Installation
+# Installing
 
 Here is a quick video showing you how to quickly install these templates:
 
@@ -7,7 +7,9 @@ Here is a quick video showing you how to quickly install these templates:
 1. Clone the VIPERTemplates repository
 1. Run the install script (double click)
   - This creates a symbolic link in the /Applications/Xcode directory to the templates
-  - Note: if your Xcode is not installed in the diffault location, then you will need to change this path
+  - Note: if your Xcode is not installed in the default location, then you will need to change this path
+  
+# Using
 1. Open an Xcode project
 1. Create a new file (File > New > File or ⌘N)
 1. Choose VIPER
