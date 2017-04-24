@@ -6,8 +6,6 @@ Here is a short video showing you how to install these templates:
 
 1. Clone the VIPERTemplates repository
 1. Run the install script (double click)
-  - This creates a symbolic link in the /Applications/Xcode directory to the templates
-  - Note: if your Xcode is not installed in the default location, then you will need to change this path
 
 # VIPER
 VIPER is a 6 tier architecture that abstracts module tasks into each tier such that everything has a single responsibility. Its conforms to SOLID design principles and is an implementation of Clean Architecture concepts.
