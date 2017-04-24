@@ -12,13 +12,7 @@ VIPER is a 6 tier architecture that abstracts module tasks into each tier such t
 
 Head over to the [VIPERTemplates Wiki](https://github.com/ColdLogical/VIPERTemplates/wiki) for some in-depth information on VIPER and using these templates.
 
-# Updating
-1. Pull the repository changes
-  - `git pull`
-    - Since we created a symbolic link above, updating the repository changes the templates in xcode without needing to do any other steps.
-
-*Note: When Xcode updates, it replaces the template folder. All you need to do is run the install script again, and the templates will be available.*
-
 # TODO
 
+- Add configurable directory for location of Xcode application to install script
 - Keep it sexy
