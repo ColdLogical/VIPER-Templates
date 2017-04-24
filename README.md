@@ -8,14 +8,11 @@ Here is a short video showing you how to install these templates:
 1. Run the install script (double click)
   - This creates a symbolic link in the /Applications/Xcode directory to the templates
   - Note: if your Xcode is not installed in the default location, then you will need to change this path
-  
-# Using
-1. Open an Xcode project
-1. Create a new file (File > New > File or ⌘N)
-1. Choose VIPER
-1. Set your VIPER stack base name
-1. Continue adding files as regular to your app target
-1. Repeat steps 4->8 for VIPER Test, adding the files to your test target
+
+# VIPER
+VIPER is a 6 tier architecture that abstracts module tasks into each tier such that everything has a single responsibility. Its conforms to SOLID design principles and is an implementation of Clean Architecture concepts.
+
+Head over to the [VIPERTemplates Wiki](https://github.com/ColdLogical/VIPERTemplates/wiki) for some in-depth information
 
 # Updating
 1. Pull the repository changes
@@ -23,11 +20,6 @@ Here is a short video showing you how to install these templates:
     - Since we created a symbolic link above, updating the repository changes the templates in xcode without needing to do any other steps.
 
 *Note: When Xcode updates, it replaces the template folder. All you need to do is run the install script again, and the templates will be available.*
-
-# VIPER
-VIPER is a 6 tier architecture that abstracts module tasks into each tier such that everything has a single responsibility. Its conforms to SOLID design principles and is an implementation of Clean Architecture concepts.
-
-Head over to the [VIPERTemplates Wiki](https://github.com/ColdLogical/VIPERTemplates/wiki) for some in-depth information
 
 # What Do the VIPERTemplates Create?
 These templates create fully configured, and tested, base VIPER stacks in either Swift 2.3 or 3.0. There is also the ability to choose between XCTest and Quick & Nimble unit tests.
