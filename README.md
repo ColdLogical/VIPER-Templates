@@ -5,8 +5,6 @@ VIPER is a 6 tier architecture that abstracts module tasks into each tier such t
 
 Head over to the [VIPERTemplates Wiki](https://github.com/ColdLogical/VIPERTemplates/wiki) for some in-depth information on VIPER and using these templates.
 
-Below is a video on installing the templates.
-
 [Did I mention there is a VIPERTemplates Wiki](https://github.com/ColdLogical/VIPERTemplates/wiki), you should check it out!
 
 # TODO
