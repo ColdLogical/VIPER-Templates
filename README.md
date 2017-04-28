@@ -9,15 +9,6 @@ Below is a video on installing the templates.
 
 [Did I mention there is a VIPERTemplates Wiki](https://github.com/ColdLogical/VIPERTemplates/wiki), you should check it out!
 
-# Installing
-
-Here is a short video showing you how to install these templates:
-
-[![VIPER - Installing](http://imgur.com/K6BZUHl.png)](https://www.youtube.com/watch?v=RLrOUUecjGI "VIPER - Installing")
-
-1. Clone the VIPERTemplates repository
-1. Run the install script (double click)
-
 # TODO
 
 - Add configurable directory for location of Xcode application to install script
