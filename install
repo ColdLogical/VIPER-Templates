@@ -1,22 +1,31 @@
 #!/bin/bash
+TEMPLATE_DIRECTORY=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
 XCODE_DIR=$1
+
 if [ -z $XCODE_DIR ]; then
         echo "Please input the path to your Xcode Application"
-        read -p "Press return to use the default /Applications/Xcode.app: " XCODE_DIR
-fi
-if [ -z $XCODE_DIR ]; then
-        XCODE_DIR="/Applications/Xcode.app"
+        read -p "Press return to use the default /Applications/Xcode.app/: " XCODE_DIR
 fi
 
-TEMPLATE_DIRECTORY=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-SOURCE_DIRECTORY="$XCODE_DIR/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/File\ Templates/Source"
+if [ -z $XCODE_DIR ]; then
+        XCODE_DIR="/Applications/Xcode.app/"
+fi
+
+SOURCE_DIRECTORY="${XCODE_DIR}Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/File Templates/Source/"
 
 echo "Installing templates to:"
 echo "$SOURCE_DIRECTORY"
 
-eval cd $SOURCE_DIRECTORY
+if [ -d "$SOURCE_DIRECTORY" ]; then
+        eval cd '"$SOURCE_DIRECTORY"'
+        echo "Creating symbolic links"
 
-echo "Creating symbolic links"
-sudo ln -sfn "$TEMPLATE_DIRECTORY/VIPER.xctemplate" VIPER.xctemplate
-sudo ln -sfn "$TEMPLATE_DIRECTORY/VIPER Tests.xctemplate" "VIPER Tests.xctemplate"
-echo "Done"
+        sudo ln -sfn "${TEMPLATE_DIRECTORY}VIPER.xctemplate" VIPER.xctemplate
+        sudo ln -sfn "${TEMPLATE_DIRECTORY}VIPER Tests.xctemplate" "VIPER Tests.xctemplate"
+
+        echo "Done"
+else
+        echo "Uh OHHHH that source directory does not exist!!!"
+        echo "Aborting. Please check your Xcode app path and try again"
+fi
