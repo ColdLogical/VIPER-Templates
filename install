@@ -1,17 +1,22 @@
 #!/bin/bash
 XCODE_DIR=$1
 if [ -z $XCODE_DIR ]; then
-  XCODE_DIR="/Applications/Xcode.app"
+        echo "Please input the path to your Xcode Application"
+        read -p "Press return to use the default /Applications/Xcode.app: " XCODE_DIR
+fi
+if [ -z $XCODE_DIR ]; then
+        XCODE_DIR="/Applications/Xcode.app"
 fi
 
-echo "Using <$XCODE_DIR>..."
-
 TEMPLATE_DIRECTORY=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-SOURCE_DIRECTORY='$XCODE_DIR/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/File\ Templates/Source'
+SOURCE_DIRECTORY="$XCODE_DIR/Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/File\ Templates/Source"
+
+echo "Installing templates to:"
+echo "$SOURCE_DIRECTORY"
 
 eval cd $SOURCE_DIRECTORY
 
-echo Creating symbolic links
-sudo ln -s "$TEMPLATE_DIRECTORY/VIPER.xctemplate" VIPER.xctemplate
-sudo ln -s "$TEMPLATE_DIRECTORY/VIPER Tests.xctemplate" "VIPER Tests.xctemplate"
-echo Done
+echo "Creating symbolic links"
+sudo ln -sfn "$TEMPLATE_DIRECTORY/VIPER.xctemplate" VIPER.xctemplate
+sudo ln -sfn "$TEMPLATE_DIRECTORY/VIPER Tests.xctemplate" "VIPER Tests.xctemplate"
+echo "Done"
