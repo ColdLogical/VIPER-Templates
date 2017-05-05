@@ -9,5 +9,4 @@ Head over to the [VIPERTemplates Wiki](https://github.com/ColdLogical/VIPERTempl
 
 # TODO
 
-- Add configurable directory for location of Xcode application to install script
 - Keep it sexy
