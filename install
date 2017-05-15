@@ -19,10 +19,11 @@ echo "$SOURCE_DIRECTORY"
 
 if [ -d "$SOURCE_DIRECTORY" ]; then
         eval cd '"$SOURCE_DIRECTORY"'
-        echo "Creating symbolic links"
+        echo "Creating symbolic links to"
+        echo ${TEMPLATE_DIRECTORY}
 
-        sudo ln -sfn "${TEMPLATE_DIRECTORY}VIPER.xctemplate" VIPER.xctemplate
-        sudo ln -sfn "${TEMPLATE_DIRECTORY}VIPER Tests.xctemplate" "VIPER Tests.xctemplate"
+        sudo ln -sfn "${TEMPLATE_DIRECTORY}/VIPER.xctemplate" VIPER.xctemplate
+        sudo ln -sfn "${TEMPLATE_DIRECTORY}/VIPER Tests.xctemplate" "VIPER Tests.xctemplate"
 
         echo "Done"
 else
