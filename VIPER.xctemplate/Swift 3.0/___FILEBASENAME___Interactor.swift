@@ -1,8 +1,8 @@
 import Foundation
 
-class ___FILEBASENAMEASIDENTIFIER___Interactor {
+class ___VARIABLE_moduleName___Interactor {
         // MARK: - VIPER Stack
-        weak var presenter: ___FILEBASENAMEASIDENTIFIER___InteractorToPresenterInterface!
+        weak var presenter: ___VARIABLE_moduleName___InteractorToPresenterInterface!
 
         // MARK: - Instance Variables
 
@@ -11,6 +11,6 @@ class ___FILEBASENAMEASIDENTIFIER___Interactor {
 }
 
 // MARK: - Presenter To Interactor Interface
-extension ___FILEBASENAMEASIDENTIFIER___Interactor: ___FILEBASENAMEASIDENTIFIER___PresenterToInteractorInterface {
+extension ___VARIABLE_moduleName___Interactor: ___VARIABLE_moduleName___PresenterToInteractorInterface {
 
 }
