@@ -1,30 +1,30 @@
 import UIKit
 
-class ___FILEBASENAMEASIDENTIFIER___Wireframe {
+class ___VARIABLE_productName___Wireframe {
         // MARK: - VIPER Stack
-        lazy var moduleInteractor = ___FILEBASENAMEASIDENTIFIER___Interactor()
+        lazy var moduleInteractor = ___VARIABLE_productName___Interactor()
         // Uncomment to use a navigationController from storyboard
         /*
         lazy var moduleNavigationController: UINavigationController = {
-                let sb = ___FILEBASENAMEASIDENTIFIER___Wireframe.storyboard()
-                let nc = (sb.instantiateViewController(withIdentifier: ___FILEBASENAMEASIDENTIFIER___Constants.navigationControllerIdentifier) as? UINavigationController)!
+                let sb = ___VARIABLE_productName___Wireframe.storyboard()
+                let nc = (sb.instantiateViewController(withIdentifier: ___VARIABLE_productName___Constants.navigationControllerIdentifier) as? UINavigationController)!
                 return nc
         }()
         */
-        lazy var modulePresenter = ___FILEBASENAMEASIDENTIFIER___Presenter()
-        lazy var moduleView: ___FILEBASENAMEASIDENTIFIER___View = {
+        lazy var modulePresenter = ___VARIABLE_productName___Presenter()
+        lazy var moduleView: ___VARIABLE_productName___View = {
                 // Uncomment the commented line below and delete the storyboard
                 //      instantiation to use a navigationController from storyboard
-                //let vc = self.moduleNavigationController.viewControllers[0] as! ___FILEBASENAMEASIDENTIFIER___View
-                let sb = ___FILEBASENAMEASIDENTIFIER___Wireframe.storyboard()
-                let vc = (sb.instantiateViewController(withIdentifier: ___FILEBASENAMEASIDENTIFIER___Constants.viewIdentifier) as? ___FILEBASENAMEASIDENTIFIER___View)!
+                //let vc = self.moduleNavigationController.viewControllers[0] as! ___VARIABLE_productName___View
+                let sb = ___VARIABLE_productName___Wireframe.storyboard()
+                let vc = (sb.instantiateViewController(withIdentifier: ___VARIABLE_productName___Constants.viewIdentifier) as? ___VARIABLE_productName___View)!
                 _ = vc.view
                 return vc
         }()
 
         // MARK: - Computed VIPER Variables
-        lazy var presenter: ___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterface = self.modulePresenter
-        lazy var view: ___FILEBASENAMEASIDENTIFIER___NavigationInterface = self.moduleView
+        lazy var presenter: ___VARIABLE_productName___WireframeToPresenterInterface = self.modulePresenter
+        lazy var view: ___VARIABLE_productName___NavigationInterface = self.moduleView
 
         // MARK: - Instance Variables
 
@@ -44,8 +44,8 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe {
         }
 
     	class func storyboard() -> UIStoryboard {
-                return UIStoryboard(name: ___FILEBASENAMEASIDENTIFIER___Constants.storyboardIdentifier,
-                                    bundle: Bundle(for: ___FILEBASENAMEASIDENTIFIER___Wireframe.self))
+                return UIStoryboard(name: ___VARIABLE_productName___Constants.storyboardIdentifier,
+                                    bundle: Bundle(for: ___VARIABLE_productName___Wireframe.self))
     	}
 
         // MARK: - Operational
@@ -53,8 +53,8 @@ class ___FILEBASENAMEASIDENTIFIER___Wireframe {
 }
 
 // MARK: - Module Interface
-extension ___FILEBASENAMEASIDENTIFIER___Wireframe: ___FILEBASENAMEASIDENTIFIER___ {
-        var delegate: ___FILEBASENAMEASIDENTIFIER___Delegate? {
+extension ___VARIABLE_productName___Wireframe: ___VARIABLE_productName___ {
+        var delegate: ___VARIABLE_productName___Delegate? {
                 get {
                         return presenter.delegate
                 }
@@ -65,6 +65,6 @@ extension ___FILEBASENAMEASIDENTIFIER___Wireframe: ___FILEBASENAMEASIDENTIFIER__
 }
 
 // MARK: - Presenter to Wireframe Interface
-extension ___FILEBASENAMEASIDENTIFIER___Wireframe: ___FILEBASENAMEASIDENTIFIER___PresenterToWireframeInterface {
+extension ___VARIABLE_productName___Wireframe: ___VARIABLE_productName___PresenterToWireframeInterface {
 
 }

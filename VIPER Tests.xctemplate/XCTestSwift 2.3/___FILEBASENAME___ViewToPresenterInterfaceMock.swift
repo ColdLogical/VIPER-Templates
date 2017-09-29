@@ -1,11 +1,11 @@
 @testable import ___PROJECTNAME___
 
-class ___FILEBASENAMEASIDENTIFIER___ViewToPresenterInterfaceMock {
+class ___VARIABLE_productName___ViewToPresenterInterfaceMock {
         var functionsCalled = [String]()
 
         // MARK: - Input Variables
 }
 
-extension ___FILEBASENAMEASIDENTIFIER___ViewToPresenterInterfaceMock: ___FILEBASENAMEASIDENTIFIER___ViewToPresenterInterface {
+extension ___VARIABLE_productName___ViewToPresenterInterfaceMock: ___VARIABLE_productName___ViewToPresenterInterface {
 
 }

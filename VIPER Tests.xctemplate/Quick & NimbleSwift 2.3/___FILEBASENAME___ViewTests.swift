@@ -4,17 +4,17 @@ import Quick
 @testable import ___PROJECTNAME___
 
  // swiftlint:disable:next type_body_length
-class ___FILEBASENAMEASIDENTIFIER___ViewSpec: QuickSpec {
+class ___VARIABLE_productName___ViewSpec: QuickSpec {
         // swiftlint:disable:next function_body_length
         override func spec() {
-                var view: ___FILEBASENAMEASIDENTIFIER___View!
+                var view: ___VARIABLE_productName___View!
 
-                var presenterMock: ___FILEBASENAMEASIDENTIFIER___ViewToPresenterInterfaceMock!
+                var presenterMock: ___VARIABLE_productName___ViewToPresenterInterfaceMock!
 
-                describe("a ___FILEBASENAMEASIDENTIFIER___ view") {
+                describe("a ___VARIABLE_productName___ view") {
                         beforeEach {
-                                view = ___FILEBASENAMEASIDENTIFIER___View()
-                                presenterMock = ___FILEBASENAMEASIDENTIFIER___ViewToPresenterInterfaceMock()
+                                view = ___VARIABLE_productName___View()
+                                presenterMock = ___VARIABLE_productName___ViewToPresenterInterfaceMock()
 
                                 _ = view.view
 

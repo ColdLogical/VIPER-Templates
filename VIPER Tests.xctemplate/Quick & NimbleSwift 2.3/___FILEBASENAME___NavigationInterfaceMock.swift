@@ -1,11 +1,11 @@
 @testable import ___PROJECTNAME___
 
-class ___FILEBASENAMEASIDENTIFIER___NavigationInterfaceMock {
+class ___VARIABLE_productName___NavigationInterfaceMock {
         var functionsCalled = [String]()
 
         // MARK: - Input Variables
 }
 
-extension ___FILEBASENAMEASIDENTIFIER___NavigationInterfaceMock: ___FILEBASENAMEASIDENTIFIER___NavigationInterface {
+extension ___VARIABLE_productName___NavigationInterfaceMock: ___VARIABLE_productName___NavigationInterface {
 
 }

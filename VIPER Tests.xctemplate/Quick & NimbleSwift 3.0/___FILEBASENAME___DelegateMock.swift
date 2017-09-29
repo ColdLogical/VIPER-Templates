@@ -1,11 +1,11 @@
 @testable import ___PROJECTNAME___
 
-class ___FILEBASENAMEASIDENTIFIER___DelegateMock {
+class ___VARIABLE_productName___DelegateMock {
         var functionsCalled = [String]()
 
         // MARK: - Input Variables
 }
 
-extension ___FILEBASENAMEASIDENTIFIER___DelegateMock: ___FILEBASENAMEASIDENTIFIER___Delegate {
+extension ___VARIABLE_productName___DelegateMock: ___VARIABLE_productName___Delegate {
 
 }

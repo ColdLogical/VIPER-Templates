@@ -3,19 +3,19 @@ import XCTest
 
 @testable import ___PROJECTNAME___
 
-class ___FILEBASENAMEASIDENTIFIER___WireframeTests: XCTestCase {
-        var wireframe: ___FILEBASENAMEASIDENTIFIER___Wireframe!
+class ___VARIABLE_productName___WireframeTests: XCTestCase {
+        var wireframe: ___VARIABLE_productName___Wireframe!
 
         // MARK: - Test Objects
-        var presenterMock: ___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterfaceMock!
-        var viewMock: ___FILEBASENAMEASIDENTIFIER___NavigationInterfaceMock!
+        var presenterMock: ___VARIABLE_productName___WireframeToPresenterInterfaceMock!
+        var viewMock: ___VARIABLE_productName___NavigationInterfaceMock!
 
         override func setUp() {
                 super.setUp()
 
-                wireframe = ___FILEBASENAMEASIDENTIFIER___Wireframe()
-                presenterMock = ___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterfaceMock()
-                viewMock = ___FILEBASENAMEASIDENTIFIER___NavigationInterfaceMock()
+                wireframe = ___VARIABLE_productName___Wireframe()
+                presenterMock = ___VARIABLE_productName___WireframeToPresenterInterfaceMock()
+                viewMock = ___VARIABLE_productName___NavigationInterfaceMock()
 
                 wireframe.presenter = presenterMock
                 wireframe.view = viewMock
@@ -24,7 +24,7 @@ class ___FILEBASENAMEASIDENTIFIER___WireframeTests: XCTestCase {
         // MARK: - Init
         func testInitWithNothingShouldInstantiateVIPERStackAndConnectLayers() {
                 // Arrange
-                wireframe = ___FILEBASENAMEASIDENTIFIER___Wireframe()
+                wireframe = ___VARIABLE_productName___Wireframe()
 
                 // Act
 
@@ -47,16 +47,16 @@ class ___FILEBASENAMEASIDENTIFIER___WireframeTests: XCTestCase {
         }
 
         // MARK: - Class Functions
-        func testStoryboardWithNothingShouldReturnStoryboardWith___FILEBASENAMEASIDENTIFIER___ConstantsStoryboardIdentifier() {
+        func testStoryboardWithNothingShouldReturnStoryboardWith___VARIABLE_productName___ConstantsStoryboardIdentifier() {
                 // Arrange
-                let storyboard = ___FILEBASENAMEASIDENTIFIER___Wireframe.storyboard()
+                let storyboard = ___VARIABLE_productName___Wireframe.storyboard()
 
                 // Act
 
                 // Assert
                 let storyboardName = storyboard.value(forKey: "name") as? String
                 XCTAssertNotNil(storyboardName)
-                XCTAssertEqual(___FILEBASENAMEASIDENTIFIER___Constants.storyboardIdentifier, storyboardName, "Storyboard identifier should be the constant identifier defined in the ___FILEBASENAMEASIDENTIFIER___WireframeProtocols file")
+                XCTAssertEqual(___VARIABLE_productName___Constants.storyboardIdentifier, storyboardName, "Storyboard identifier should be the constant identifier defined in the ___VARIABLE_productName___WireframeProtocols file")
         }
 
         // MARK: - Operational

@@ -3,23 +3,23 @@ import XCTest
 
 @testable import ___PROJECTNAME___
 
-class ___FILEBASENAMEASIDENTIFIER___PresenterTests: XCTestCase {
-        var presenter: ___FILEBASENAMEASIDENTIFIER___Presenter!
+class ___VARIABLE_productName___PresenterTests: XCTestCase {
+        var presenter: ___VARIABLE_productName___Presenter!
 
         // MARK: - Test Objects
-        var delegateMock: ___FILEBASENAMEASIDENTIFIER___DelegateMock!
-        var interactorMock: ___FILEBASENAMEASIDENTIFIER___PresenterToInteractorInterfaceMock!
-        var viewMock: ___FILEBASENAMEASIDENTIFIER___PresenterToViewInterfaceMock!
-        var wireframeMock: ___FILEBASENAMEASIDENTIFIER___WireframeInterfacesMock!
+        var delegateMock: ___VARIABLE_productName___DelegateMock!
+        var interactorMock: ___VARIABLE_productName___PresenterToInteractorInterfaceMock!
+        var viewMock: ___VARIABLE_productName___PresenterToViewInterfaceMock!
+        var wireframeMock: ___VARIABLE_productName___WireframeInterfacesMock!
 
         override func setUp() {
                 super.setUp()
 
-                presenter = ___FILEBASENAMEASIDENTIFIER___Presenter()
-                delegateMock = ___FILEBASENAMEASIDENTIFIER___DelegateMock()
-                interactorMock = ___FILEBASENAMEASIDENTIFIER___PresenterToInteractorInterfaceMock()
-                viewMock = ___FILEBASENAMEASIDENTIFIER___PresenterToViewInterfaceMock()
-                wireframeMock = ___FILEBASENAMEASIDENTIFIER___WireframeInterfacesMock()
+                presenter = ___VARIABLE_productName___Presenter()
+                delegateMock = ___VARIABLE_productName___DelegateMock()
+                interactorMock = ___VARIABLE_productName___PresenterToInteractorInterfaceMock()
+                viewMock = ___VARIABLE_productName___PresenterToViewInterfaceMock()
+                wireframeMock = ___VARIABLE_productName___WireframeInterfacesMock()
 
                 presenter.delegate = delegateMock
                 presenter.interactor = interactorMock
@@ -28,7 +28,7 @@ class ___FILEBASENAMEASIDENTIFIER___PresenterTests: XCTestCase {
         }
 
         // MARK: - Operational
-        func testModuleWireframeComputedVariableWithConnectedWireframeReturnsTheWireframeAsA___FILEBASENAMEASIDENTIFIER___Object() {
+        func testModuleWireframeComputedVariableWithConnectedWireframeReturnsTheWireframeAsA___VARIABLE_productName___Object() {
                 // Arrange
 
                 // Act
@@ -46,7 +46,7 @@ class ___FILEBASENAMEASIDENTIFIER___PresenterTests: XCTestCase {
         func testSetDelegateWithAnythingShouldSetPresentersDelegate() {
                 // Arrange
                 presenter.delegate = nil
-                let testDelegate = ___FILEBASENAMEASIDENTIFIER___DelegateMock()
+                let testDelegate = ___VARIABLE_productName___DelegateMock()
 
                 // Act
                 presenter.set(delegate: testDelegate)
