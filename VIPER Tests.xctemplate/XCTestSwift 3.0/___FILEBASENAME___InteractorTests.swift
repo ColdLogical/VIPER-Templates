@@ -3,17 +3,17 @@ import XCTest
 
 @testable import ___PROJECTNAME___
 
-class ___FILEBASENAMEASIDENTIFIER___InteractorTests: XCTestCase {
-        var interactor: ___FILEBASENAMEASIDENTIFIER___Interactor!
+class ___VARIABLE_productName___InteractorTests: XCTestCase {
+        var interactor: ___VARIABLE_productName___Interactor!
 
         // MARK: - Test Objects
-        var presenterMock: ___FILEBASENAMEASIDENTIFIER___InteractorToPresenterInterfaceMock!
+        var presenterMock: ___VARIABLE_productName___InteractorToPresenterInterfaceMock!
 
         override func setUp() {
                 super.setUp()
 
-                interactor = ___FILEBASENAMEASIDENTIFIER___Interactor()
-                presenterMock = ___FILEBASENAMEASIDENTIFIER___InteractorToPresenterInterfaceMock()
+                interactor = ___VARIABLE_productName___Interactor()
+                presenterMock = ___VARIABLE_productName___InteractorToPresenterInterfaceMock()
 
                 interactor.presenter = presenterMock
         }

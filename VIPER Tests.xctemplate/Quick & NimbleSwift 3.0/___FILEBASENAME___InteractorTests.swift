@@ -4,17 +4,17 @@ import Quick
 @testable import ___PROJECTNAME___
 
  // swiftlint:disable:next type_body_length
-class ___FILEBASENAMEASIDENTIFIER___InteractorSpec: QuickSpec {
+class ___VARIABLE_productName___InteractorSpec: QuickSpec {
         // swiftlint:disable:next function_body_length
         override func spec() {
-                var interactor: ___FILEBASENAMEASIDENTIFIER___Interactor!
+                var interactor: ___VARIABLE_productName___Interactor!
 
-                var presenterMock: ___FILEBASENAMEASIDENTIFIER___InteractorToPresenterInterfaceMock!
+                var presenterMock: ___VARIABLE_productName___InteractorToPresenterInterfaceMock!
 
-                describe("a ___FILEBASENAMEASIDENTIFIER___ interactor") {
+                describe("a ___VARIABLE_productName___ interactor") {
                         beforeEach {
-                                interactor = ___FILEBASENAMEASIDENTIFIER___Interactor()
-                                presenterMock = ___FILEBASENAMEASIDENTIFIER___InteractorToPresenterInterfaceMock()
+                                interactor = ___VARIABLE_productName___Interactor()
+                                presenterMock = ___VARIABLE_productName___InteractorToPresenterInterfaceMock()
 
                                 interactor.presenter = presenterMock
                         }

@@ -1,16 +1,16 @@
 import Foundation
 
-class ___VARIABLE_moduleName___Presenter {
+class ___VARIABLE_productName___Presenter {
         // MARK: - VIPER Stack
-        weak var interactor: ___VARIABLE_moduleName___PresenterToInteractorInterface!
-        weak var view: ___VARIABLE_moduleName___PresenterToViewInterface!
-        weak var wireframe: ___VARIABLE_moduleName___PresenterToWireframeInterface!
+        weak var interactor: ___VARIABLE_productName___PresenterToInteractorInterface!
+        weak var view: ___VARIABLE_productName___PresenterToViewInterface!
+        weak var wireframe: ___VARIABLE_productName___PresenterToWireframeInterface!
 
         // MARK: - Instance Variables
-        weak var delegate: ___VARIABLE_moduleName___Delegate?
-        var moduleWireframe: ___VARIABLE_moduleName___ {
+        weak var delegate: ___VARIABLE_productName___Delegate?
+        var moduleWireframe: ___VARIABLE_productName___ {
                 get {
-                        let mw = (self.wireframe as? ___VARIABLE_moduleName___)!
+                        let mw = (self.wireframe as? ___VARIABLE_productName___)!
                         return mw
                 }
         }
@@ -20,18 +20,18 @@ class ___VARIABLE_moduleName___Presenter {
 }
 
 // MARK: - Interactor to Presenter Interface
-extension ___VARIABLE_moduleName___Presenter: ___VARIABLE_moduleName___InteractorToPresenterInterface {
+extension ___VARIABLE_productName___Presenter: ___VARIABLE_productName___InteractorToPresenterInterface {
 
 }
 
 // MARK: - View to Presenter Interface
-extension ___VARIABLE_moduleName___Presenter: ___VARIABLE_moduleName___ViewToPresenterInterface {
+extension ___VARIABLE_productName___Presenter: ___VARIABLE_productName___ViewToPresenterInterface {
 
 }
 
 // MARK: - Wireframe to Presenter Interface
-extension ___VARIABLE_moduleName___Presenter: ___VARIABLE_moduleName___WireframeToPresenterInterface {
-        func set(delegate newDelegate: ___VARIABLE_moduleName___Delegate?) {
+extension ___VARIABLE_productName___Presenter: ___VARIABLE_productName___WireframeToPresenterInterface {
+        func set(delegate newDelegate: ___VARIABLE_productName___Delegate?) {
                 delegate = newDelegate
         }
 }

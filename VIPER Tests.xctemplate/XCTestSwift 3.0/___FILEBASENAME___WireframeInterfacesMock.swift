@@ -1,13 +1,13 @@
 @testable import ___PROJECTNAME___
 
-class ___FILEBASENAMEASIDENTIFIER___WireframeInterfacesMock {
+class ___VARIABLE_productName___WireframeInterfacesMock {
         var functionsCalled = [String]()
 
         // MARK: - Input Variables
 }
 
-extension ___FILEBASENAMEASIDENTIFIER___WireframeInterfacesMock: ___FILEBASENAMEASIDENTIFIER___ {
-        var delegate: ___FILEBASENAMEASIDENTIFIER___Delegate? {
+extension ___VARIABLE_productName___WireframeInterfacesMock: ___VARIABLE_productName___ {
+        var delegate: ___VARIABLE_productName___Delegate? {
                 get {
                         functionsCalled.append(#function)
                         return nil
@@ -18,6 +18,6 @@ extension ___FILEBASENAMEASIDENTIFIER___WireframeInterfacesMock: ___FILEBASENAME
         }
 }
 
-extension ___FILEBASENAMEASIDENTIFIER___WireframeInterfacesMock: ___FILEBASENAMEASIDENTIFIER___PresenterToWireframeInterface {
+extension ___VARIABLE_productName___WireframeInterfacesMock: ___VARIABLE_productName___PresenterToWireframeInterface {
 
 }

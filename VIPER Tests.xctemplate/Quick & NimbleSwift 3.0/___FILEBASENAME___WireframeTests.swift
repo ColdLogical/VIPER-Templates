@@ -4,19 +4,19 @@ import Quick
 @testable import ___PROJECTNAME___
 
  // swiftlint:disable:next type_body_length
-class ___FILEBASENAMEASIDENTIFIER___WireframeSpec: QuickSpec {
+class ___VARIABLE_productName___WireframeSpec: QuickSpec {
         // swiftlint:disable:next function_body_length
         override func spec() {
-                var wireframe: ___FILEBASENAMEASIDENTIFIER___Wireframe!
+                var wireframe: ___VARIABLE_productName___Wireframe!
 
-                var presenterMock: ___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterfaceMock!
-                var viewMock: ___FILEBASENAMEASIDENTIFIER___NavigationInterfaceMock!
+                var presenterMock: ___VARIABLE_productName___WireframeToPresenterInterfaceMock!
+                var viewMock: ___VARIABLE_productName___NavigationInterfaceMock!
 
-                describe("a ___FILEBASENAMEASIDENTIFIER___ wireframe") {
+                describe("a ___VARIABLE_productName___ wireframe") {
                         beforeEach {
-                                wireframe = ___FILEBASENAMEASIDENTIFIER___Wireframe()
-                                presenterMock = ___FILEBASENAMEASIDENTIFIER___WireframeToPresenterInterfaceMock()
-                                viewMock = ___FILEBASENAMEASIDENTIFIER___NavigationInterfaceMock()
+                                wireframe = ___VARIABLE_productName___Wireframe()
+                                presenterMock = ___VARIABLE_productName___WireframeToPresenterInterfaceMock()
+                                viewMock = ___VARIABLE_productName___NavigationInterfaceMock()
 
                                 wireframe.presenter = presenterMock
                                 wireframe.view = viewMock
@@ -26,7 +26,7 @@ class ___FILEBASENAMEASIDENTIFIER___WireframeSpec: QuickSpec {
                         describe("init function") {
                                 it("instantiates and connect the VIPER stack") {
                                         // Arrange
-                                        wireframe = ___FILEBASENAMEASIDENTIFIER___Wireframe()
+                                        wireframe = ___VARIABLE_productName___Wireframe()
 
                                         // Act
 
@@ -51,16 +51,16 @@ class ___FILEBASENAMEASIDENTIFIER___WireframeSpec: QuickSpec {
 
                         // MARK: - Class Functions
                         describe("storyboard class function") {
-                                it("returns the storyboard with the ___FILEBASENAMEASIDENTIFIER___ storyboard identifier") {
+                                it("returns the storyboard with the ___VARIABLE_productName___ storyboard identifier") {
                                         // Arrange
-                                        let storyboard = ___FILEBASENAMEASIDENTIFIER___Wireframe.storyboard()
+                                        let storyboard = ___VARIABLE_productName___Wireframe.storyboard()
 
                                         // Act
 
                                         // Assert
                                         let storyboardName = storyboard.value(forKey: "name") as? String
                                         expect(storyboardName).toNot(beNil())
-                                        expect(storyboardName).to(equal(___FILEBASENAMEASIDENTIFIER___Constants.storyboardIdentifier))
+                                        expect(storyboardName).to(equal(___VARIABLE_productName___Constants.storyboardIdentifier))
                                 }
                         }
 
@@ -80,7 +80,7 @@ class ___FILEBASENAMEASIDENTIFIER___WireframeSpec: QuickSpec {
                         describe("set delegate function") {
                                 it("tells presenter to set the module delegate") {
                                         // Arrange
-                                        let delegateMock = ___FILEBASENAMEASIDENTIFIER___DelegateMock()
+                                        let delegateMock = ___VARIABLE_productName___DelegateMock()
 
                                         // Act
                                         wireframe.delegate = delegateMock
