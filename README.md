@@ -12,11 +12,12 @@ Head over to the [VIPER-Templates Wiki](../../wiki) for some in-depth informatio
 # TODO
 
 - Keep it sexy
+- Write "Creating a VIPER Stack"
 
 # Contents
 
 * [VIPER](../../wiki/VIPER) - An overview of VIPER
-* [Creating a VIPER Stack](../../wiki/Creating-a-VIPER-Stack) - step by step process of creating an example VIPER stack
+* (NOT IMPLEMENTED) [Creating a VIPER Stack](../../wiki/Creating-a-VIPER-Stack) - step by step process of creating an example VIPER stack
 * The VIPER Layers Explained
   * [Wireframe](../../wiki/Wireframe) - instantiation and navigation
   * [Presenter](../../wiki/Presenter) - business logic
@@ -25,13 +26,13 @@ Head over to the [VIPER-Templates Wiki](../../wiki) for some in-depth informatio
   * [Services](../../wiki/Services) - web endpoint interactions
   * [Entities](../../wiki/Entities) - data objects
 * [Installing](../../wiki/Installing) - how to install the templates in less than a minute
-* [Installation Troubleshooting](../../wiki/Installation Troubleshooting) - a few possible problems and solutions with installing the templates
+* [Installation Troubleshooting](../../wiki/Installation-Troubleshooting) - a few possible problems and solutions with installing the templates
 * [Updating](../../wiki/Updating) - how to update with new changes to the templates
-* [Using the Templates](../../wiki/Using the Templates) - how to use the templates to create your VIPER stacks
-* [Organizing the Stack](../../wiki/Organizing the Stack) - one way of organizing the VIPER files in an Xcode project
-* [What are These?](../../wiki/What are These?) - a general description of the files created by the templates
-* [Mocking Made Easy](../../wiki/Mocking Made Easy) - short guide showing you how to use the mock files for testing
-* [Alternative Resources](../../wiki/Alternative Resources) - some other perspectives and implementations of VIPER
+* [Using the Templates](../../wiki/Using-the-Templates) - how to use the templates to create your VIPER stacks
+* [Organizing the Stack](../../wiki/Organizing-the-Stack) - one way of organizing the VIPER files in an Xcode project
+* [What are These?](../../wiki/What-are-These?) - a general description of the files created by the templates
+* [Mocking Made Easy](../../wiki/Mocking-Made-Easy) - short guide showing you how to use the mock files for testing
+* [Alternative Resources](../../wiki/Alternative-Resources) - some other perspectives and implementations of VIPER
 
 # VIPER
 
