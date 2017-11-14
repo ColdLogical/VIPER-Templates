@@ -303,3 +303,60 @@ func userTappedLogin(withUsername username: String, andPassword password: String
 ```
 Here, the `View` tells the [[Presenter]] of the user event, and communicates the information that it gathered (username and password). The [[Presenter]] then decides what to do with the user event. Notice this flow isn't initiating a login call to the backend. It is just notifying the [[Presenter]] of the user event.
 
+# Interactor
+
+An `Interactor` is responsible for data logic. It is the layer that retrieves the data from any source it needs to. For instance, it can communicate with a [Service](Services) or a local data store such as CoreData.
+
+It has outlets only to the [[Presenter]] of the VIPER stack, something like this:
+```swift
+weak var presenter: InteractorToPresenterInterface!
+```
+
+#### Communicating with a Service
+Lets take a look at a typical flow. Lets say your user wants to login to the application, so the presenter has been told the user wants to login with their username and password:
+```swift
+//Presenter.swift
+func userTappedLogin(withUsername username: String, andPassword password: String) {
+     interactor.login(withUsername: username, andPassword: password)
+}
+
+//Interactor.swift
+lazy var loginService: LoginService = LoginService()
+func login(withUserName username: String, andPassword password: String) {
+    loginService.login(withUsername: username, andPassword: password,
+        success: { (user: User) in
+             self.loggedIn(withUser: user)
+        },
+        failure: { (error: Error) in
+             self.failedLogin(withError: error)
+        })
+}
+```
+Here, the `Interactor` is told to login with the username and password by the [[Presenter]]. The `Interactor` knows that it needs to make a call to the `loginService` to login the user and get the `user` object from the web service. It can then implement the `success` and `failure` completion blocks as it needs to.
+
+#### Communicating with the Presenter
+So the `loginService` succeeded, and the success block of the [Service](Services) is ran, and now this information needs to be conveyed to the [[Presenter]].
+```swift
+//Interactor.swift
+func loggedIn(withUser: user) {
+     presenter.logginSucceeded()
+}
+```
+
+#### Communicating with a DataStore
+So what if instead of calling a [Service](Services), you instead want to get information from some sort of data manager like Realm? Lets say we are making a jogging application that records the user's jogging sessions.
+```swift
+//Presenter.swift
+func beganPresenting() {
+    interactor.fetchJogs()
+}
+
+//Interactor.swift
+func fetchJogs() {
+    let realm = try! Realm()
+    let allJogs = realm.objects(Jog.self)
+    presenter.fetchedJogs(Array(allJogs))
+}
+```
+Notice the interface to the `Interactor` from the [[Presenter]] is the same as if the `Interactor` was going to call a [Service](Services). The [[Presenter]] has no idea how the `Interactor` fetches jogs (or logs in the user). The `Interactor` is responsible for this interaction.
+
