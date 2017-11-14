@@ -459,3 +459,29 @@ Here is a short video showing you how to install these templates:
 
 If you do not see the templates in Xcode, head over to [[Installation Troubleshooting]], and see if there is a solution.
 
+# Installation Troubleshooting
+
+The installation of the [[VIPER]] templates is meant to be as easy and seamless as possible. The install script creates a symbolic link in the Xcode directory to the templates. This allows them to integrate directly into Xcode and be easily used through the `File->New File` Xcode flow. However, there is a problem that can arise based on the assumption of the install script.
+
+# Default Xcode Location
+One very common occurrence is to have multiple versions of Xcode. You could have Xcode 7 (Swift 2.2), Xcode 8.2 (Swift 2.3), and Xcode 8.3 (Latest).
+
+If your Xcode is not installed in the default `/Applications/Xcode` location, then you will need to change this path. It is very easy though!
+
+The below examples use an applications directory with multiple Xcodes that looks like this:
+
+![Multiple Xcodes](images/multipleXcodes.png)
+
+
+## Double Click
+
+1. Double Click the install script.
+1. When the script asks for the path to Xcode, instead of pressing return, put in the correct path.
+
+![Script Inputting the Xcode Path](images/install-scriptInput.png)
+
+## Command Line
+Alternatively, you can input the path to your Xcode.app as a command line argument
+
+![Command Line Inputting the Xcode Path](images/install-commandLine.png)
+
