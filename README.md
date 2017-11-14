@@ -13,6 +13,7 @@ Head over to the [VIPER-Templates Wiki](../../wiki) for some in-depth informatio
 
 - Keep it sexy
 - Write "Creating a VIPER Stack"
+- Write script to generate README from wiki pages (currently manual process)
 
 # Contents
 
