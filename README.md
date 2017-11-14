@@ -190,3 +190,116 @@ func userTappedResetPassword() {
 }
 ```
 Here, the user event is reported from the [[View]] to the `Presenter`, since there is navigation away from the login stack, to the reset password stack, the [[Wireframe]] needs to be notified. The `Presenter` tells the [[Wireframe]] to present that module, however it needs to.
+
+# View
+
+An `View` is responsible for the user interface. It is the layer that retrieves information and events from the user and relates that to the [[Presenter]].
+
+It has outlets only to the [[Presenter]] of the VIPER stack, something like this:
+```swift
+weak var presenter: ViewToPresenterInterface!
+```
+
+It is important to understand that the `View` is dumb, it does not drive interactions of any kind. This is typically a very difficult concept for people new to VIPER, as with MVC, we are used to responding to `View` events like `viewDidLoad` or `viewDidAppear`. In VIPER, these events are handled by the [[Presenter]], and the [[Presenter]] is what tells the `View` what to do.
+
+## Being a Reactive View
+The `View` in a VIPER stack is reactive, not proactive. It only updates the UI in response to a command from the [[Presenter]]. This is important to understand as this is what causes the UI to be independent of data flow and easily changed. Lets say there is a jogging application, and the module has been told to present a screen that shows all the users jogging sessions. Somehow, the [[Presenter]] is told that some jogs were fetched.
+```swift
+//Presenter.swift
+func fetchedJogs(jogs: [Jog]) {
+    view.display(jogs: jogs)
+}
+
+//View.swift
+func display(jogs newJogs: [Jog]) {
+     jogs = newJogs
+     tableView.reloadData()
+}
+```
+When the [[Presenter]] receives jogs in someway, it then knows it needs to tell the `View` to display them, so it calls the `display(jogs:)` method on the `View`. This particular `View` uses a `UITableView` to display the jogs, so it just saves the jogs and tells the `tableView` to reload its data.
+
+What if you wanted to change this implementation to use a `UICollectionView`? The `display(jogs:)` function would stay the same, and the [[Presenter]]/[[Interactor]]/[[Wireframe]] would never need to be touched. You could create a new `View` object that conforms to the same `PresenterToViewInterface`, but this one uses a `UICollectionView` implementation. Then this new `View` is just dropped into the place and you're all done!
+
+## Using View Objects
+A big key of the [[VIPER]] architecture is being able to easily change layers without them affecting others. So what if we changed the `Jog` object to something like a `Run` object? Consequently, we would need to change all the layers of the [[VIPER]] stack to use this new `Run` object interface. What would be a better way?
+
+We could create a data object that is specifically for this `View` layer that has only the fields we require to display. Lets say this `View` only needs to display the distance, date, and time of the `Jog`.
+```swift
+//Jog.swift
+class Jog {
+    var date: Date?
+    var distance: Double?
+    var location: Location?
+    var time: Int?
+    var user: User?
+}
+
+//ViewObject.swift
+class ViewObject {
+    var date: Date?
+    var distance: Double?
+    var time: Int?
+    
+    // Initializers
+    init(fromJog jog: Jog) {
+        date = jog.date
+        distance = jog.distance
+        time = jog.time
+    }
+}
+
+//View.swift
+func display(viewObjects newViewObjects: [ViewObject]) {
+    viewObjects = newViewObjects
+    tableView.reloadData()
+}
+```
+Easy enough, right? Ok, now the backend starts returning `Run` objects. All we need to do is make the `ViewObject` have an `init(fromRun:)`
+```swift
+//Run.swift
+class Run {
+    var date: Date?
+    var distance: Double?
+    var endTime: Date?
+    var location: Location?
+    var startTime: Date?
+    var user: User?
+}
+
+//ViewObject.swift
+class ViewObject {
+    var date: Date?
+    var distance: Double?
+    var time: Int?
+    
+    // Initializers
+    init(fromJog jog: Jog) {
+        // fromJog implementation
+    }
+    
+    init(fromRun run: Run) {
+        date = run.date
+        distance = run.distance
+        time = run.endTime - run.startTime
+    }
+}
+```
+All done! The `View` can keep using the same `ViewObject` to display the UI, and nothing needs to be changed on the `View` layer to handle this new data type.
+
+## Communicating with a Presenter
+Ok, now lets say your user wants to login to the application, so the `View` is displaying two text fields, one for username entry, and the other for password. The user types in their username and password, then presses a `Login` button.
+```swift
+//View.swift
+@IBAction func loginTapped(sender: AnyObject) {
+    let username = usernameTextField.text
+    let password = passwordTextField.text
+    presenter.userTappedLogin(withUsername: username, andPassword: password)
+}
+
+//Presenter.swift
+func userTappedLogin(withUsername username: String, andPassword password: String) {
+     interactor.login(withUsername: username, andPassword: password)
+}
+```
+Here, the `View` tells the [[Presenter]] of the user event, and communicates the information that it gathered (username and password). The [[Presenter]] then decides what to do with the user event. Notice this flow isn't initiating a login call to the backend. It is just notifying the [[Presenter]] of the user event.
+
