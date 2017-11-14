@@ -144,7 +144,7 @@ func userTappedLogin(withUsername username: String, andPassword password: String
      interactor.login(withUsername: username, andPassword: password)
 }
 ```
-The [View](../../wiki/View) will tell the `Presenter` of the user event, and pass the related information. When the `Presenter` gets it, it will tell the [[Interactor]] that it needs to call a service to login the user with the username and password the user entered.
+The [View](../../wiki/View) will tell the `Presenter` of the user event, and pass the related information. When the `Presenter` gets it, it will tell the [Interactor](../../wiki/Interactor) that it needs to call a service to login the user with the username and password the user entered.
 
 #### Communicating with the Delegate
 Lets say the call to the login service succeeded, and the module now needs to tell the `Delegate` the user has been logged in.
@@ -174,7 +174,7 @@ func loginFailed(withError error: Error) {
     view.displayLoginError(withDescription: error.description)
 }
 ```
-The [Interactor](../../wiki/Interactor) will tell the `Presenter` that login failed, and pass the error along. The presenter decides to tell the [[View]] to display a login error with the description received from backend. The [[View]] can then decide how it displays said error, maybe with an alert, or just a label, what ever it wants to do.
+The [Interactor](../../wiki/Interactor) will tell the `Presenter` that login failed, and pass the error along. The presenter decides to tell the [View](../../wiki/View) to display a login error with the description received from backend. The [View](../../wiki/View) can then decide how it displays said error, maybe with an alert, or just a label, what ever it wants to do.
 
 #### Communicating with the Wireframe
 Maybe the user forgot their password and the reset password module needs to be presented.
@@ -189,7 +189,7 @@ func userTappedResetPassword() {
     wireframe.presentResetPassword()
 }
 ```
-Here, the user event is reported from the [View](../../wiki/View) to the `Presenter`, since there is navigation away from the login stack, to the reset password stack, the [[Wireframe]] needs to be notified. The `Presenter` tells the [[Wireframe]] to present that module, however it needs to.
+Here, the user event is reported from the [View](../../wiki/View) to the `Presenter`, since there is navigation away from the login stack, to the reset password stack, the [Wireframe](../../wiki/Wireframe) needs to be notified. The `Presenter` tells the [Wireframe](../../wiki/Wireframe) to present that module, however it needs to.
 
 # View
 
@@ -200,10 +200,10 @@ It has outlets only to the [Presenter](../../wiki/Presenter) of the VIPER stack,
 weak var presenter: ViewToPresenterInterface!
 ```
 
-It is important to understand that the `View` is dumb, it does not drive interactions of any kind. This is typically a very difficult concept for people new to VIPER, as with MVC, we are used to responding to `View` events like `viewDidLoad` or `viewDidAppear`. In VIPER, these events are handled by the [Presenter](../../wiki/Presenter), and the [[Presenter]] is what tells the `View` what to do.
+It is important to understand that the `View` is dumb, it does not drive interactions of any kind. This is typically a very difficult concept for people new to VIPER, as with MVC, we are used to responding to `View` events like `viewDidLoad` or `viewDidAppear`. In VIPER, these events are handled by the [Presenter](../../wiki/Presenter), and the [Presenter](../../wiki/Presenter) is what tells the `View` what to do.
 
 #### Being a Reactive View
-The `View` in a VIPER stack is reactive, not proactive. It only updates the UI in response to a command from the [Presenter](../../wiki/Presenter). This is important to understand as this is what causes the UI to be independent of data flow and easily changed. Lets say there is a jogging application, and the module has been told to present a screen that shows all the users jogging sessions. Somehow, the [[Presenter]] is told that some jogs were fetched.
+The `View` in a VIPER stack is reactive, not proactive. It only updates the UI in response to a command from the [Presenter](../../wiki/Presenter). This is important to understand as this is what causes the UI to be independent of data flow and easily changed. Lets say there is a jogging application, and the module has been told to present a screen that shows all the users jogging sessions. Somehow, the [Presenter](../../wiki/Presenter) is told that some jogs were fetched.
 ```swift
 //Presenter.swift
 func fetchedJogs(jogs: [Jog]) {
@@ -218,10 +218,10 @@ func display(jogs newJogs: [Jog]) {
 ```
 When the [Presenter](../../wiki/Presenter) receives jogs in someway, it then knows it needs to tell the `View` to display them, so it calls the `display(jogs:)` method on the `View`. This particular `View` uses a `UITableView` to display the jogs, so it just saves the jogs and tells the `tableView` to reload its data.
 
-What if you wanted to change this implementation to use a `UICollectionView`? The `display(jogs:)` function would stay the same, and the [Presenter](../../wiki/Presenter)/[[Interactor]]/[[Wireframe]] would never need to be touched. You could create a new `View` object that conforms to the same `PresenterToViewInterface`, but this one uses a `UICollectionView` implementation. Then this new `View` is just dropped into the place and you're all done!
+What if you wanted to change this implementation to use a `UICollectionView`? The `display(jogs:)` function would stay the same, and the [Presenter](../../wiki/Presenter)/[Interactor](../../wiki/Interactor)/[Wireframe](../../wiki/Wireframe) would never need to be touched. You could create a new `View` object that conforms to the same `PresenterToViewInterface`, but this one uses a `UICollectionView` implementation. Then this new `View` is just dropped into the place and you're all done!
 
 #### Using View Objects
-A big key of the [VIPER](../../wiki/VIPER) architecture is being able to easily change layers without them affecting others. So what if we changed the `Jog` object to something like a `Run` object? Consequently, we would need to change all the layers of the [[VIPER]] stack to use this new `Run` object interface. What would be a better way?
+A big key of the [VIPER](../../wiki/VIPER) architecture is being able to easily change layers without them affecting others. So what if we changed the `Jog` object to something like a `Run` object? Consequently, we would need to change all the layers of the [VIPER](../../wiki/VIPER) stack to use this new `Run` object interface. What would be a better way?
 
 We could create a data object that is specifically for this `View` layer that has only the fields we require to display. Lets say this `View` only needs to display the distance, date, and time of the `Jog`.
 ```swift
@@ -301,7 +301,7 @@ func userTappedLogin(withUsername username: String, andPassword password: String
      interactor.login(withUsername: username, andPassword: password)
 }
 ```
-Here, the `View` tells the [Presenter](../../wiki/Presenter) of the user event, and communicates the information that it gathered (username and password). The [[Presenter]] then decides what to do with the user event. Notice this flow isn't initiating a login call to the backend. It is just notifying the [[Presenter]] of the user event.
+Here, the `View` tells the [Presenter](../../wiki/Presenter) of the user event, and communicates the information that it gathered (username and password). The [Presenter](../../wiki/Presenter) then decides what to do with the user event. Notice this flow isn't initiating a login call to the backend. It is just notifying the [Presenter](../../wiki/Presenter) of the user event.
 
 # Interactor
 
@@ -358,7 +358,7 @@ func fetchJogs() {
     presenter.fetchedJogs(Array(allJogs))
 }
 ```
-Notice the interface to the `Interactor` from the [Presenter](../../wiki/Presenter) is the same as if the `Interactor` was going to call a [Service](Services). The [[Presenter]] has no idea how the `Interactor` fetches jogs (or logs in the user). The `Interactor` is responsible for this interaction.
+Notice the interface to the `Interactor` from the [Presenter](../../wiki/Presenter) is the same as if the `Interactor` was going to call a [Service](Services). The [Presenter](../../wiki/Presenter) has no idea how the `Interactor` fetches jogs (or logs in the user). The `Interactor` is responsible for this interaction.
 
 # Services
 
@@ -411,7 +411,7 @@ So, with this implementation, notice that we can easily swap out [Alamofire](htt
 
 # Entities
 
-`Entities` are data objects that we use throughout the application. They can be used anywhere, and are typically created by [Services](../../wiki/Services). They can be passed around any of the [[VIPER]] layers and used as needed.
+`Entities` are data objects that we use throughout the application. They can be used anywhere, and are typically created by [Services](../../wiki/Services). They can be passed around any of the [VIPER](../../wiki/VIPER) layers and used as needed.
 
 Lets take a look a typical `User` entity
 ```swift
@@ -530,7 +530,7 @@ Once all the files for the stack are created, organize them so they are easy to 
 
 * You want to organize the files into their respective layers for easy access. These layers are typically referred to as:
   * Data Logic - the [Interactor](../../wiki/Interactor) and any associated tests or mocks.
-  * Routing - the [Wireframe](../../wiki/Wireframe) and [[Presenter]], as well as any associated tests or mocks.
+  * Routing - the [Wireframe](../../wiki/Wireframe) and [Presenter](../../wiki/Presenter), as well as any associated tests or mocks.
   * User Interface - the [View](../../wiki/View), storyboard, view objects, and any associated tests or mocks.
 * Try to keep your tests files as close to the implementation files as possible.
   * This is so when you see the implementation file you also see the test file, and you don't skip out on tests (something that is easy to do when you're focused on implementation).
@@ -539,7 +539,7 @@ Once all the files for the stack are created, organize them so they are easy to 
 
 These templates create fully configured, and tested, base VIPER stacks in either Swift 2.3 or 3.0. There is also the ability to choose between XCTest and [Quick & Nimble](https://github.com/Quick/Nimble) unit tests.
 
-The [VIPER](../../wiki/VIPER) Templates create a large amount of files for just two templates. Its probably something you aren't used too, and can be a bit overwhelming if you're just getting into [[VIPER]]. However, understand that a lot of time, effort, and thought has gone into each of these files and their structure. 
+The [VIPER](../../wiki/VIPER) Templates create a large amount of files for just two templates. Its probably something you aren't used too, and can be a bit overwhelming if you're just getting into [VIPER](../../wiki/VIPER). However, understand that a lot of time, effort, and thought has gone into each of these files and their structure. 
 
 ## List of Files
 
@@ -587,7 +587,7 @@ Say we need to write code to capture a user tapping login. The user story would 
 > When I tap the login button<br>
 > Then I should login with my username and password<br>
 
-The tap on the button needs to cause the [Presenter](../../wiki/Presenter) to be told that the user is trying to login in using the inputted username and password. Inside the [[View]] layer, the variable `presenter` is anything that conforms to the `ViewToPresenterInterface`. So what do we do if we want to test that, when the user taps login, the [[Presenter]] is told of the user event? The templates already abstract out the `ViewToPresenterInterfaceMock`. So in TDD we would start by writing our failing test, something like this:
+The tap on the button needs to cause the [Presenter](../../wiki/Presenter) to be told that the user is trying to login in using the inputted username and password. Inside the [View](../../wiki/View) layer, the variable `presenter` is anything that conforms to the `ViewToPresenterInterface`. So what do we do if we want to test that, when the user taps login, the [Presenter](../../wiki/Presenter) is told of the user event? The templates already abstract out the `ViewToPresenterInterfaceMock`. So in TDD we would start by writing our failing test, something like this:
 
 ```swift
 //ViewTests.swift
@@ -733,14 +733,14 @@ VIPER isn't an industry standard. Just as there is no one way to implement MVC o
 
   Differences:
   - Uses original vocabulary. Makes it very difficult to start with VIPER as you have to now all the vocabulary to get a decent understanding of what is happening. For example: their `View.eventHandler` = our `View.presenter`
-  - Brigade has an additional `DataManager` layer. In practice this ends up turning the [Interactor](../../wiki/Interactor) into a pass through layer. In our version, the [[Interactor]] interacts with `Services` directly.
+  - Brigade has an additional `DataManager` layer. In practice this ends up turning the [Interactor](../../wiki/Interactor) into a pass through layer. In our version, the [Interactor](../../wiki/Interactor) interacts with `Services` directly.
 
 ## Mutual Mobile (Original Authors)
   - [Architecting iOS Apps with VIPER](https://www.objc.io/issues/13-architecture/viper/)
 
   Differences:
   - Uses original vocabulary. Makes it very difficult to start with VIPER as you have to now all the vocabulary to get a decent understanding of what is happening. For example: their `View.eventHandler` = our `View.presenter`
-  - Examples are Objective-C. This ends up with them using PONSOs instead of base objects, but their intent is the same: `Have very simple data structures to represent [Entities](../../wiki/Entities)`
+  - Examples are Objective-C. This ends up with them using PONSOs instead of base objects, but their intent is the same: `Have very simple data structures to represent `[Entities](../../wiki/Entities)
 
 ## An Architecture Exploration
 This post is more of an exploration of many different architectures. It has decent break downs of each with explanations. Very useful to get some exposure to lots of different architectures.
