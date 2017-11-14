@@ -535,3 +535,44 @@ Once all the files for the stack are created, organize them so they are easy to 
 * Try to keep your tests files as close to the implementation files as possible.
   * This is so when you see the implementation file you also see the test file, and you don't skip out on tests (something that is easy to do when you're focused on implementation).
 
+# What are These?
+
+These templates create fully configured, and tested, base VIPER stacks in either Swift 2.3 or 3.0. There is also the ability to choose between XCTest and [Quick & Nimble](https://github.com/Quick/Nimble) unit tests.
+
+The [[VIPER]] Templates create a large amount of files for just two templates. Its probably something you aren't used too, and can be a bit overwhelming if you're just getting into [[VIPER]]. However, understand that a lot of time, effort, and thought has gone into each of these files and their structure. 
+
+## List of Files
+
+Below is the list of files created by the templates. The filenames were created such that they should be self explanatory of the intent of the file. However, some context is added to files that may not be instantly understood. If there is anything that is confusing, please let me know and I will do my best to clarify.
+
+### VIPER Template
+
+- `Interactor`
+- `InteractorProtocols`
+  - Presenter->Interactor protocol
+- `Presenter`
+- `PresenterProtocols`
+  - Delegate, Interactor->Presenter, View->Presenter, Wireframe->Presenter protocols
+- `View`
+- `ViewProtocols`
+  - Navigation and Presenter->View protocols
+- `Wireframe`
+- `WireframeProtocols`
+  - Module and Presenter->Wireframe protocols
+
+#### VIPER Tests Template
+
+- `DelegateMock`
+  - mocked interface for the stacks delegate
+- `InteractorTests`
+- `InteractorToPresenterInterfaceMock`
+- `PresenterTests`
+- `PresenterToInteractorInterfaceMock`
+- `PresenterToViewInterfaceMock`
+- `ViewTests`
+- `ViewToPresenterInterfaceMock`
+- `WireframeInterfacesMock`
+  - Mocks both the module interface and the PresenterToWireframeInterface since these objects need to be the same internally
+- `WireframeTests`
+- `WireframeToPresenterInterfaceMock`
+
