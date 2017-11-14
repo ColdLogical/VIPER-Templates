@@ -409,7 +409,7 @@ Similarly, if there was an error (maybe the username or password was incorrect),
 
 So, with this implementation, notice that we can easily swap out [Alamofire](https://github.com/Alamofire/Alamofire) for any other networking API. The [[Interactor]] will still call the login service the same way, and receive the `User` or `Error` object through the same handler blocks, allowing this implementation to change on the fly without affecting any other part of our application!
 
-#Entities
+# Entities
 
 `Entities` are data objects that we use throughout the application. They can be used anywhere, and are typically created by [[Services]]. They can be passed around any of the [[VIPER]] layers and used as needed.
 
@@ -447,4 +447,15 @@ class User {
 }
 ```
 Here, we have a basic `User` object. In the `init(withJson:)` method we use [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON) to easily parse the JSON's values into the objects instance variables.
+
+# Installing
+
+Here is a short video showing you how to install these templates:
+
+[![VIPER - Installing](http://imgur.com/K6BZUHl.png)](https://www.youtube.com/watch?v=RLrOUUecjGI "VIPER - Installing")
+
+1. Clone the VIPERTemplates repository
+1. Run the install script (double click)
+
+If you do not see the templates in Xcode, head over to [[Installation Troubleshooting]], and see if there is a solution.
 
