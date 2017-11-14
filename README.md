@@ -16,7 +16,7 @@ Head over to the [VIPER-Templates Wiki](../../wiki) for some in-depth informatio
 # Contents
 
 * [VIPER](../../wiki/VIPER) - An overview of VIPER
-* [Creating a VIPER Stack](../../wiki/Creating a VIPER Stack) - step by step process of creating an example VIPER stack
+* [Creating a VIPER Stack](../../wiki/Creating-a-VIPER-Stack) - step by step process of creating an example VIPER stack
 * The VIPER Layers Explained
   * [Wireframe](../../wiki/Wireframe) - instantiation and navigation
   * [Presenter](../../wiki/Presenter) - business logic
