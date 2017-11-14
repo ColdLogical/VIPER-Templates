@@ -485,3 +485,25 @@ Alternatively, you can input the path to your Xcode.app as a command line argume
 
 ![Command Line Inputting the Xcode Path](images/install-commandLine.png)
 
+# Updating
+
+The [[VIPER]] Templates are always being improved and updates are pushed fairly frequently. The update process has had considerable thought put into it, and is meant to be just as easy, if not easier, than using the templates themselves. So what are the possible scenarios for updating?
+
+## Xcode Updates
+Because Xcode is an app from the App Store, it is updated via the App Store, and the template directory does not have a static location on a users computer. So when Xcode updates, the template directory gets overwritten with Xcode's version of the templates. Getting the [[VIPER]] Templates back is very easy though!
+
+1. Run the install script
+2. All done!
+
+Simply running the install script again re-adds the links to the [[VIPER]] templates into Xcode templates directory.
+
+## VIPER Template Updates
+Since the templates are constantly being updated and improved, you will want the latest and greatest. So how do you update?
+
+1. Open Terminal
+1. cd into the VIPERTemplates repository
+1. `git pull`
+1. All done!
+
+Since the install script creates symbolic links to the templates files, changing the files will instantly reflect in Xcode. So updating the repository with a `pull` from Git will update all your templates instantly as well!
+
