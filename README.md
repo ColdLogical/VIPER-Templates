@@ -409,3 +409,42 @@ Similarly, if there was an error (maybe the username or password was incorrect),
 
 So, with this implementation, notice that we can easily swap out [Alamofire](https://github.com/Alamofire/Alamofire) for any other networking API. The [[Interactor]] will still call the login service the same way, and receive the `User` or `Error` object through the same handler blocks, allowing this implementation to change on the fly without affecting any other part of our application!
 
+#Entities
+
+`Entities` are data objects that we use throughout the application. They can be used anywhere, and are typically created by [[Services]]. They can be passed around any of the [[VIPER]] layers and used as needed.
+
+Lets take a look a typical `User` entity
+```swift
+//User.swift
+class User {
+    // Identifier
+    let userId: Int
+
+    // Instance Variables
+    let gender: String?
+    let password: String?
+    let username: String?
+    
+    // Initializers
+    init(withUserId newUserId: Int) {
+         userId = newUserId 
+    }
+    
+    init?(fromJson json: [String: AnyObject]) {
+        let json = JSON(jsonDictionary)
+        let identifier = json["userId"].int
+
+        guard identifier != nil else {
+            return nil
+        }
+
+        self.init(withUserId: identifier)
+
+        gender = json["gender"].string
+        password = json["password"].string
+        username = json["username"].string
+    }
+}
+```
+Here, we have a basic `User` object. In the `init(withJson:)` method we use [SwiftyJSON](https://github.com/SwiftyJSON/SwiftyJSON) to easily parse the JSON's values into the objects instance variables.
+
