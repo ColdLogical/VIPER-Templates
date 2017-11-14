@@ -3,7 +3,10 @@
 
 VIPER is a 6 tier architecture that abstracts module tasks into each tier such that everything has a single responsibility. Its conforms to SOLID design principles and is an implementation of Clean Architecture concepts.
 
-These templates are written in Swift for use with Xcode.
+These templates are written in Swift for use with Xcode. Current supported versions of Swift are:
+  * Swift 4
+  * Swift 3
+  * Swift 2.3
 
 Head over to the [VIPER-Templates Wiki](../../wiki) for some in-depth information on VIPER and using these templates.
 
@@ -539,7 +542,7 @@ Once all the files for the stack are created, organize them so they are easy to 
 
 # What are These?
 
-These templates create fully configured, and tested, base VIPER stacks in either Swift 2.3 or 3.0. There is also the ability to choose between XCTest and [Quick & Nimble](https://github.com/Quick/Nimble) unit tests.
+These templates create fully configured, and tested, base VIPER stacks in either Swift 2.3 or Swift 3 -> Swift 4. There is also the ability to choose between XCTest and [Quick & Nimble](https://github.com/Quick/Nimble) unit tests.
 
 The [VIPER](../../wiki/VIPER) Templates create a large amount of files for just two templates. Its probably something you aren't used too, and can be a bit overwhelming if you're just getting into [VIPER](../../wiki/VIPER). However, understand that a lot of time, effort, and thought has gone into each of these files and their structure. 
 
