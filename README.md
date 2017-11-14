@@ -459,7 +459,7 @@ Here is a short video showing you how to install these templates:
 1. Clone the VIPERTemplates repository
 1. Run the install script (double click)
 
-If you do not see the templates in Xcode, head over to [Installation Troubleshooting](../../wiki/Installation Troubleshooting), and see if there is a solution.
+If you do not see the templates in Xcode, head over to [Installation Troubleshooting](../../wiki/Installation-Troubleshooting), and see if there is a solution.
 
 # Installation Troubleshooting
 
