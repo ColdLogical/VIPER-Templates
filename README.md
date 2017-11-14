@@ -9,6 +9,8 @@ Head over to the [VIPER-Templates Wiki](../../wiki) for some in-depth informatio
 
 [Did I mention there is a VIPER-Templates Wiki](../../wiki), you should check it out!
 
+*Note: Even though the wiki is linked three times above, the wiki is all displayed below because sometimes developers are lazy.*
+
 # TODO
 
 - Keep it sexy
