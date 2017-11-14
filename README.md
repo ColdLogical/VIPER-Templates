@@ -112,3 +112,81 @@ func present(onViewController viewController: UIViewController) {
 ```
 The home wireframe has been told to present the login stack (from the `HomePresenter`). This function calls the login's wireframe, which implements the module's interface protocol, presentation method. The login's wireframe implements the presentation method by telling the view controller that is passed in to present the login module's view controller.
 
+# Presenter
+
+The `Presenter` is where business logic lives. It is what drives all the other layers, making decisions based on events that happen in the other layers. Think of the `Presenter` like a manager, it knows what needs to happen to get certain task done, it knows who is best to do the job, and it tells those in its employ to do them, but doesn`t do any of the heavy lifting itself.
+
+It has outlets to the other components of the VIPER stack, something like this:
+```swift
+weak var delegate: Delegate?
+weak var interactor: PresenterToInteractorInterface!
+weak var view: PresenterToViewInterface!
+weak var wireframe: PresenterToWireframeInterface!
+var moduleWireframe: Login {
+     get {
+         return self.wireframe as! Login
+     }
+}
+```
+
+#### Communicating with the Interactor
+Lets take a look at a typical flow. Lets say your user wants to login to the application, so they have entered their username and password in the `View`, and now they tap the `Login` button.
+```swift
+//View.swift
+@IBAction func loginTapped(sender: AnyObject) {
+    let username = usernameTextField.text
+    let password = passwordTextField.text
+    presenter.userTappedLogin(withUsername: username, andPassword: password)
+}
+
+//Presenter.swift
+func userTappedLogin(withUsername username: String, andPassword password: String) {
+     interactor.login(withUsername: username, andPassword: password)
+}
+```
+The [[View]] will tell the `Presenter` of the user event, and pass the related information. When the `Presenter` gets it, it will tell the [[Interactor]] that it needs to call a service to login the user with the username and password the user entered.
+
+#### Communicating with the Delegate
+Lets say the call to the login service succeeded, and the module now needs to tell the `Delegate` the user has been logged in.
+```swift
+//Interactor.swift
+func loggedIn(withUser user: User) {
+    presenter.loginSucceeded()
+}
+
+//Presenter.swift
+func loginSucceeded() {
+    delegate?.loggedIn(login: moduleWireframe)
+}
+```
+The [[Interactor]] will tell the `Presenter` of the success, and the presenter decides to tell the `Delegate` that login succeeded.
+
+#### Communicating with the View
+What if the login failed? Maybe the username doesn't exist, or the password was incorrect.
+```swift
+//Interactor.swift
+func failedLogin(withError error: Error) {
+    presenter.loginFailed(withError: error)
+}
+
+//Presenter.swift
+func loginFailed(withError error: Error) {
+    view.displayLoginError(withDescription: error.description)
+}
+```
+The [[Interactor]] will tell the `Presenter` that login failed, and pass the error along. The presenter decides to tell the [[View]] to display a login error with the description received from backend. The [[View]] can then decide how it displays said error, maybe with an alert, or just a label, what ever it wants to do.
+
+#### Communicating with the Wireframe
+Maybe the user forgot their password and the reset password module needs to be presented.
+```swift
+//View.swift
+@IBAction func resetPasswordTapped(sender: AnyObject) {
+    presenter.userTappedResetPassword()
+}
+
+//Presenter.swift
+func userTappedResetPassword() {
+    wireframe.presentResetPassword()
+}
+```
+Here, the user event is reported from the [[View]] to the `Presenter`, since there is navigation away from the login stack, to the reset password stack, the [[Wireframe]] needs to be notified. The `Presenter` tells the [[Wireframe]] to present that module, however it needs to.
