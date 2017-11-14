@@ -522,3 +522,16 @@ Once the templates are installed, using them is very easy. Here is a short video
 1. Repeat steps 4->8 for VIPER Test, adding the files to your test target
 1. Continue to [[Organizing the Stack]]
 
+# Organizing The Stack
+
+Once all the files for the stack are created, organize them so they are easy to work with. Here is a short video showing you one way of how:
+
+[![VIPER - Organizing the VIPER Stack](http://i.imgur.com/3IUo5J5.png)](https://www.youtube.com/watch?v=pJWXqsLbTK8 "VIPER - Organizing the VIPER Stack")
+
+* You want to organize the files into their respective layers for easy access. These layers are typically referred to as:
+  * Data Logic - the [[Interactor]] and any associated tests or mocks.
+  * Routing - the [[Wireframe]] and [[Presenter]], as well as any associated tests or mocks.
+  * User Interface - the [[View]], storyboard, view objects, and any associated tests or mocks.
+* Try to keep your tests files as close to the implementation files as possible.
+  * This is so when you see the implementation file you also see the test file, and you don't skip out on tests (something that is easy to do when you're focused on implementation).
+
