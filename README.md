@@ -202,7 +202,7 @@ weak var presenter: ViewToPresenterInterface!
 
 It is important to understand that the `View` is dumb, it does not drive interactions of any kind. This is typically a very difficult concept for people new to VIPER, as with MVC, we are used to responding to `View` events like `viewDidLoad` or `viewDidAppear`. In VIPER, these events are handled by the [[Presenter]], and the [[Presenter]] is what tells the `View` what to do.
 
-## Being a Reactive View
+#### Being a Reactive View
 The `View` in a VIPER stack is reactive, not proactive. It only updates the UI in response to a command from the [[Presenter]]. This is important to understand as this is what causes the UI to be independent of data flow and easily changed. Lets say there is a jogging application, and the module has been told to present a screen that shows all the users jogging sessions. Somehow, the [[Presenter]] is told that some jogs were fetched.
 ```swift
 //Presenter.swift
@@ -220,7 +220,7 @@ When the [[Presenter]] receives jogs in someway, it then knows it needs to tell 
 
 What if you wanted to change this implementation to use a `UICollectionView`? The `display(jogs:)` function would stay the same, and the [[Presenter]]/[[Interactor]]/[[Wireframe]] would never need to be touched. You could create a new `View` object that conforms to the same `PresenterToViewInterface`, but this one uses a `UICollectionView` implementation. Then this new `View` is just dropped into the place and you're all done!
 
-## Using View Objects
+#### Using View Objects
 A big key of the [[VIPER]] architecture is being able to easily change layers without them affecting others. So what if we changed the `Jog` object to something like a `Run` object? Consequently, we would need to change all the layers of the [[VIPER]] stack to use this new `Run` object interface. What would be a better way?
 
 We could create a data object that is specifically for this `View` layer that has only the fields we require to display. Lets say this `View` only needs to display the distance, date, and time of the `Jog`.
@@ -286,7 +286,7 @@ class ViewObject {
 ```
 All done! The `View` can keep using the same `ViewObject` to display the UI, and nothing needs to be changed on the `View` layer to handle this new data type.
 
-## Communicating with a Presenter
+#### Communicating with a Presenter
 Ok, now lets say your user wants to login to the application, so the `View` is displaying two text fields, one for username entry, and the other for password. The user types in their username and password, then presses a `Login` button.
 ```swift
 //View.swift
@@ -359,4 +359,53 @@ func fetchJogs() {
 }
 ```
 Notice the interface to the `Interactor` from the [[Presenter]] is the same as if the `Interactor` was going to call a [Service](Services). The [[Presenter]] has no idea how the `Interactor` fetches jogs (or logs in the user). The `Interactor` is responsible for this interaction.
+
+# Services
+
+
+A `Service` is a modularized object that typically connects to a web interface to get data. This allows the connection to a web endpoint to be completely abstracted and easily changeable. The [[Interactor]] will call the `Services` and handle the responses, whether it is a success or failure.
+
+Continuing with the Login flow example, lets say the [[Interactor]] has been told to login with a username and password.
+```swift
+//Interactor.swift
+lazy var loginService: LoginService = LoginService()
+func login(withUserName username: String, andPassword password: String) {
+    loginService.login(withUsername: username, andPassword: password,
+        success: { (user: User) in
+             self.loggedIn(withUser: user)
+        },
+        failure: { (error: Error) in
+             self.failedLogin(withError: error)
+        })
+}
+
+//LoginService.swift
+func login(withUsername username: String,
+           andPassword password: String,
+           success completion: (user: User),
+           failure: ((error: Error) -> Void)) {
+    let parameters: Parameters = [
+        "username": username,
+        "password": password,
+    ]
+    let request = Alamofire.request("http://www.myserver.com/login,
+                      method: Method.get,
+                      parameters: parameters,
+                      encoding: JSONEncoding.default)
+    request.responseJSON { (response: Response) in
+         switch response.result {
+             case .Success(let value):
+                 let user = User(fromJson: value)
+                 completion(user: user)
+             case .Failure(let error):
+                 failure(error: error)
+         }
+    }
+}
+```
+Here, we use [Alamofire](https://github.com/Alamofire/Alamofire) to handle the HTTP request to our server and login the user with username and password provided. The response is JSON, that is then parsed into a `User` object by the `User` entities init from JSON method. It is then returned to the completion handler block.
+
+Similarly, if there was an error (maybe the username or password was incorrect), the failure block is called with the `Error` that was received.
+
+So, with this implementation, notice that we can easily swap out [Alamofire](https://github.com/Alamofire/Alamofire) for any other networking API. The [[Interactor]] will still call the login service the same way, and receive the `User` or `Error` object through the same handler blocks, allowing this implementation to change on the fly without affecting any other part of our application!
 
