@@ -507,3 +507,18 @@ Since the templates are constantly being updated and improved, you will want the
 
 Since the install script creates symbolic links to the templates files, changing the files will instantly reflect in Xcode. So updating the repository with a `pull` from Git will update all your templates instantly as well!
 
+# Using The Templates
+
+Once the templates are installed, using them is very easy. Here is a short video showing you how:
+
+[![VIPER - Creating a VIPER Stack](http://i.imgur.com/JEuhQpV.png)](https://www.youtube.com/watch?v=CicdKYgzUDw "VIPER - Creating a VIPER Stack")
+
+
+1. Open an Xcode project
+1. Create a new file (File > New > File or ⌘N)
+1. Choose VIPER
+1. Set your VIPER stack base name
+1. Continue adding files as regular to your app target
+1. Repeat steps 4->8 for VIPER Test, adding the files to your test target
+1. Continue to [[Organizing the Stack]]
+
