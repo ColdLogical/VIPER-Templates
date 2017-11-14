@@ -305,7 +305,7 @@ Here, the `View` tells the [Presenter](../../wiki/Presenter) of the user event, 
 
 # Interactor
 
-An `Interactor` is responsible for data logic. It is the layer that retrieves the data from any source it needs to. For instance, it can communicate with a [Service](Services) or a local data store such as CoreData.
+An `Interactor` is responsible for data logic. It is the layer that retrieves the data from any source it needs to. For instance, it can communicate with a [Service](../../wiki/Services) or a local data store such as CoreData.
 
 It has outlets only to the [Presenter](../../wiki/Presenter) of the VIPER stack, something like this:
 ```swift
@@ -335,7 +335,7 @@ func login(withUserName username: String, andPassword password: String) {
 Here, the `Interactor` is told to login with the username and password by the [Presenter](../../wiki/Presenter). The `Interactor` knows that it needs to make a call to the `loginService` to login the user and get the `user` object from the web service. It can then implement the `success` and `failure` completion blocks as it needs to.
 
 #### Communicating with the Presenter
-So the `loginService` succeeded, and the success block of the [Service](Services) is ran, and now this information needs to be conveyed to the [Presenter](../../wiki/Presenter).
+So the `loginService` succeeded, and the success block of the [Service](../../wiki/Services) is ran, and now this information needs to be conveyed to the [Presenter](../../wiki/Presenter).
 ```swift
 //Interactor.swift
 func loggedIn(withUser: user) {
@@ -344,7 +344,7 @@ func loggedIn(withUser: user) {
 ```
 
 #### Communicating with a DataStore
-So what if instead of calling a [Service](Services), you instead want to get information from some sort of data manager like Realm? Lets say we are making a jogging application that records the user's jogging sessions.
+So what if instead of calling a [Service](../../wiki/Services), you instead want to get information from some sort of data manager like Realm? Lets say we are making a jogging application that records the user's jogging sessions.
 ```swift
 //Presenter.swift
 func beganPresenting() {
@@ -358,7 +358,7 @@ func fetchJogs() {
     presenter.fetchedJogs(Array(allJogs))
 }
 ```
-Notice the interface to the `Interactor` from the [Presenter](../../wiki/Presenter) is the same as if the `Interactor` was going to call a [Service](Services). The [Presenter](../../wiki/Presenter) has no idea how the `Interactor` fetches jogs (or logs in the user). The `Interactor` is responsible for this interaction.
+Notice the interface to the `Interactor` from the [Presenter](../../wiki/Presenter) is the same as if the `Interactor` was going to call a [Service](../../wiki/Services). The [Presenter](../../wiki/Presenter) has no idea how the `Interactor` fetches jogs (or logs in the user). The `Interactor` is responsible for this interaction.
 
 # Services
 
@@ -470,7 +470,7 @@ If your Xcode is not installed in the default `/Applications/Xcode` location, th
 
 The below examples use an applications directory with multiple Xcodes that looks like this:
 
-![Multiple Xcodes](images/multipleXcodes.png)
+![Multiple Xcodes](../../wiki/images/multipleXcodes.png)
 
 
 ### Double Click
@@ -478,12 +478,12 @@ The below examples use an applications directory with multiple Xcodes that looks
 1. Double Click the install script.
 1. When the script asks for the path to Xcode, instead of pressing return, put in the correct path.
 
-![Script Inputting the Xcode Path](images/install-scriptInput.png)
+![Script Inputting the Xcode Path](../../wiki/images/install-scriptInput.png)
 
 ### Command Line
 Alternatively, you can input the path to your Xcode.app as a command line argument
 
-![Command Line Inputting the Xcode Path](images/install-commandLine.png)
+![Command Line Inputting the Xcode Path](../../wiki/images/install-commandLine.png)
 
 # Updating
 
