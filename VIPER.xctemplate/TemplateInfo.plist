@@ -36,11 +36,12 @@
 			<key>Type</key>
 			<string>popup</string>
 			<key>Default</key>
-			<string>Swift 3 &amp; Swift 4</string>
+			<string>Swift 4</string>
 			<key>Values</key>
 			<array>
+				<string>Swift 4</string>
+				<string>Swift 3</string>
 				<string>Swift 2.3</string>
-				<string>Swift 3 &amp; Swift 4</string>
 			</array>
 		</dict>
 	</array>

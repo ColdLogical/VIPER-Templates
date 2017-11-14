@@ -1,0 +1,1 @@
+../XCTestSwift 4/___FILEBASENAME___PresenterToInteractorInterfaceMock.swift
