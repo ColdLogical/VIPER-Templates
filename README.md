@@ -724,3 +724,24 @@ presenter.userTappedLogin(withUsername: username, andPassword: password)
 
 Run the unit tests again and they should pass without problems.
 
+# Alternative Resources
+
+VIPER isn't an industry standard. Just as there is no one way to implement MVC or MVVM, there are many different flavors of VIPER. The templates version has very verbose names to reduce the vocabulary and make it as easy as possible to get into VIPER. However, seeing others implementations is very useful.
+
+## Brigade
+  - [Brigade’s Experience Using an MVC Alternative](https://medium.com/brigade-engineering/brigades-experience-using-an-mvc-alternative-36ef1601a41f)
+
+  Differences:
+  - Uses original vocabulary. Makes it very difficult to start with VIPER as you have to now all the vocabulary to get a decent understand of what is happening. For example: their `View.eventHandler` = our `View.presenter`
+  - Brigade has an additional `DataManager` layer. In practice this ends up turning the [[Interactor]] into a pass through layer. In our version, the [[Interactor]] interacts with `Services` directly.
+
+## Mutual Mobile (Original Authors)
+  - [Architecting iOS Apps with VIPER](https://www.objc.io/issues/13-architecture/viper/)
+
+  Differences:
+  - Uses original vocabulary. Makes it very difficult to start with VIPER as you have to now all the vocabulary to get a decent understand of what is happening. For example: their `View.eventHandler` = our `View.presenter`
+  - Examples are Objective-C. This ends up with them using PONSOs instead of base objects, but their intent is the same: Have very simple data structures to represent [[Entities]]
+
+## An Architecture Exploration
+This post is more of an exploration of many different architectures. It has decent break downs of each with explanations. Very useful to get some exposure to lots of different architectures.
+  - [iOS Architecture Patterns](https://medium.com/ios-os-x-development/ios-architecture-patterns-ecba4c38de52)
