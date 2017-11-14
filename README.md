@@ -66,3 +66,49 @@ The abstracted interfaces provide us with a way to easily conform to the interfa
 
 ## What VIPER Is NOT
 VIPER is not the end all of architectures. It solves many problems that arise from MVC, but sometimes the technology of our IDE's doesn't mix well (ex: storyboards and segues). If you see a way to improve VIPER, please be vocal, we want it to improve!
+
+# Wireframe
+The wireframe is responsible for instantiation and navigation. It is the interface into the VIPER stack. When creating a VIPER stack, you instantiate the wireframe and it instantiates all the other layers and connects them properly. A wireframe constructor could look like this:
+
+```swift
+lazy var moduleInteractor = Interactor()
+lazy var modulePresenter = Presenter()
+lazy var moduleView = View()
+
+init() {
+    super.init()
+
+    let i = moduleInteractor
+    let p = modulePresenter
+    let v = moduleView
+
+    i.presenter = p
+
+    p.interactor = i
+    p.view = v
+    p.wireframe = self
+
+    v.presenter = p
+}
+```
+The wireframe maintains strong references to module layers so they do not get deallocated. It initializes all of them, and connects each one to the other, correctly.
+
+With navigation, its specifically navigation to the stack or away from the stack. Lets say you want to display a login stack from the home stack of the application.
+```swift
+//HomeWireframe.swift
+lazy loginModule: Login = LoginWireframe()
+func presentLogin() {
+    loginModule.present(onViewController: moduleView)
+}
+
+//LoginWireframe.swift
+func present(onViewController viewController: UIViewController) {
+    viewController.present(moduleView, animated: true)
+    // Here, you could also notify the presenter that the stack 
+    //    began presenting, but for login, there is no initial setup 
+    //    for this to be needed since the text fields will be empty
+    // presenter.beganPresenting()
+}
+```
+The home wireframe has been told to present the login stack (from the `HomePresenter`). This function calls the login's wireframe, which implements the module's interface protocol, presentation method. The login's wireframe implements the presentation method by telling the view controller that is passed in to present the login module's view controller.
+
