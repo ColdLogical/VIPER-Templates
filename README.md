@@ -576,3 +576,151 @@ Below is the list of files created by the templates. The filenames were created 
 - `WireframeTests`
 - `WireframeToPresenterInterfaceMock`
 
+# Mocking Made Easy
+
+One of the core goals of [[VIPER]] is to make unit testing easy. Many times developers are introduced to unit testing and end up hating it because it can be difficult. But why is it difficult? More often then not, the code was built without the thought of testing in mind. In other words, it wasn't written to be tested.
+
+[[VIPER]], by default, is built to be tested by abstracting the interfaces into protocols. This allows anything to conform to the protocol and thus the layers are easily injectable for unit testing.
+
+Say we need to write code to capture a user tapping login. The user story would be something like this:
+> Given I am a user trying to login<br>
+> When I tap the login button<br>
+> Then I should login with my username and password<br>
+
+The tap on the button needs to cause the [[Presenter]] to be told that the user is trying to login in using the inputted username and password. Inside the [[View]] layer, the variable `presenter` is anything that conforms to the `ViewToPresenterInterface`. So what do we do if we want to test that, when the user taps login, the [[Presenter]] is told of the user event? The templates already abstract out the `ViewToPresenterInterfaceMock`. So in TDD we would start by writing our failing test, something like this:
+
+```swift
+//ViewTests.swift
+@testable import Project
+class ViewTests: XCTestCase {
+    var view: JogsView!
+    var presenterMock: JogsViewToPresenterInterfaceMock!
+
+    override func setUp() {
+        super.setUp()
+
+        let sb = UIStoryboard(name: Jogs.storyboardIdentifier, bundle: Bundle(for: JogsView.self))
+        view = sb.instantiateViewController(withIdentifier: .viewIdentifier) as! JogsView
+        presenterMock = JogsViewToPresenterInterfaceMock()
+
+        _ = view.view
+
+        // This is where we easily inject a mocked interface into the view for testing
+        view.presenter = presenterMock
+    }
+    
+    func testLoginWasTappedWithUsernameAndPasswordShouldTellPresenterUserTappedLogin() {
+         // Arrange
+         view.usernameField.text = "testUserName"
+         view.passwordField.text = "testPassword"
+
+         // Act
+         view.loginTapped(view.loginButton)
+
+         // Assert
+         XCTAssert(presenterMock.functionsCalled.contains("userTappedLogin(withUsername:andPassword:)"))
+         XCTAssertEqual(presenterMock.withUsername, "testUserName")
+         XCTAssertEqual(presenterMock.andPassword, "testPassword")
+    }
+}
+```
+Now we can run this test and see that it fails because we haven't implemented anything yet. Next, we define the interface function to call for the [[Presenter]].
+
+```swift
+//PresenterProtocols.swift
+protocol ViewToPresenterInterface {
+    func userTappedLogin(withUsername username: String, andPassword password: String)
+}
+```
+Pretty good, next we need to have our actual [[Presenter]] and our `ViewToPresenterInterfaceMock` conform to the protocols.
+
+```swift
+//Presenter.swift
+class Presenter {
+    weak var interactor: PresenterToInteractorInterface!
+    weak var view: PresenterToViewInterface!
+    weak var wireframe: PresenterToWireframeInterface!
+}
+
+extension Presenter: ViewToPresenterInterface {
+    func userTappedLogin(withUsername username: String, andPassword password: String) {
+         interactor.login(withUsername: username, andPassword: password)
+    }
+}
+```
+For the mocked interface, we just need to update the extension to conform to protocol, and save the input values so we can test them. Our mock turns into something like this:
+
+```swift
+//ViewToPresenterInterfaceMock.swift
+class ViewToPresenterInterfaceMock {
+    var functionsCalled = [String]()
+    
+    var andPassword: String?
+    var withUsername: String?
+}
+
+extension ViewToPresenterInterfaceMock: ViewToPresenterInterface {
+    func userTappedLogin(withUsername username: String, andPassword password: String) {
+        functionsCalled.append(#function)
+        withUsername = userName
+        andPassword = password
+    }
+}
+```
+Great, everything conforms to the protocols we need them to, the [[View]] tests are injecting the mocked `ViewToPresenterInterface`, and everything compiles. However, we still have our failing test because we haven't implemented the functionality yet.
+
+```swift
+//View.swift
+class View {
+    weak var presenter: ViewToPresenterInterface!
+    
+    @IBAction func loginTapped(sender: AnyObject) {
+        let username = usernameTextField.text
+        let password = passwordTextField.text
+        presenter.userTappedLogin(withUsername: username, andPassword: username)
+    }
+}
+```
+
+Now we are at a spot where we can run our tests and see if the presenter is told of the user event with the correct values being passed in. What happens when we run the tests?
+
+```swift
+func testLoginWasTappedWithUsernameAndPasswordShouldTellPresenterUserTappedLogin() {
+    // Arrange
+    view.usernameField.text = "testUserName"
+    view.passwordField.text = "testPassword"
+
+    // Act
+    view.loginTapped(view.loginButton)
+
+    // Assert
+    XCTAssert(presenterMock.functionsCalled.contains("userTappedLogin(withUsername:andPassword:)"))
+    XCTAssertEqual(presenterMock.withUsername, "testUserName")
+    XCTAssertEqual(presenterMock.andPassword, "testPassword")
+    // TEST FAILED: "testUserName" != "testPassword"
+}
+```
+
+Oh dear, how could our test have failed?? But the message makes sense and we can easily find the error
+```swift
+//View.swift
+class View {
+    weak var presenter: ViewToPresenterInterface!
+    
+    @IBAction func loginTapped(sender: AnyObject) {
+        let username = usernameTextField.text
+        let password = passwordTextField.text
+        presenter.userTappedLogin(withUsername: username, andPassword: username)
+        // We passed the username as the password on accident!
+    }
+}
+```
+
+A quick change to the `presenter` call and we are good to go!
+
+```swift
+presenter.userTappedLogin(withUsername: username, andPassword: password)
+```
+
+Run the unit tests again and they should pass without problems.
+
