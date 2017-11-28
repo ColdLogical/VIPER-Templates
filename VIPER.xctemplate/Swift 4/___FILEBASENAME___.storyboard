@@ -31,7 +31,7 @@
         <!--Navigation Controller-->
         <scene sceneID="U2K-Jr-YuH">
             <objects>
-                <navigationController id="xfT-rk-fsJ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="___VARIABLE_productName___NavigationController" id="xfT-rk-fsJ" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Rwx-4i-qSq">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
