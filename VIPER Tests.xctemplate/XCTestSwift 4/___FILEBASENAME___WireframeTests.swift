@@ -72,7 +72,7 @@ class ___VARIABLE_productName___WireframeTests: XCTestCase {
 
         func testSetDelegateWithAnythingShouldTellPresenterToSetNewDelegate() {
                 // Arrange
-                let testDelegate = TestDelegateMock()
+                let testDelegate = ___VARIABLE_productName___DelegateMock()
 
                 // Act
                 wireframe.delegate = testDelegate
