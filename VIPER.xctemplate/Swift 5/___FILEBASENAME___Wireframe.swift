@@ -68,3 +68,28 @@ extension ___VARIABLE_productName___Wireframe: ___VARIABLE_productName___ {
 extension ___VARIABLE_productName___Wireframe: ___VARIABLE_productName___PresenterToWireframeInterface {
 
 }
+
+// MARK: - Communication Interfaces
+// Interface Abstraction for working with the VIPER Module
+protocol ___VARIABLE_productName___: class {
+        var delegate: ___VARIABLE_productName___Delegate? { get set }
+}
+
+// VIPER Module Constants
+struct ___VARIABLE_productName___Constants {
+        // Uncomment to utilize a navigation contoller from storyboard
+        //static let navigationControllerIdentifier = "___VARIABLE_productName___NavigationController"
+        static let storyboardIdentifier = "___VARIABLE_productName___"
+        static let viewIdentifier = "___VARIABLE_productName___View"
+}
+
+// VIPER Interface for manipulating the navigation of the view
+protocol ___VARIABLE_productName___NavigationInterface: class {
+
+}
+
+// VIPER Interface for communication from Wireframe -> Presenter
+protocol ___VARIABLE_productName___WireframeToPresenterInterface: class {
+        var delegate: ___VARIABLE_productName___Delegate? { get }
+        func set(delegate newDelegate: ___VARIABLE_productName___Delegate?)
+}

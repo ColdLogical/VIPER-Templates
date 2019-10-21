@@ -62,4 +62,62 @@ class ___VARIABLE_productName___PresenterSpec: QuickSpec {
                 }
         }
 }
+
+// MARK: - Communicaiton Interface Mocks
+// MARK: - Delegate
+class ___VARIABLE_productName___DelegateMock {
+        var functionsCalled = [String]()
+
+        // MARK: - Input Variables
+}
+
+extension ___VARIABLE_productName___DelegateMock: ___VARIABLE_productName___Delegate {
+
+}
+
+// MARK: - Present to Interactor
+class ___VARIABLE_productName___PresenterToInteractorInterfaceMock {
+        var functionsCalled = [String]()
+
+        // MARK: - Input Variables
+}
+
+extension ___VARIABLE_productName___PresenterToInteractorInterfaceMock: ___VARIABLE_productName___PresenterToInteractorInterface {
+
+}
+
+// MARK: - Present to View
+class ___VARIABLE_productName___PresenterToViewInterfaceMock {
+        var functionsCalled = [String]()
+
+        // MARK: - Input Variables
+}
+
+extension ___VARIABLE_productName___PresenterToViewInterfaceMock: ___VARIABLE_productName___PresenterToViewInterface {
+
+}
+
+// MARK: - Present to Wireframe
+class ___VARIABLE_productName___WireframeInterfacesMock {
+        var functionsCalled = [String]()
+
+        // MARK: - Input Variables
+}
+
+extension ___VARIABLE_productName___WireframeInterfacesMock: ___VARIABLE_productName___ {
+        var delegate: ___VARIABLE_productName___Delegate? {
+                get {
+                        functionsCalled.append(#function)
+                        return nil
+                }
+            set {
+                functionsCalled.append(#function)
+            }
+        }
+}
+
+extension ___VARIABLE_productName___WireframeInterfacesMock: ___VARIABLE_productName___PresenterToWireframeInterface {
+
+}
+
 // swiftlint:disable:this file_length

@@ -19,3 +19,9 @@ extension ___VARIABLE_productName___View: ___VARIABLE_productName___NavigationIn
 extension ___VARIABLE_productName___View: ___VARIABLE_productName___PresenterToViewInterface {
 
 }
+
+// MARK: - Communication Interfaces
+// VIPER Interface for communication from View -> Presenter
+protocol ___VARIABLE_productName___ViewToPresenterInterface: class {
+
+}

@@ -23,3 +23,16 @@ class ___VARIABLE_productName___InteractorTests: XCTestCase {
         // MARK: - Presenter to Interactor Interface
 
 }
+
+ // MARK: - Communicaiton Interface Mocks
+ // MARK: - Interactor to Presenter
+class ___VARIABLE_productName___InteractorToPresenterInterfaceMock {
+        var functionsCalled = [String]()
+
+        // MARK: - Input Variables
+}
+
+extension ___VARIABLE_productName___InteractorToPresenterInterfaceMock: ___VARIABLE_productName___InteractorToPresenterInterface {
+
+}
+

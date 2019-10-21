@@ -14,3 +14,9 @@ class ___VARIABLE_productName___Interactor {
 extension ___VARIABLE_productName___Interactor: ___VARIABLE_productName___PresenterToInteractorInterface {
 
 }
+
+// MARK: - Communication Interfaces
+// VIPER Interface for communication from Interactor -> Presenter
+protocol ___VARIABLE_productName___InteractorToPresenterInterface: class {
+
+}

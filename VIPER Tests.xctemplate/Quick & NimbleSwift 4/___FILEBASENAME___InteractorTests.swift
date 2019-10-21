@@ -25,4 +25,17 @@ class ___VARIABLE_productName___InteractorSpec: QuickSpec {
                 }
         }
 }
+
+// MARK: - Communicaiton Interface Mocks
+// MARK: - Interactor to Presenter
+class ___VARIABLE_productName___InteractorToPresenterInterfaceMock {
+        var functionsCalled = [String]()
+
+        // MARK: - Input Variables
+}
+
+extension ___VARIABLE_productName___InteractorToPresenterInterfaceMock: ___VARIABLE_productName___InteractorToPresenterInterface {
+
+}
+
 // swiftlint:disable:this file_length

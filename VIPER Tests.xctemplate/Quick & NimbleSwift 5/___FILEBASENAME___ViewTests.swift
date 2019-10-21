@@ -27,4 +27,28 @@ class ___VARIABLE_productName___ViewSpec: QuickSpec {
                 }
         }
 }
+
+// MARK: - Communicaiton Interface Mocks
+// MARK: - Navigation
+class ___VARIABLE_productName___NavigationInterfaceMock {
+        var functionsCalled = [String]()
+
+        // MARK: - Input Variables
+}
+
+extension ___VARIABLE_productName___NavigationInterfaceMock: ___VARIABLE_productName___NavigationInterface {
+
+}
+
+// MARK: - View to Presenter
+class ___VARIABLE_productName___ViewToPresenterInterfaceMock {
+        var functionsCalled = [String]()
+
+        // MARK: - Input Variables
+}
+
+extension ___VARIABLE_productName___ViewToPresenterInterfaceMock: ___VARIABLE_productName___ViewToPresenterInterface {
+
+}
+
 // swiftlint:disable:this file_length
