@@ -1,1 +1,0 @@
-../Quick & NimbleSwift 4/___FILEBASENAME___NavigationInterfaceMock.swift

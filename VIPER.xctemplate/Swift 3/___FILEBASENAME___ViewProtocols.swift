@@ -1,1 +1,0 @@
-../Swift 4/___FILEBASENAME___ViewProtocols.swift
