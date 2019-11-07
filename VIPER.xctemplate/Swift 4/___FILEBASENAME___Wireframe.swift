@@ -77,7 +77,7 @@ protocol ___VARIABLE_productName___: class {
 
 // VIPER Module Constants
 struct ___VARIABLE_productName___Constants {
-        // Uncomment to utilize a navigation contoller from storyboard
+        // Uncomment to utilize a navigation controller from storyboard
         //static let navigationControllerIdentifier = "___VARIABLE_productName___NavigationController"
         static let storyboardIdentifier = "___VARIABLE_productName___"
         static let viewIdentifier = "___VARIABLE_productName___View"
