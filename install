@@ -12,7 +12,7 @@ if [ -z $XCODE_DIR ]; then
         XCODE_DIR="/Applications/Xcode.app/"
 fi
 
-SOURCE_DIRECTORY="${XCODE_DIR}Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/File Templates/Source/"
+SOURCE_DIRECTORY="${XCODE_DIR}Contents/Developer/Platforms/iPhoneOS.platform/Developer/Library/Xcode/Templates/File Templates/iOS/Source/"
 
 echo "Installing templates to:"
 echo "$SOURCE_DIRECTORY"
