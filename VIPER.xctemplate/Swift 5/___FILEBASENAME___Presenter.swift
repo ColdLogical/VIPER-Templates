@@ -38,21 +38,21 @@ extension ___VARIABLE_productName___Presenter: ___VARIABLE_productName___Wirefra
 
 // MARK: - Communication Interfaces
 // VIPER Interface to the Module
-protocol ___VARIABLE_productName___Delegate: class {
+protocol ___VARIABLE_productName___Delegate: AnyObject {
 
 }
 
 // VIPER Interface for communication from Presenter to Interactor
-protocol ___VARIABLE_productName___PresenterToInteractorInterface: class {
+protocol ___VARIABLE_productName___PresenterToInteractorInterface: AnyObject {
 
 }
 
 // VIPER Interface for communication from Presenter -> Wireframe
-protocol ___VARIABLE_productName___PresenterToWireframeInterface: class {
+protocol ___VARIABLE_productName___PresenterToWireframeInterface: AnyObject {
 
 }
 
 // VIPER Interface for communication from Presenter -> View
-protocol ___VARIABLE_productName___PresenterToViewInterface: class {
+protocol ___VARIABLE_productName___PresenterToViewInterface: AnyObject {
 
 }

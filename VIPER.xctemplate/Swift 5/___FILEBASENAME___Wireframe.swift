@@ -71,7 +71,7 @@ extension ___VARIABLE_productName___Wireframe: ___VARIABLE_productName___Present
 
 // MARK: - Communication Interfaces
 // Interface Abstraction for working with the VIPER Module
-protocol ___VARIABLE_productName___: class {
+protocol ___VARIABLE_productName___: AnyObject {
         var delegate: ___VARIABLE_productName___Delegate? { get set }
 }
 
@@ -84,12 +84,12 @@ struct ___VARIABLE_productName___Constants {
 }
 
 // VIPER Interface for manipulating the navigation of the view
-protocol ___VARIABLE_productName___NavigationInterface: class {
+protocol ___VARIABLE_productName___NavigationInterface: AnyObject {
 
 }
 
 // VIPER Interface for communication from Wireframe -> Presenter
-protocol ___VARIABLE_productName___WireframeToPresenterInterface: class {
+protocol ___VARIABLE_productName___WireframeToPresenterInterface: AnyObject {
         var delegate: ___VARIABLE_productName___Delegate? { get }
         func set(delegate newDelegate: ___VARIABLE_productName___Delegate?)
 }

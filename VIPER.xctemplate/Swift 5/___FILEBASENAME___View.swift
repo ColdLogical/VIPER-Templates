@@ -22,6 +22,6 @@ extension ___VARIABLE_productName___View: ___VARIABLE_productName___PresenterToV
 
 // MARK: - Communication Interfaces
 // VIPER Interface for communication from View -> Presenter
-protocol ___VARIABLE_productName___ViewToPresenterInterface: class {
+protocol ___VARIABLE_productName___ViewToPresenterInterface: AnyObject {
 
 }
