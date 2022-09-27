@@ -44,8 +44,10 @@ class ___VARIABLE_productName___Wireframe {
         }
 
     	class func storyboard() -> UIStoryboard {
-                return UIStoryboard(name: ___VARIABLE_productName___Constants.storyboardIdentifier,
-                                    bundle: Bundle(for: ___VARIABLE_productName___Wireframe.self))
+                return UIStoryboard(
+                    name: ___VARIABLE_productName___Constants.storyboardIdentifier,
+                    bundle: Bundle(for: ___VARIABLE_productName___Wireframe.self)
+                )
     	}
 
         // MARK: - Operational
