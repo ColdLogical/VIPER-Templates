@@ -26,6 +26,25 @@
 		</dict>
 		<dict>
 			<key>Identifier</key>
+			<string>uiFrameworkChoice</string>
+			<key>Required</key>
+			<true/>
+			<key>Name</key>
+			<string>UI Framework</string>
+			<key>Description</key>
+			<string>The UI framework to use. Either UIKit or SwiftUI</string>
+			<key>Type</key>
+			<string>popup</string>
+			<key>Default</key>
+			<string>UIKit</string>
+			<key>Values</key>
+			<array>
+				<string>UIKit</string>
+				<string>SwiftUI</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Identifier</key>
 			<string>swiftVersionChoice</string>
 			<key>Required</key>
 			<true/>
@@ -40,7 +59,6 @@
 			<key>Values</key>
 			<array>
 				<string>Swift 5</string>
-				<string>Swift 4</string>
 			</array>
 		</dict>
 	</array>
