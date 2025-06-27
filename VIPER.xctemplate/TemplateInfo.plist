@@ -30,9 +30,28 @@
 			<key>Required</key>
 			<true/>
 			<key>Name</key>
-			<string>UI Framework</string>
+			<string>User Interface</string>
 			<key>Description</key>
 			<string>The UI framework to use. Either UIKit or SwiftUI</string>
+			<key>Type</key>
+			<string>popup</string>
+			<key>Default</key>
+			<string>UIKit</string>
+			<key>Values</key>
+			<array>
+				<string>UIKit</string>
+				<string>SwiftUI</string>
+			</array>
+		</dict>
+		<dict>
+			<key>Identifier</key>
+			<string>navigationFrameworkChoice</string>
+			<key>Required</key>
+			<true/>
+			<key>Name</key>
+			<string>Navigation</string>
+			<key>Description</key>
+			<string>The navigation framework to use. Either UIKit or SwiftUI</string>
 			<key>Type</key>
 			<string>popup</string>
 			<key>Default</key>
@@ -55,10 +74,10 @@
 			<key>Type</key>
 			<string>popup</string>
 			<key>Default</key>
-			<string>Swift 5</string>
+			<string>Current</string>
 			<key>Values</key>
 			<array>
-				<string>Swift 5</string>
+				<string>Current</string>
 			</array>
 		</dict>
 	</array>

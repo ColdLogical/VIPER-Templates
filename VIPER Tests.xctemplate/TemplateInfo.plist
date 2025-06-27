@@ -32,14 +32,15 @@
 			<key>Name</key>
 			<string>Testing Framework:</string>
 			<key>Description</key>
-			<string>The testing framework to use. Either XCTest or Quick &amp; Nimble</string>
+			<string>The testing framework to use. Either XCTest, Swift Testing, or Quick &amp; Nimble</string>
 			<key>Type</key>
 			<string>popup</string>
 			<key>Default</key>
-			<string>XCTest</string>
+			<string>Swift Testing</string>
 			<key>Values</key>
 			<array>
 				<string>XCTest</string>
+				<string>Swift Testing</string>
 				<string>Quick &amp; Nimble</string>
 			</array>
 		</dict>

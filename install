@@ -1,7 +1,7 @@
 #!/bin/bash
 TEMPLATE_DIRECTORY=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
-eval SOURCE_DIRECTORY="~/Library/Developer/Xcode/Templates/File Templates/"
+eval SOURCE_DIRECTORY="~/Library/Developer/Xcode/Templates/File\ Templates/"
 
 echo "Installing templates to:"
 echo "$SOURCE_DIRECTORY"
